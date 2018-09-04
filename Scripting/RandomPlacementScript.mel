@@ -1,0 +1,32 @@
+global proc string[] orbs() {
+
+string $spheres[];
+
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+
+int $randnumber = rand (12, 52);
+
+for ($i=0; $i < $randnumber; $i++)
+    {
+        
+      string $tempsort[] = `duplicate -rr`;
+      $spheres [$i] = $tempsort [0]; 
+    }
+
+     return $spheres;
+}
+
+global proc movingspheres () {
+    
+    string $movable[] = `orbs`;
+    for ($flyingOrb in $movable)
+    {
+        int $x = rand (-12, 12);
+        int $y = rand (-25, 25);
+        int $z = rand (-32, 32);
+        move $x $y $z $flyingOrb;
+        
+        }
+}
+
+movingspheres();
