@@ -1,32 +1,36 @@
-global proc string[] orbs() {
+global proc string[] orbs() {//Proc stansd for procedure, which is a finction
 
-string $spheres[];
+string $spheres[]; //creating an array, names have to start with a dollar sign and end with brackets
 
-polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;
+polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1;//creating a sphere
 
-int $randnumber = rand (12, 52);
+int $randnumber = rand (12, 52); /*int means creating a number, rand means 
+it will ne selected randomly from the range assigned*/
 
-for ($i=0; $i < $randnumber; $i++)
+for ($i=0; $i < $randnumber; $i++)/*for loop means that $i (i is for loop standard) starts at zero and runs as long
+ as its less then the assigned afore mentioned random number */
     {
         
-      string $tempsort[] = `duplicate -rr`;
-      $spheres [$i] = $tempsort [0]; 
+      string $tempsort[] = `duplicate -rr`; // creates a new array that recieves the duplicates spheres
+      
+      $spheres [$i] = $tempsort [0]; /*spheres is a previously defined array that will now recieve 
+      all of the data from tempsort*/
     }
 
-     return $spheres;
+     return $spheres; //makes the data in this proc available after it has run
 }
 
 global proc movingspheres () {
     
-    string $movable[] = `orbs`;
-    for ($flyingOrb in $movable)
+    string $movable[] = `orbs`; //makes a new array $movable and retrieves the data from previous proc
+    for ($flyingOrb in $movable) // for in loop that moves the stored data in movable to flying orb and executes the contents
     {
         int $x = rand (-12, 12);
-        int $y = rand (-25, 25);
+        int $y = rand (-25, 25);//assigns a random number to each axis
         int $z = rand (-32, 32);
-        move $x $y $z $flyingOrb;
+        move $x $y $z $flyingOrb;//moves each object in $flying orb to an assigned object until all of themm are moved to a random place
         
         }
 }
 
-movingspheres();
+movingspheres(); executes script
