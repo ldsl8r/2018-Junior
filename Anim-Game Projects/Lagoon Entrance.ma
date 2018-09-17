@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Lagoon Entrance.ma
-//Last modified: Mon, Sep 17, 2018 10:29:40 AM
+//Last modified: Mon, Sep 17, 2018 10:39:06 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "6A5F6166-4487-0170-8CC9-84B00E98864B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.2847321137380749 0.087352357389210766 83.931622815096276 ;
-	setAttr ".r" -type "double3" 3.2616472676414792 718.60000000015123 -4.9711006141185065e-17 ;
+	setAttr ".t" -type "double3" -0.82766798888241411 15.403163601185554 96.045634158928578 ;
+	setAttr ".r" -type "double3" -2.7383527326992798 720.20000000004711 9.4733895300369121e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "14E5EC98-4713-FA3D-9268-7789AB581275";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 81.080353959111093;
+	setAttr ".coi" 95.785120428424406;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
