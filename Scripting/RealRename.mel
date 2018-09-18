@@ -1,22 +1,91 @@
 global proc Split (string $Stringtosplit)
 {
     string $store[];
-    string $number;
     string $SelectedObj[] = `ls -selection`;
     int $numRange = 1;
 
     tokenize $Stringtosplit "#" $store;
 
-    
 
     for ($iterate in $SelectedObj)
     {
-         $number = "0"+$numRange; 
+        int $poundsigns = size($Stringtosplit)-(size($store[0])+size($store[1]));
+        string $number = $numRange;
+        int $Padding = $poundsigns-size($number);
 
-         string $fullString= $store[0]+"_"+$number+"_"+$store[1];
+        for($i = 0;$i < $Padding; $i++)
+        {
+            $number = "0"+ $number;
+        }
+
+         string $fullString = $store[0]+"_"+$number+"_"+$store[1];
          rename $iterate $fullString;
          $numRange++;
     }
      
 }
-Split("arm_##_jnt");
+Split("arm####jnt");
+
+/*
+global proc Split (string $Stringtosplit)
+{
+    //creates array
+
+    string $store[];
+
+    // takes the selected objects in the scene and saving them into Array $Selected Obj with ls - selection
+    // which is a maya function that returns a name
+
+    string $SelectedObj[] = `ls -selection`;
+
+    // creates an in and sets it to 1 to start
+
+    int $numRange = 1;
+
+    //a maya function that splits up the string according to the second perameters in "" and stores them in the third perameter, a sting
+
+    tokenize $Stringtosplit "#" $store;
+
+    // a for in loop that figures out the number of hashtags that are in the mater string,
+    // creates a padding method, and puts the loop back together
+
+    for ($iterate in $SelectedObj)
+    {
+        //int poundsigns is assigned the contents of Stringtosplit after the results of tokenize are taken out, 
+        //Stringtosplit is an array, store is an array that is storing the strings leftover from tokenize (in this case arm, and jnt)
+
+        int $poundsigns = size($Stringtosplit)-(size($store[0])+size($store[1]));
+
+        //reassigns numrange, an int, to a string, number
+
+        string $number = $numRange;
+
+        //padding is assigned the contents of poundsigns after the number contained in the selection is subtracted
+
+        int $Padding = $poundsigns-size($number);
+
+        // a for loop that iterates through padding to assign a zero to each # left over after the number is determined
+
+        for($i = 0;$i < $Padding; $i++)
+        {
+            $number = "0"+ $number;
+        }
+        //puts the string back together that was tokenized using _ as the devider, the store array is called as it was before (arm, and jnt)
+
+         string $fullString = $store[0]+"_"+$number+"_"+$store[1];
+
+        //renames the contents of iterate to be the contents of fullstring
+
+         rename $iterate $fullString;
+
+         //sets the for in loop to cycle back through for the nect iteration
+
+         $numRange++;
+    }
+     
+}
+//final input to be put through the function, this is where you can change what is being tokenized as well as tell the 
+//function how many will need to be put through padding loop
+
+Split("arm####jnt");
+*/
