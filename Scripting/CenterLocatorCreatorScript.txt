@@ -1,0 +1,10 @@
+global proc CenterLoc()
+{
+    string $SelectedObj[] = `ls -sl`;
+    spaceLocator 
+    move
+    
+    
+    
+    
+}

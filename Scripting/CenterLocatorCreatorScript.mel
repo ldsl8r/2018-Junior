@@ -1,0 +1,25 @@
+global proc CenterLoc()
+{
+    string $SelectedObj[] = `ls -sl`;
+    string $temp[] = `duplicate -rr $SelectedObj`;
+
+    if (size($temp) > 1)
+        $temp = `polyUnite $temp`;
+
+    float $bbPos[];
+    $bbPos = `xform -q -boundingBox $temp`;
+    delete -ch $temp[0];
+    delete $temp[0];
+
+    float $xPos, $yPos, $zPos;
+    $xPos = ($bbPos[0]+$bbPos[3]) / 2;
+    $yPos = ($bbPos[1]+$bbPos[4]) / 2;
+    $zPos = ($bbPos[2]+$bbPos[5]) / 2;
+
+    string $locator[] = `spaceLocator -position 0 0 0`;
+    xform -translation $xPos $yPos $zPos -worldSpace -absolute $locator[0];
+    
+    return $locator[0];
+}
+
+CenterLoc();
