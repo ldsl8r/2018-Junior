@@ -1,0 +1,41 @@
+global proc MakeCrtls(Parameters)
+{
+    //need selection to be stores to ne sorted later
+    string $SelectedObj[] = `ls -selection`;
+    //for loop? needed to run through the selection and:
+
+    /*create a control and control group
+    match orientations to jnts in selection
+    rename controls to fit jnts
+    have the modularity to not run on a selection in which case
+    the controls are set at the origin*/
+    
+    return MakeCrtls
+    
+}
+
+global proc SetCrtlColors ()
+{
+    string to recieve MakeCrtls
+    string $colors[];
+
+    /*
+        loop to determine type of contols and
+        assign a color based on: name and color type stored in an array
+    */
+
+    //also needed is the capacity to assign control shapes: circle, square, diamond, and i would
+    //like to do the inverted circle squiggle for pole vecotrs we did last year
+
+
+
+
+
+
+}
+
+circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.1 -s 8 -ch 1; objectMoveCommand;
+nurbsSquare -c 0 0 0 -nr 0 1 0 -sl1 1 -sl2 1 -sps 1 -d 3 -ch 1 ; objectMoveCommand;
+
+setAttr "nurbsCircleShape1.overrideEnabled" 1;
+setAttr nurbsCircle1.overrideColor 9;
