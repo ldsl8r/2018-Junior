@@ -1,7 +1,14 @@
-global proc MakeCrtls(Parameters)
+global proc MakeCrtls(int $index)
 {
-    //need selection to be stores to ne sorted later
     string $SelectedObj[] = `ls -selection`;
+
+    for ($sel in $SelectedObj)
+    {
+    string $crtls[] = `circle -name` ($sel + "_Crtl")`;
+    string $crlt = $crtls[0];
+    Color Controls($crtl, $index);
+    }
+    
     //for loop? needed to run through the selection and:
 
     /*create a control and control group
@@ -14,17 +21,44 @@ global proc MakeCrtls(Parameters)
     
 }
 
-global proc SetCrtlColors ()
+global proc colorCrtls(string $Crtl, int $color())
 {
-    string to recieve MakeCrtls
-    string $colors[];
+    //Sets color index of the conrtol
+
+    string $shapes[];
+
+    //find the shape node of Crtl
+    $shapes = `listRelatives -shapes $Crtl`;
+    //enable override on $shape
+    for ($shape in $shapes)
+    {
+        if (`nodeType $Shape` == "nurbsCurve")
+        {
+            setAttr ($shape + ".overrideEnabled") 1;
+            setAttr ($shape = ".overrideColor") $color;
+        }
+        else
+        {
+            warning("selected object is not a curve.");
+        }
+
+    }
+    //set $Crtl color to $color
+}
+//run script to this point to load funtion into Maya
+source ContolMaker
+colorCrtls("nurbsCircle1", 12)
+
+
+
+
 
     /*
         loop to determine type of contols and
         assign a color based on: name and color type stored in an array
     */
 
-    //also needed is the capacity to assign control shapes: circle, square, diamond, and i would
+    //create the same functions but capacity to assign a different control shape: circle, square, diamond, and i would
     //like to do the inverted circle squiggle for pole vecotrs we did last year
 
 
@@ -34,8 +68,10 @@ global proc SetCrtlColors ()
 
 }
 
-circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.1 -s 8 -ch 1; objectMoveCommand;
-nurbsSquare -c 0 0 0 -nr 0 1 0 -sl1 1 -sl2 1 -sps 1 -d 3 -ch 1 ; objectMoveCommand;
+circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.1 -s 8 -ch 1; objectMoveCommand;0
 
 setAttr "nurbsCircleShape1.overrideEnabled" 1;
 setAttr nurbsCircle1.overrideColor 9;
+
+
+
