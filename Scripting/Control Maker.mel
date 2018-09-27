@@ -33,11 +33,14 @@ global proc string reshape (string $Shapes)
 
    else if ($Shapes == "square")
    {
-        select -r nurbsCircle1.cv[2] ;
+        /*select -r nurbsCircle1.cv[2] ;
         select -tgl nurbsCircle1.cv[0] ;
         select -tgl nurbsCircle1.cv[4] ;
         select -tgl nurbsCircle1.cv[6] ;
-        scale -r -p 0cm 0cm 0cm 1.518027 1.518027 1.518027 ;
+        scale -r -p 0cm 0cm 0cm 1.518027 1.518027 1.518027 ;*/
+        curve -d 1 -p -0.5 0 -0.5 -p -0.5 0 0.5 -p 0.5 0 0.5 -p 0.5 0 -0.5 -p -0.5 0 -0.5 -k 0 -k 1 -k 2 -k 3 -k 4 ;
+        closeCurve -ch 1 -ps 1 -rpo 1 -bb 0.5 -bki 0 -p 0.1;
+
    }
    else if ($Shapes == "diamond")
    {
@@ -68,9 +71,9 @@ global proc MakeCrtls(int $index, string $nameOshape)
         {
             //creates a control
             string $typecrtl = reshape($nameOshape);
+            colorCrtls($typecrtl,$index);
             //renames control and saves it into a string so it can be called later
             string $reCrtl = `rename $typecrtl ($selection+ "_Crtl")`;
-            colorCrtls($reCrtl,$index);
             //ends new group with suffix_grp
             string $groupies = `group -world -name ($reCrtl+ "_Grp") $reCrtl`;
           
