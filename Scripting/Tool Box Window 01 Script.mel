@@ -1,0 +1,14 @@
+string $mainWindow = "RandomPlacementWindow";
+if (`window -exists $mainWindow`)
+{
+    deleteUI $mainWindow;
+}
+
+$mainWindow =`window -title "Random Placement Generator" $mainWindow`;
+string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+string $firstRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 2 - adjustableColumn 2`;
+text -parent $firstRowLayout -label "Duplicate";
+string $duplicateIntField = `intField -parent $firstRowLayout -minValue 1 -value 7`;
+
+
+showWindow $mainWindow;

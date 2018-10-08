@@ -1,0 +1,13 @@
+string $mainWindow = "LoganWindow";
+if (`window -exists $mainWindow`)
+{
+    deleteUI $mainWindow;
+}
+
+$mainWindow =`window -title "LoganToolbox" $mainWindow`;
+
+string $mColumn = `columnLayout -parent $mainWindow -columnAttach "both"`;
+button -parent $mColumn -label "Random Placement Generator" -command "parentGroup ()";
+button -parent $mColumn -label "Control Maker"
+button -parent $mColumn -label "Rename Selection"
+button -parent $mColumn -label "Create Vibranium"
