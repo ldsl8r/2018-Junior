@@ -6,9 +6,19 @@ if (`window -exists $mainWindow`)
 
 $mainWindow =`window -title "Random Placement Generator" $mainWindow`;
 string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
-string $firstRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 2 - adjustableColumn 2`;
-text -parent $firstRowLayout -label "Duplicate";
-string $duplicateIntField = `intField -parent $firstRowLayout -minValue 1 -value 7`;
+
+
+string $dupRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 2 - adjustableColumn 2`;
+text -parent $dupRowLayout -label "Duplicate";
+string $duplicateIntField = `intField -parent $dupRowLayout -minValue 1 -value 7`;
+
+string $rangeRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 4`;
+text -parent $rangeRowLayout -label "Range";
+string $xRange = `floatField -parent $rangeRowLayout -value 0`;
+string $yRange = `floatField -parent $rangeRowLayout -value 0`;
+string $zRange = `floatField -parent $rangeRowLayout -value 0`;
+
+string $button = `button -parent $mainColumn -label "Generate"`;
 
 
 showWindow $mainWindow;
