@@ -1,0 +1,33 @@
+string $mainWindow = "RandomPlacementWindow";
+if (`window -exists $mainWindow`)
+{
+    deleteUI $mainWindow;
+}
+
+$mainWindow =`window -title "Rename Selection" $mainWindow`;
+string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+
+checkBoxGrp
+        -vr
+        -numberOfCheckBoxes 4
+        -label "Prefix"
+        -labelArray4 "Arm" "Leg" "Spine" "Finger" ;
+checkBoxGrp
+        -numberOfCheckBoxes 3
+        -vr
+        -label "Padding"
+        -labelArray3 "#" "##" "None" ;
+
+checkBoxGrp
+        -numberOfCheckBoxes 4
+        -vr
+        -label "Suffix"
+        -labelArray4 "Geo" "Jnt" "Crtl" "Grp";
+        
+
+string $button = `button -parent $mainColumn -label "Rename"`;
+
+
+
+
+showWindow $mainWindow;
