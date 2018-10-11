@@ -5,7 +5,7 @@ if (`window -exists $mainWindow`)
 }
 
 $mainWindow =`window -title "Random Placement Generator" $mainWindow`;
-string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
+string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1 -rowSpacing 10`;
 
 
 string $dupRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 2 - adjustableColumn 2`;
@@ -13,12 +13,28 @@ text -parent $dupRowLayout -label "Duplicate";
 string $duplicateIntField = `intField -parent $dupRowLayout -minValue 1 -value 7`;
 
 string $rangeRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 4`;
-text -parent $rangeRowLayout -label "Range";
-string $xRange = `floatField -parent $rangeRowLayout -value 0`;
-string $yRange = `floatField -parent $rangeRowLayout -value 0`;
-string $zRange = `floatField -parent $rangeRowLayout -value 0`;
+text -parent $rangeRowLayout -label "Min Range";
+string $minxRange = `floatField -parent $rangeRowLayout -value 0`;
+string $minyRange = `floatField -parent $rangeRowLayout -value 0`;
+string $minzRange = `floatField -parent $rangeRowLayout -value 0`;
 
-string $button = `button -parent $mainColumn -label "Generate"`;
+string $rangeRowLayout = `rowLayout -parent $mainColumn -numberOfColumns 4`;
+text -parent $rangeRowLayout -label "MaxRange";
+string $maxxRange = `floatField -parent $rangeRowLayout -value 0`;
+string $maxyRange = `floatField -parent $rangeRowLayout -value 0`;
+string $maxzRange = `floatField -parent $rangeRowLayout -value 0`;
 
+string $button = `button -parent $mainColumn -label "Generate and Move" -command ("MoveObj(\"" + $minxRange + "\", \"" + $minyRange"\", \"" + $minzRange + "\", \"" + $maxxRange + "\", \"" + $maxyRange + "\", \"" + $maxzRange + "\")")`;
 
 showWindow $mainWindow;
+
+global proc MoveObj (string $xName, string $yName, string $zName,)
+{
+    string $sels[] = `ls -selection`
+
+    float $xVal = `GetFloatFieldValue ($xName)`;
+    float $yVal = `GetFloatFieldValue ($yName)`;
+    float $zVal = `GetFloatFieldValue ($zName)`;
+
+    move $xVal $yVal $zVal -relative $sels;
+}

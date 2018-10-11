@@ -1,0 +1,49 @@
+global proc CreateCrtlUI()
+{
+string $mainWindow = "CreateControl Window";
+if (`window -exists $mainWindow`)
+{
+    deleteUI $mainWindow;
+}
+
+$mainWindow =`window -title "Create Control" $mainWindow`;
+string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1 -rowSpacing 10`;
+
+string $crtlColor = `optionMenu -label "Crtl Color" -parent $mainColumn -width 250`;
+
+        menuItem -label "Blue(6)";
+        menuItem -label "Red(13)";
+        menuItem -label "Yellow(17)";
+        menuItem -label "Green(14)";
+
+//color index 17 = yellow
+//color index 13 = red
+//color index 6 = blue
+//color index 14 = green
+
+string $crtlShape = `optionMenu -label "Crtl Shape" -parent $mainColumn -width 250`;
+
+        menuItem -label "Circle";
+        menuItem -label "Square";
+        menuItem -label "Diamond";
+        menuItem -label "Squiggle";
+
+        
+
+string $button = `button -parent $mainColumn -label "Create Controls"` -command ("getcrtlinfo(\"" + $crtlColor + "\", \"" + $crtlShape"\")");
+
+}
+
+showWindow $mainWindow;
+
+
+global proc getcrtlinfo(string $crtlColorName, string $crtlShapeName) 
+{
+    string $color = GetOptionMenuValue($crtlColorName);
+    string $shape = GetOptionMenuValue($crtlShapeName);
+
+
+
+
+
+}

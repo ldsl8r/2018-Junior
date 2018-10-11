@@ -95,7 +95,8 @@ global proc MakeCrtls(int $index, string $nameOshape)
     }
 }
 
-MakeCrtls(6,"square");
+MakeCrtls(14,"square");
 //color index 17 = yellow
 //color index 13 = red
 //color index 6 = blue
+//color index 14 = green

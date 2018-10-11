@@ -7,25 +7,42 @@ if (`window -exists $mainWindow`)
 $mainWindow =`window -title "Rename Selection" $mainWindow`;
 string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
 
-checkBoxGrp
-        -vr
-        -numberOfCheckBoxes 4
-        -label "Prefix"
-        -labelArray4 "Arm" "Leg" "Spine" "Finger" ;
-checkBoxGrp
-        -numberOfCheckBoxes 3
-        -vr
-        -label "Padding"
-        -labelArray3 "#" "##" "None" ;
+optionMenu -label "Prefix" -parent $mainColumn -width 250;
 
-checkBoxGrp
-        -numberOfCheckBoxes 4
-        -vr
-        -label "Suffix"
-        -labelArray4 "Geo" "Jnt" "Crtl" "Grp";
+        menuItem -label "L";
+        menuItem -label "R";
+        menuItem -label "None";
+
+optionMenu -label "Main Name" -parent $mainColumn -width 250;
+
+        menuItem -label "Arm";
+        menuItem -label "Leg";
+        menuItem -label "Spine";
+        menuItem -label "Hand";
+        menuItem -label "Foot";
+        menuItem -label "Digit";
+            
+        optionMenu -label "Suffix" -parent $mainColumn -width 250;
+
+        menuItem -label "Geo";
+        menuItem -label "Jnt";
+        menuItem -label "Crtl";
+        menuItem -label "Grp";
+        
+        optionMenu -label "Padding" -parent $mainColumn -width 250;
+        
+        menuItem -label "none";
+        menuItem -label "#";
+        menuItem -label "##";
+        menuItem -label "###";
         
 
 string $button = `button -parent $mainColumn -label "Rename"`;
+
+
+
+
+showWindow $mainWindow;
 
 
 
