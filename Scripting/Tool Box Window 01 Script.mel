@@ -1,3 +1,38 @@
+global proc RandomObjects (int $NumofDuplicates, float $XrangeMin, float $XrangeMax, float $YrangeMin, float $YrangeMax, float $ZrangeMin, float $ZrangeMax)
+{
+
+	string $Objects[];
+	string $Sels[] = `ls -selection`;
+
+    for ($i=0; $i<$NumofDuplicates; $i++)
+    {
+         string $tempsort[] = `duplicate -rr $Sels[0]`;
+		 $Objects [$i] = $tempsort [0];
+    }   
+    
+	
+	for ($moveStuff in $Objects)
+	{
+        int $xpos = rand ($XrangeMin, $XrangeMax);
+        int $ypos = rand ($YrangeMin, $YrangeMax);
+        int $zpos = rand ($ZrangeMin, $ZrangeMax);
+        move $xpos $ypos $zpos $moveStuff;
+    }
+}
+
+
+global proc float QueryFloatValue(string $objName)
+{
+    float $value = `floatField -q -v $objName`;
+    return $value;
+}
+
+global proc int QueryIntValue(string $objName)
+{
+    int $intValue = `intField -q -v $objName`;
+    return $intValue;
+}
+
 string $mainWindow = "RandomPlacementWindow";
 if (`window -exists $mainWindow`)
 {
@@ -24,17 +59,6 @@ string $maxxRange = `floatField -parent $rangeRowLayout -value 0`;
 string $maxyRange = `floatField -parent $rangeRowLayout -value 0`;
 string $maxzRange = `floatField -parent $rangeRowLayout -value 0`;
 
-string $button = `button -parent $mainColumn -label "Generate and Move" -command ("MoveObj(\"" + $minxRange + "\", \"" + $minyRange"\", \"" + $minzRange + "\", \"" + $maxxRange + "\", \"" + $maxyRange + "\", \"" + $maxzRange + "\")")`;
-
+//string $button = `button -parent $mainColumn -label "Generate and Move" -command ("MoveObj(\"" + $minxRange + "\", \"" + $minyRange"\", \"" + $minzRange + "\", \"" + $maxxRange + "\", \"" + $maxyRange + "\", \"" + $maxzRange + "\")")`;
+string $button = `button -label "Random Generate" -parent $mainColumn -command "RandomObjects(`QueryIntValue($duplicateIntField)`, `QueryFloatValue($minxRange)`, `QueryFloatValue($maxxRange)`, `QueryFloatValue($minyRange)`, `QueryFloatValue( $maxyRange)`, `QueryFloatValue($minzRange)`, `QueryFloatValue($maxzRange)`);"`;
 showWindow $mainWindow;
-
-global proc MoveObj (string $xName, string $yName, string $zName,)
-{
-    string $sels[] = `ls -selection`
-
-    float $xVal = `GetFloatFieldValue ($xName)`;
-    float $yVal = `GetFloatFieldValue ($yName)`;
-    float $zVal = `GetFloatFieldValue ($zName)`;
-
-    move $xVal $yVal $zVal -relative $sels;
-}

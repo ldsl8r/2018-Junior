@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Spline IK Exersise.ma
-//Last modified: Sun, Oct 14, 2018 02:24:00 PM
+//Last modified: Sun, Oct 14, 2018 03:32:10 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "colorConstant" "lookdevKit" "1.0";
@@ -16,13 +16,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "A5E7286C-4F26-6158-95B5-2597CD8E2B8C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.645187546832014 24.035761241592027 31.619233652105223 ;
-	setAttr ".r" -type "double3" -35.138352729445977 22.200000000003257 0 ;
+	setAttr ".t" -type "double3" -29.60395620089821 20.686602358997693 31.597111467240708 ;
+	setAttr ".r" -type "double3" -24.938352729446997 -35.799999999997581 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "C242DB23-4C71-0963-AAFB-FCB2D1D2C061";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 41.761176708483546;
+	setAttr ".coi" 47.525598261145205;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2051,7 +2051,7 @@ createNode nurbsCurve -n "Snek_Spline_IK_curveShape1Orig" -p "Snek_Spline_IK_cur
 createNode ikHandle -n "ikHandle1" -p "Deformers";
 	rename -uid "FC3ACB79-4015-4593-C927-54B687480771";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.999999999998249 3.330669073875446e-15 0 ;
+	setAttr ".t" -type "double3" 14.999999999998249 7.706500177506733 0 ;
 	setAttr ".roc" yes;
 	setAttr ".dwut" 4;
 	setAttr ".dtvt" 1;
@@ -2065,6 +2065,7 @@ createNode joint -n "Spline_01_base_jnt" -p "Base_Jnts_Grp";
 	rename -uid "580D96D5-4D08-5577-E796-A59CD4A62215";
 	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
 	setAttr ".uoc" 1;
+	setAttr ".t" -type "double3" -15.000000000001751 7.7065001775067294 0 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -15.000000000001751 0 0 1;
@@ -2611,6 +2612,7 @@ createNode transform -n "Snek_Spline_FK_01_Crtl" -p "Snek_Spline_FK_01_Crtl_Grp"
 	addAttr -ci true -sn "FollowTranslate" -ln "FollowTranslate" -dv 1 -min 0 -max 
 		1 -at "double";
 	addAttr -ci true -sn "FollowRotate" -ln "FollowRotate" -dv 1 -min 0 -max 1 -at "double";
+	setAttr ".t" -type "double3" 0 7.7065001775067294 0 ;
 	setAttr -k on ".FollowTranslate";
 	setAttr -k on ".FollowRotate";
 createNode nurbsCurve -n "Snek_Spline_FK_01_CrtlShape" -p "Snek_Spline_FK_01_Crtl";

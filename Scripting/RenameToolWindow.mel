@@ -1,3 +1,39 @@
+global proc Rename (string $prefix , string $newName , string $numPad ,  int $newNum , string $suffix)
+{
+    string $SelectedObj[] = `ls -selection`;
+
+
+    for ($iterate in $SelectedObj)
+    {
+        int $poundsigns = size ($numPad);
+        string $number;
+        int $Padding = size (string($numPad)) - size (string($newNum));
+
+        for($i = 0;$i < $Padding; $i++)
+        {
+            $number = "0"+ $number;
+        }
+
+         string $fullString = $prefix + "_" + $newName + "_" + $newNum + "_" + $suffix;
+         rename $iterate $fullString;
+         $newNum++;
+    }
+     
+}
+
+//allows value of the input field in the window generated
+global proc int QueryIntValue(string $objName)
+{
+    int $intValue = `intField -q -v $objName`;
+    return $intValue;
+}
+
+global proc string QueryMenuItem(string $objName)
+{
+    string $text = `optionMenu -q -v $objName`;
+    return $text;
+}
+
 string $mainWindow = "RandomPlacementWindow";
 if (`window -exists $mainWindow`)
 {
@@ -7,13 +43,16 @@ if (`window -exists $mainWindow`)
 $mainWindow =`window -title "Rename Selection" $mainWindow`;
 string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1`;
 
-optionMenu -label "Prefix" -parent $mainColumn -width 250;
+text -parent $mainColumn -label "Number Rename will Star On";
+string $numToStart = `intField -parent $mainColumn -minValue 1 -value 7`;
+
+string $prefix  = `optionMenu -label "Prefix" -parent $mainColumn -width 250`;
 
         menuItem -label "L";
         menuItem -label "R";
         menuItem -label "None";
 
-optionMenu -label "Main Name" -parent $mainColumn -width 250;
+string $mainName  = `optionMenu -label "Main Name" -parent $mainColumn -width 250`;
 
         menuItem -label "Arm";
         menuItem -label "Leg";
@@ -22,29 +61,21 @@ optionMenu -label "Main Name" -parent $mainColumn -width 250;
         menuItem -label "Foot";
         menuItem -label "Digit";
             
-        optionMenu -label "Suffix" -parent $mainColumn -width 250;
+string $Suffix  = `optionMenu -label "Suffix" -parent $mainColumn -width 250`;
 
         menuItem -label "Geo";
         menuItem -label "Jnt";
         menuItem -label "Crtl";
         menuItem -label "Grp";
         
-        optionMenu -label "Padding" -parent $mainColumn -width 250;
+string $Padding  = `optionMenu -label "Padding" -parent $mainColumn -width 250`;
         
-        menuItem -label "none";
+        menuItem -label "";
         menuItem -label "#";
         menuItem -label "##";
         menuItem -label "###";
         
 
-string $button = `button -parent $mainColumn -label "Rename"`;
-
-
-
-
-showWindow $mainWindow;
-
-
-
+string $button = `button -parent $mainColumn -label "Rename" -command "Rename (`QueryMenuItem($prefix)` , `QueryMenuItem($mainName)` , `QueryMenuItem($Padding)` ,  `QueryIntValue($numToStart)` , `QueryMenuItem($Suffix)`);"`;
 
 showWindow $mainWindow;

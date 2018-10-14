@@ -1,0 +1,23 @@
+global proc Rename ((string $prefix , string $newName , string $numPad ,  int $newNum , string $suffix))
+{
+    string $SelectedObj[] = `ls -selection`;
+
+
+    for ($iterate in $SelectedObj)
+    {
+        int $poundsigns = size ($numPad);
+        string $number;
+        int $Padding = size (string($numPad)) - size (string($newNum));
+
+        for($i = 0;$i < $Padding; $i++)
+        {
+            $number = "0"+ $number;
+        }
+
+         string $fullString = $prefix + "_" + $newName + "_" + $newNum + "_" + $suffix;
+         rename $iterate $fullString;
+         $newNum++;
+    }
+     
+}
+Split("arm####jnt");

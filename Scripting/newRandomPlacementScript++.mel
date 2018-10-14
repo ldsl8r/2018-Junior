@@ -1,0 +1,23 @@
+global proc RandomObjects (int $NumofDuplicates, int $XrangeMin, int $XrangeMax, int $YrangeMin, int $YrangeMax, int $ZrangeMin, int $ZrangeMax)
+{
+
+	string $Objects[];
+	string $Sels[] = `ls -selection`;
+
+    for ($i=0; $i<$NumofDuplicates; $i++)
+    {
+         string $tempsort[] = `duplicate -rr $Sels[0]`;
+		 $Objects [$i] = $tempsort [0];
+    }   
+    
+	
+	for ($moveStuff in $Objects)
+	{
+        int $xpos = rand ($XrangeMin, $XrangeMax);
+        int $ypos = rand ($YrangeMin, $YrangeMax);
+        int $zpos = rand ($ZrangeMin, $ZrangeMax);
+        move $xpos $ypos $zpos $moveStuff;
+    }
+}
+
+RandomObjects(30, -10, 10, -20, 20, -10, 10);
