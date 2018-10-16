@@ -28,6 +28,9 @@ global proc int QueryIntValue(string $objName)
     return $intValue;
 }
 
+
+
+
 global proc string QueryMenuItem(string $objName)
 {
     string $text = `optionMenu -q -v $objName`;
