@@ -1,0 +1,19 @@
+source ToolBoxWindow01Script; 
+source CreateCrtlUI;
+source RenameToolWindow;
+
+string $mainWindow = "CreateControl Window";
+if (`window -exists $mainWindow`)
+{
+    deleteUI $mainWindow;
+}
+
+$mainWindow =`window -title "Create Control" $mainWindow`;
+string $mainColumn = `columnLayout -parent $mainWindow -adjustableColumn 1 -rowSpacing 10`; 
+
+string $button = `button -parent $mainColumn -label "Random Placement Generator" -command RandPlacement`;
+string $button = `button -parent $mainColumn -label "Create Control(s)" -command CreateCrtlUI`;
+string $button = `button -parent $mainColumn -label "Rename" -command RenameWindow`;
+
+
+showWindow $mainWindow;

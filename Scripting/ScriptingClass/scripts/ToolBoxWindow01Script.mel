@@ -33,7 +33,9 @@ global proc int QueryIntValue(string $objName)
     return $intValue;
 }
 
-string $mainWindow = "RandomPlacementWindow";
+global proc RandPlacement ()
+{
+    string $mainWindow = "RandomPlacementWindow";
 if (`window -exists $mainWindow`)
 {
     deleteUI $mainWindow;
@@ -62,3 +64,4 @@ string $maxzRange = `floatField -parent $rangeRowLayout -value 0`;
 //string $button = `button -parent $mainColumn -label "Generate and Move" -command ("MoveObj(\"" + $minxRange + "\", \"" + $minyRange"\", \"" + $minzRange + "\", \"" + $maxxRange + "\", \"" + $maxyRange + "\", \"" + $maxzRange + "\")")`;
 string $button = `button -label "Random Generate" -parent $mainColumn -command "RandomObjects(`QueryIntValue($duplicateIntField)`, `QueryFloatValue($minxRange)`, `QueryFloatValue($maxxRange)`, `QueryFloatValue($minyRange)`, `QueryFloatValue( $maxyRange)`, `QueryFloatValue($minzRange)`, `QueryFloatValue($maxzRange)`);"`;
 showWindow $mainWindow;
+}

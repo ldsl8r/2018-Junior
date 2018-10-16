@@ -37,7 +37,8 @@ global proc string QueryMenuItem(string $objName)
     return $text;
 }
 
-string $mainWindow = "RandomPlacementWindow";
+global proc RenameWindow()
+{string $mainWindow = "RandomPlacementWindow";
 if (`window -exists $mainWindow`)
 {
     deleteUI $mainWindow;
@@ -82,3 +83,4 @@ string $Padding  = `optionMenu -label "Padding" -parent $mainColumn -width 250`;
 string $button = `button -parent $mainColumn -label "Rename" -command "Rename (`QueryMenuItem($prefix)` , `QueryMenuItem($mainName)` , `QueryMenuItem($Padding)` ,  `QueryIntValue($numToStart)` , `QueryMenuItem($Suffix)`);"`;
 
 showWindow $mainWindow;
+}
