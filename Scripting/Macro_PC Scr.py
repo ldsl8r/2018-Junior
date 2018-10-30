@@ -36,24 +36,44 @@ cdms.select('ShieldMainBody.f[5]', 'ShieldMainBody.f[11]', 'ShieldMainBody.f[17]
             'ShieldMainBody.f[221]', 'ShieldMainBody.f[227]', 'ShieldMainBody.f[233]', 'ShieldMainBody.f[239]', r=True)
 cdms.select('ShieldMainBody.f[154]', tgl=True)
 cdms.select('ShieldMainBody.f[160]', tgl=True)
-
-#here
-
-cdms.select -add ShieldMainBody.f[124] ShieldMainBody.f[130] ShieldMainBody.f[136] ShieldMainBody.f[142] ShieldMainBody.f[148] ShieldMainBody.f[154] ShieldMainBody.f[160] ShieldMainBody.f[166] ShieldMainBody.f[172] ShieldMainBody.f[178] ShieldMainBody.f[184] ShieldMainBody.f[190] ShieldMainBody.f[196] ShieldMainBody.f[202] ShieldMainBody.f[208] ShieldMainBody.f[214] ShieldMainBody.f[220] ShieldMainBody.f[226] ShieldMainBody.f[232] ShieldMainBody.f[238] ;
-cdms.select -tgl ShieldMainBody.f[153] ;
-cdms.select -tgl ShieldMainBody.f[159] ;
-cdms.select -add ShieldMainBody.f[123] ShieldMainBody.f[129] ShieldMainBody.f[135] ShieldMainBody.f[141] ShieldMainBody.f[147] ShieldMainBody.f[153] ShieldMainBody.f[159] ShieldMainBody.f[165] ShieldMainBody.f[171] ShieldMainBody.f[177] ShieldMainBody.f[183] ShieldMainBody.f[189] ShieldMainBody.f[195] ShieldMainBody.f[201] ShieldMainBody.f[207] ShieldMainBody.f[213] ShieldMainBody.f[219] ShieldMainBody.f[225] ShieldMainBody.f[231] ShieldMainBody.f[237] ;
-cdms.select -tgl ShieldMainBody.f[40] ;
-cdms.select -tgl ShieldMainBody.f[34] ;
-cdms.select -add ShieldMainBody.f[4] ShieldMainBody.f[10] ShieldMainBody.f[16] ShieldMainBody.f[22] ShieldMainBody.f[28] ShieldMainBody.f[34] ShieldMainBody.f[40] ShieldMainBody.f[46] ShieldMainBody.f[52] ShieldMainBody.f[58] ShieldMainBody.f[64] ShieldMainBody.f[70] ShieldMainBody.f[76] ShieldMainBody.f[82] ShieldMainBody.f[88] ShieldMainBody.f[94] ShieldMainBody.f[100] ShieldMainBody.f[106] ShieldMainBody.f[112] ShieldMainBody.f[118] ;
-select -tgl ShieldMainBody.f[39] ;
-select -tgl ShieldMainBody.f[33] ;
-select -add ShieldMainBody.f[3] ShieldMainBody.f[9] ShieldMainBody.f[15] ShieldMainBody.f[21] ShieldMainBody.f[27] ShieldMainBody.f[33] ShieldMainBody.f[39] ShieldMainBody.f[45] ShieldMainBody.f[51] ShieldMainBody.f[57] ShieldMainBody.f[63] ShieldMainBody.f[69] ShieldMainBody.f[75] ShieldMainBody.f[81] ShieldMainBody.f[87] ShieldMainBody.f[93] ShieldMainBody.f[99] ShieldMainBody.f[105] ShieldMainBody.f[111] ShieldMainBody.f[117] ;
-move -r 0.599232 0 0 ;
-select -r ShieldMainBody.f[5] ShieldMainBody.f[11] ShieldMainBody.f[17] ShieldMainBody.f[23] ShieldMainBody.f[29] ShieldMainBody.f[35] ShieldMainBody.f[41] ShieldMainBody.f[47] ShieldMainBody.f[53] ShieldMainBody.f[59] ShieldMainBody.f[65] ShieldMainBody.f[71] ShieldMainBody.f[77] ShieldMainBody.f[83] ShieldMainBody.f[89] ShieldMainBody.f[95] ShieldMainBody.f[101] ShieldMainBody.f[107] ShieldMainBody.f[113] ShieldMainBody.f[119] ShieldMainBody.f[125] ShieldMainBody.f[131] ShieldMainBody.f[137] ShieldMainBody.f[143] ShieldMainBody.f[149] ShieldMainBody.f[155] ShieldMainBody.f[161] ShieldMainBody.f[167] ShieldMainBody.f[173] ShieldMainBody.f[179] ShieldMainBody.f[185] ShieldMainBody.f[191] ShieldMainBody.f[197] ShieldMainBody.f[203] ShieldMainBody.f[209] ShieldMainBody.f[215] ShieldMainBody.f[221] ShieldMainBody.f[227] ShieldMainBody.f[233] ShieldMainBody.f[239] ;
-select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
-select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
-select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
+cdms.select('ShieldMainBody.f[124]', 'ShieldMainBody.f[130]', 'ShieldMainBody.f[136]', 'ShieldMainBody.f[142]',
+             'ShieldMainBody.f[148]', 'ShieldMainBody.f[154]', 'ShieldMainBody.f[160]', 'ShieldMainBody.f[166]',
+             'ShieldMainBody.f[172]', 'ShieldMainBody.f[178]', 'ShieldMainBody.f[184]', 'ShieldMainBody.f[190]',
+             'ShieldMainBody.f[196]', 'ShieldMainBody.f[202]', 'ShieldMainBody.f[208]', 'ShieldMainBody.f[214]',
+             'ShieldMainBody.f[220]', 'ShieldMainBody.f[226]', 'ShieldMainBody.f[232]', 'ShieldMainBody.f[238]', r=True)
+cdms.select('ShieldMainBody.f[153]', tgl=True)
+cdms.select('ShieldMainBody.f[159]', tgl=True)
+cdms.select('ShieldMainBody.f[123]', 'ShieldMainBody.f[129]', 'ShieldMainBody.f[135]', 'ShieldMainBody.f[141]',
+            'ShieldMainBody.f[147]', 'ShieldMainBody.f[153]', 'ShieldMainBody.f[159]', 'ShieldMainBody.f[165]',
+            'ShieldMainBody.f[171]', 'ShieldMainBody.f[177]', 'ShieldMainBody.f[183]', 'ShieldMainBody.f[189]',
+            'ShieldMainBody.f[195]', 'ShieldMainBody.f[201]', 'ShieldMainBody.f[207]', 'ShieldMainBody.f[213]',
+            'ShieldMainBody.f[219]', 'ShieldMainBody.f[225]', 'ShieldMainBody.f[231]', 'ShieldMainBody.f[237]', r=True)
+cdms.select('ShieldMainBody.f[40]', tgl=True)
+cdms.select('ShieldMainBody.f[34]', tgl=True)
+cdms.select('ShieldMainBody.f[4]', 'ShieldMainBody.f[10]', 'ShieldMainBody.f[16]', 'ShieldMainBody.f[22]',
+            'ShieldMainBody.f[28]', 'ShieldMainBody.f[34]', 'ShieldMainBody.f[40]', 'ShieldMainBody.f[46]',
+            'ShieldMainBody.f[52]', 'ShieldMainBody.f[58]', 'ShieldMainBody.f[64]', 'ShieldMainBody.f[70]',
+            'ShieldMainBody.f[76]', 'ShieldMainBody.f[82]', 'ShieldMainBody.f[88]', 'ShieldMainBody.f[94]',
+            'ShieldMainBody.f[100]', 'ShieldMainBody.f[106]', 'ShieldMainBody.f[112]', 'ShieldMainBody.f[118]', r=True)
+select('ShieldMainBody.f[39]', tgl=True)
+select('ShieldMainBody.f[33]', tgl=True)
+select('ShieldMainBody.f[3]', 'ShieldMainBody.f[9]', 'ShieldMainBody.f[15]', 'ShieldMainBody.f[21]', 'ShieldMainBody.f[27]',
+       'ShieldMainBody.f[33]', 'ShieldMainBody.f[39]', 'ShieldMainBody.f[45]', 'ShieldMainBody.f[51]', 'ShieldMainBody.f[57]',
+       'ShieldMainBody.f[63]', 'ShieldMainBody.f[69]', 'ShieldMainBody.f[75]', 'ShieldMainBody.f[81]', 'ShieldMainBody.f[87]',
+       'ShieldMainBody.f[93]', 'ShieldMainBody.f[99]', 'ShieldMainBody.f[105]', 'ShieldMainBody.f[111]', 'ShieldMainBody.f[117]', r=True)
+cdms.move(0.599232, 0, 0 )
+cdms.select('ShieldMainBody.f[5]', 'ShieldMainBody.f[11]', 'ShieldMainBody.f[17]', 'ShieldMainBody.f[23]', 'ShieldMainBody.f[29]',
+            'ShieldMainBody.f[35]', 'ShieldMainBody.f[41]', 'ShieldMainBody.f[47]', 'ShieldMainBody.f[53]', 'ShieldMainBody.f[59]',
+            'ShieldMainBody.f[65]', 'ShieldMainBody.f[71]', 'ShieldMainBody.f[77]', 'ShieldMainBody.f[83]', 'ShieldMainBody.f[89]',
+            'ShieldMainBody.f[95]', 'ShieldMainBody.f[101]', 'ShieldMainBody.f[107]', 'ShieldMainBody.f[113]', 'ShieldMainBody.f[119]',
+            'ShieldMainBody.f[125]', 'ShieldMainBody.f[131]', 'ShieldMainBody.f[137]', 'ShieldMainBody.f[143]', 'ShieldMainBody.f[149]',
+            'ShieldMainBody.f[155]', 'ShieldMainBody.f[161]', 'ShieldMainBody.f[167]', 'ShieldMainBody.f[173]', 'ShieldMainBody.f[179]',
+            'ShieldMainBody.f[185]', 'ShieldMainBody.f[191]', 'ShieldMainBody.f[197]', 'ShieldMainBody.f[203]', 'ShieldMainBody.f[209]',
+            'ShieldMainBody.f[215]', 'ShieldMainBody.f[221]', 'ShieldMainBody.f[227]', 'ShieldMainBody.f[233]', 'ShieldMainBody.f[239]', r=True)
+#cdms.select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
+cmds.select(cmds.ls(sl=True), select(sl=True), PolySelectTraverse=1)
+cdms.select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
+cdms.select `ls -sl`;PolySelectTraverse 1;select `ls -sl`;
 cdms.move(0.803745, 0, 0 )
 cdms.select('ShieldMainBody.f[5]', 'ShieldMainBody.f[11]', 'ShieldMainBody.f[17]', 'ShieldMainBody.f[23]', 'ShieldMainBody.f[29]',
             'ShieldMainBody.f[35]', 'ShieldMainBody.f[41]', 'ShieldMainBody.f[47]', 'ShieldMainBody.f[53]', 'ShieldMainBody.f[59]',
