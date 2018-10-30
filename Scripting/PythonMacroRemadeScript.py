@@ -1,6 +1,6 @@
 import maya.cmds as cdms
 
-obj=cdms.polyCylinder(radius=5, height=0.15, sx=20, sy=1, sz=4, ax=[0, 1, 0], rcp=0, cuv=3, ch=1, name='ShieldMainBody')
+obj = cdms.polyCylinder(radius=5, height=0.15, sx=20, sy=1, sz=4, ax=[0, 1, 0], rcp=0, cuv=3, ch=1, name='ShieldMainBody')
 
 cdms.select('ShieldMainBody.vtx[160:161]', r=True)
 cdms.move(0, 0.12, 0, os=True, r=True)
@@ -81,48 +81,48 @@ cdms.move(0, 0, 0.05, os=True, r=True)
 
 
 #Star
-strobj=cdms.polyCylinder(r=1, h=2, sx=10, sy=1, sz=1, ax=[0, 1, 0], rcp=0, cuv=3, ch=1)
+strobj = cdms.polyCylinder(r=1, h=2, sx=10, sy=1, sz=1, ax=[0, 1, 0], rcp=0, cuv=3, ch=1)
 cdms.setAttr("pCylinder1.rotateZ", 90)
 cdms.select('pCylinder1.e[29]', r=True)
-cdms.move(0, 2, 0, os=True, r=True)
+cdms.move(0, 2, 0, ws=True, r=True)
 cdms.select('pCylinder1.e[27]', r=True)
 cdms.select('pCylinder1.e[21]', tgl=True)
-cdms.scale(1, 1, 3.166667, p=[0, 0.309, 8.9], r=True)
-cdms.move(0, 0.494749, 0, os=True, r=True)
+cdms.scale(1, 1, 3.166667, p=[0, 0.309, 8.9], ws=True, r=True)
+cdms.move(0, 0.494749, 0, ws=True, r=True)
 cdms.select('pCylinder1.e[23]', r=True)
 cdms.select('pCylinder1.e[25]', tgl=True)
-cdms.move(0 -2.18372, 0, os=True, r=True)
-cdms.scale(1, 1, 3.411111, p=[0, 2.992737, 5.96046], r=True)
+cdms.move(0, -2.18372, 0, ws=True, r=True)
+cdms.scale(1, 1, 3.411111, p=[0, 2.992737, 5.96046], ws=True, r=True)
 cdms.move(0, 0.443568, 0, os=True, r=True)
 cdms.setAttr("pCylinder1.scaleY", .1)
 cdms.select('pCylinder1.vtx[20]', r=True)
-cdms.move( 0.3, 0, 0, os=True, r=True)
+cdms.move(0.3, 0, 0, os=True, r=True)
 cdms.select('pCylinder1.vtx[7]', r=True)
 cdms.select('pCylinder1.vtx[5]', tgl=True)
 cdms.select('pCylinder1.vtx[3]', tgl=True)
 cdms.select('pCylinder1.vtx[1]', tgl=True)
 cdms.select('pCylinder1.vtx[9]', tgl=True)
-cdms.move( 0.14, 0, 0, os=True, r=True)
+cdms.move(0.14, 0, 0, os=True, r=True)
 cdms.select('pCylinder1.vtx[21]', r=True)
 cdms.move(0.33, 0, 0, os=True, r=True)
 
 cdms.select('pCylinder1.e[21]', r=True)
-cdms.select('pCylinder1.e[29', tgl=True)
-cdms.select('pCylinder1.e[27', tgl=True)
-cdms.select('pCylinder1.e[25', tgl=True)
-cdms.select('pCylinder1.e[23', tgl=True)
+cdms.select('pCylinder1.e[29]', tgl=True)
+cdms.select('pCylinder1.e[27]', tgl=True)
+cdms.select('pCylinder1.e[25]', tgl=True)
+cdms.select('pCylinder1.e[23]', tgl=True)
 cdms.move(0.483459, 0, 0, os=True, r=True)
 cdms.select('pCylinder1', r=True)
 cdms.rotate(-90, 0, 0, os=True, r=True)
 cdms.move(0, 5.05, 1.310962, os=True, r=True)
-cdms.scale( 0.375373, 0.375373, 0.375373,r=True)
+cdms.scale(0.375373, 0.375373, 0.375373,r=True)
 cdms.select('pCylinder1.vtx[0]', 'pCylinder1.vtx[2]', 'pCylinder1.vtx[4]', 'pCylinder1.vtx[6]', 'pCylinder1.vtx[8]',
-            ',pCylinder1.vtx[10]', 'pCylinder1.vtx[12]', 'pCylinder1.vtx[14]', 'pCylinder1.vtx[16]', 'pCylinder1.vtx[18]',
+            'pCylinder1.vtx[10]', 'pCylinder1.vtx[12]', 'pCylinder1.vtx[14]', 'pCylinder1.vtx[16]', 'pCylinder1.vtx[18]',
             'pCylinder1.vtx[20:21]', r=True)
+cdms.move(0, 0, -0.0917036, os=True, r=True)
 
 #bevel back side of shield
 
-cdms.move(0, 0, -0.0917036, os=True, r=True)
 cdms.select('ShieldMainBody', r=True)
 cdms.select('ShieldMainBody.e[46]', r=True)
 cdms.select('ShieldMainBody.e[47]', tgl=True)
@@ -138,20 +138,44 @@ cdms.polyBevel3('ShieldMainBody.e[0:59]', fraction=0.03, offsetAsFraction=1, aut
                 mergeVertexTolerance=0.0001, miteringAngle=180, angleTolerance=180, ch=1)
 cdms.select('ShieldMainBody.e[1036]', r=True)
 cdms.select('ShieldMainBody.e[1038]', tgl=True)
-cdms.select -add ShieldMainBody.e[1020] ShieldMainBody.e[1022] ShieldMainBody.e[1024] ShieldMainBody.e[1026] ShieldMainBody.e[1028] ShieldMainBody.e[1030] ShieldMainBody.e[1032] ShieldMainBody.e[1034] ShieldMainBody.e[1036] ShieldMainBody.e[1038] ShieldMainBody.e[1040] ShieldMainBody.e[1042] ShieldMainBody.e[1044] ShieldMainBody.e[1046] ShieldMainBody.e[1048] ShieldMainBody.e[1050] ShieldMainBody.e[1052] ShieldMainBody.e[1054] ShieldMainBody.e[1056] ShieldMainBody.e[1058] ;
-cdms.select -tgl ShieldMainBody.e[1037] ;
-cdms.select -tgl ShieldMainBody.e[1039] ;
-cdms.select -add ShieldMainBody.e[1021] ShieldMainBody.e[1023] ShieldMainBody.e[1025] ShieldMainBody.e[1027] ShieldMainBody.e[1029] ShieldMainBody.e[1031] ShieldMainBody.e[1033] ShieldMainBody.e[1035] ShieldMainBody.e[1037] ShieldMainBody.e[1039] ShieldMainBody.e[1041] ShieldMainBody.e[1043] ShieldMainBody.e[1045] ShieldMainBody.e[1047] ShieldMainBody.e[1049] ShieldMainBody.e[1051] ShieldMainBody.e[1053] ShieldMainBody.e[1055] ShieldMainBody.e[1057] ShieldMainBody.e[1059] ;
-cdms.select -tgl ShieldMainBody.e[996] ;
-cdms.select -tgl ShieldMainBody.e[998] ;
-cdms.select -add ShieldMainBody.e[980] ShieldMainBody.e[982] ShieldMainBody.e[984] ShieldMainBody.e[986] ShieldMainBody.e[988] ShieldMainBody.e[990] ShieldMainBody.e[992] ShieldMainBody.e[994] ShieldMainBody.e[996] ShieldMainBody.e[998] ShieldMainBody.e[1000] ShieldMainBody.e[1002] ShieldMainBody.e[1004] ShieldMainBody.e[1006] ShieldMainBody.e[1008] ShieldMainBody.e[1010] ShieldMainBody.e[1012] ShieldMainBody.e[1014] ShieldMainBody.e[1016] ShieldMainBody.e[1018] ;
-cdms.select -tgl ShieldMainBody.e[997] ;
-cdms.select -tgl ShieldMainBody.e[999] ;
-cdms.select -add ShieldMainBody.e[981] ShieldMainBody.e[983] ShieldMainBody.e[985] ShieldMainBody.e[987] ShieldMainBody.e[989] ShieldMainBody.e[991] ShieldMainBody.e[993] ShieldMainBody.e[995] ShieldMainBody.e[997] ShieldMainBody.e[999] ShieldMainBody.e[1001] ShieldMainBody.e[1003] ShieldMainBody.e[1005] ShieldMainBody.e[1007] ShieldMainBody.e[1009] ShieldMainBody.e[1011] ShieldMainBody.e[1013] ShieldMainBody.e[1015] ShieldMainBody.e[1017] ShieldMainBody.e[1019] ;
-cdms.select -tgl ShieldMainBody.e[955] ;
-cdms.select -tgl ShieldMainBody.e[957] ;
-cdms.select -add ShieldMainBody.e[941] ShieldMainBody.e[943] ShieldMainBody.e[945] ShieldMainBody.e[947] ShieldMainBody.e[949] ShieldMainBody.e[951] ShieldMainBody.e[953] ShieldMainBody.e[955] ShieldMainBody.e[957] ShieldMainBody.e[959] ShieldMainBody.e[961] ShieldMainBody.e[963] ShieldMainBody.e[965] ShieldMainBody.e[967] ShieldMainBody.e[969] ShieldMainBody.e[971] ShieldMainBody.e[973] ShieldMainBody.e[975] ShieldMainBody.e[977] ShieldMainBody.e[979] ;
-cdms.select -tgl ShieldMainBody.e[954] ;
-cdms.select -tgl ShieldMainBody.e[956] ;
-cdms.select -add ShieldMainBody.e[940] ShieldMainBody.e[942] ShieldMainBody.e[944] ShieldMainBody.e[946] ShieldMainBody.e[948] ShieldMainBody.e[950] ShieldMainBody.e[952] ShieldMainBody.e[954] ShieldMainBody.e[956] ShieldMainBody.e[958] ShieldMainBody.e[960] ShieldMainBody.e[962] ShieldMainBody.e[964] ShieldMainBody.e[966] ShieldMainBody.e[968] ShieldMainBody.e[970] ShieldMainBody.e[972] ShieldMainBody.e[974] ShieldMainBody.e[976] ShieldMainBody.e[978] ;
-cdms.move -r 0 0 0.04 ;
+cdms.select('ShieldMainBody.e[1020]', 'ShieldMainBody.e[1022]', 'ShieldMainBody.e[1024]', 'ShieldMainBody.e[1026]',
+            'ShieldMainBody.e[1028]', 'ShieldMainBody.e[1030]', 'ShieldMainBody.e[1032]', 'ShieldMainBody.e[1034]',
+            'ShieldMainBody.e[1036]', 'ShieldMainBody.e[1038]', 'ShieldMainBody.e[1040]', 'ShieldMainBody.e[1042]',
+            'ShieldMainBody.e[1044]', 'ShieldMainBody.e[1046]', 'ShieldMainBody.e[1048]', 'ShieldMainBody.e[1050]',
+            'ShieldMainBody.e[1052]', 'ShieldMainBody.e[1054]', 'ShieldMainBody.e[1056]', 'ShieldMainBody.e[1058]', add=True)
+cdms.select('ShieldMainBody.e[1037]', tgl=True)
+cdms.select('ShieldMainBody.e[1039]', tgl=True)
+cdms.select(' ShieldMainBody.e[1021]', 'ShieldMainBody.e[1023]', 'ShieldMainBody.e[1025]', 'ShieldMainBody.e[1027]',
+            'ShieldMainBody.e[1029]', 'ShieldMainBody.e[1031]', 'ShieldMainBody.e[1033]', 'ShieldMainBody.e[1035]',
+            'ShieldMainBody.e[1037]', 'ShieldMainBody.e[1039]', 'ShieldMainBody.e[1041]', 'ShieldMainBody.e[1043]',
+            'ShieldMainBody.e[1045]', 'ShieldMainBody.e[1047]', 'ShieldMainBody.e[1049]', 'ShieldMainBody.e[1051]',
+            'ShieldMainBody.e[1053]', 'ShieldMainBody.e[1055]', 'ShieldMainBody.e[1057]', 'ShieldMainBody.e[1059]', add=True)
+cdms.select('ShieldMainBody.e[996]', tgl=True)
+cdms.select('ShieldMainBody.e[998]', tgl=True)
+cdms.select('ShieldMainBody.e[980]', 'ShieldMainBody.e[982]', 'ShieldMainBody.e[984]', 'ShieldMainBody.e[986]',
+            'ShieldMainBody.e[988]', 'ShieldMainBody.e[990]', 'ShieldMainBody.e[992]', 'ShieldMainBody.e[994]',
+            'ShieldMainBody.e[996]', 'ShieldMainBody.e[998]', 'ShieldMainBody.e[1000]', 'ShieldMainBody.e[1002]',
+            'ShieldMainBody.e[1004]', 'ShieldMainBody.e[1006]', 'ShieldMainBody.e[1008]', 'ShieldMainBody.e[1010]',
+            'ShieldMainBody.e[1012]', 'ShieldMainBody.e[1014]', 'ShieldMainBody.e[1016]', 'ShieldMainBody.e[1018]', add=True)
+cdms.select('ShieldMainBody.e[997]', tgl=True)
+cdms.select('ShieldMainBody.e[999]', tgl=True)
+cdms.select('ShieldMainBody.e[981]', 'ShieldMainBody.e[983]', 'ShieldMainBody.e[985]', 'ShieldMainBody.e[987]',
+            'ShieldMainBody.e[989]', 'ShieldMainBody.e[991]', 'ShieldMainBody.e[993]', 'ShieldMainBody.e[995]',
+            'ShieldMainBody.e[997]', 'ShieldMainBody.e[999]', 'ShieldMainBody.e[1001]', 'ShieldMainBody.e[1003]',
+            'ShieldMainBody.e[1005]', 'ShieldMainBody.e[1007]', 'ShieldMainBody.e[1009]', 'ShieldMainBody.e[1011]',
+            'ShieldMainBody.e[1013]', 'ShieldMainBody.e[1015]', 'ShieldMainBody.e[1017]', 'ShieldMainBody.e[1019]', add=True)
+cdms.select('ShieldMainBody.e[955]', tgl=True)
+cdms.select('ShieldMainBody.e[957]', tgl=True)
+cdms.select('ShieldMainBody.e[941]', 'ShieldMainBody.e[943]', 'ShieldMainBody.e[945]', 'ShieldMainBody.e[947]',
+            'ShieldMainBody.e[949]', 'ShieldMainBody.e[951]', 'ShieldMainBody.e[953]', 'ShieldMainBody.e[955]',
+            'ShieldMainBody.e[957]', 'ShieldMainBody.e[959]', 'ShieldMainBody.e[961]', 'ShieldMainBody.e[963]',
+            'ShieldMainBody.e[965]', 'ShieldMainBody.e[967]', 'ShieldMainBody.e[969]', 'ShieldMainBody.e[971]',
+            'ShieldMainBody.e[973]', 'ShieldMainBody.e[975]', 'ShieldMainBody.e[977]', 'ShieldMainBody.e[979]', add=True)
+cdms.select('ShieldMainBody.e[954]', tgl=True)
+cdms.select('ShieldMainBody.e[956]', tgl=True)
+cdms.select('ShieldMainBody.e[940]', 'ShieldMainBody.e[942]', 'ShieldMainBody.e[944]', 'ShieldMainBody.e[946]',
+            'ShieldMainBody.e[948]', 'ShieldMainBody.e[950]', 'ShieldMainBody.e[952]', 'ShieldMainBody.e[954]',
+            'ShieldMainBody.e[956]', 'ShieldMainBody.e[958]', 'ShieldMainBody.e[960]', 'ShieldMainBody.e[962]',
+            'ShieldMainBody.e[964]', 'ShieldMainBody.e[966]', 'ShieldMainBody.e[968]', 'ShieldMainBody.e[970]',
+            'ShieldMainBody.e[972]', 'ShieldMainBody.e[974]', 'ShieldMainBody.e[976]', 'ShieldMainBody.e[978]', add=True)
+cdms.move(0, 0, 0.04, os=True, r=True)
