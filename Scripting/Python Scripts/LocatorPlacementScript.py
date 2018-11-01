@@ -1,0 +1,27 @@
+import maya.cmds as cmds
+
+#def used to make a Function (gives a parameter)=1 sets option to a default of 1
+def CreateLoc(option=1):
+    #gets selection
+    sels = cmds.ls(sl=True)
+
+    if option is 1:
+        dups = cdms.duplicate(sels, rr=True)
+        dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[]
+        bbox = cmds.xform(dups, boundingbox =True, q=True)
+        pivot = [(bbox[0]+bbox[3])/2, (bbox[1]+bbox[4]) / 2,(bbox[2]+bbox[5]) / 2]
+
+        cmds.delete(dups, ch=True)
+        cmds.delete(dups)
+
+        loc = cmds.spaceLocator()[0]
+        cmds.xform(loc, translation=pivot, worldSpace=True)
+
+    elif option is 2:
+        for sel in sels:
+            pivot = cmds.xform(sel, q=True, rp=True, ws=True)
+            loc = cmds.spaceLocator()[0]
+            cmds.xform(loc, translation=pivot, worldSpace=True)
+
+
+CreateLoc()
