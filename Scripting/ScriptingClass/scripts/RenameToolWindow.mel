@@ -84,3 +84,5 @@ string $button = `button -parent $mainColumn -label "Rename" -command "Rename (`
 
 showWindow $mainWindow;
 }
+
+RenameWindow()

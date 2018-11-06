@@ -6,9 +6,9 @@ def CreateLoc(option=1):
     sels = cmds.ls(sl=True)
 
     if option is 1:
-        dups = cdms.duplicate(sels, rr=True)
-        dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[]
-        bbox = cmds.xform(dups, boundingbox =True, q=True)
+        dups = cmds.duplicate(sels, rr=True)
+        dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[0]
+        bbox = cmds.xform(dups, boundingBox =True, q=True)
         pivot = [(bbox[0]+bbox[3])/2, (bbox[1]+bbox[4]) / 2,(bbox[2]+bbox[5]) / 2]
 
         cmds.delete(dups, ch=True)
