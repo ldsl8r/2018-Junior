@@ -22,3 +22,4 @@ def RenameTool(newName, numPad, newNum, suffix):
 
 
 RenameTool('hand', '00', 8, 'geo')
+c
