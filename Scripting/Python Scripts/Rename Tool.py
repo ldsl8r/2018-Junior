@@ -21,4 +21,4 @@ def RenameTool(prefix, newName, numPad, newNum, suffix):
         newNum = newNum + 1
 
 
-RenameTool('L','Leg_Fk', '00', 1, 'Jnt')
+RenameTool('L', 'Leg_Fk', '00', 1, 'Jnt')

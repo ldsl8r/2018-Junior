@@ -1,0 +1,13 @@
+global proc Crtl2JntConstraint()
+{
+
+    string $SelectedObj[] = `ls -selection`;
+    //print $SelectedObj;
+    
+    parentConstraint -mo -weight 1 $SelectedObj[0] $SelectedObj[1];
+
+    scaleConstraint -offset 1 1 1 -weight 1 $SelectedObj[0] $SelectedObj[1];
+
+}
+
+Crtl2JntConstraint()
