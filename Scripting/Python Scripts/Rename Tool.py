@@ -1,7 +1,7 @@
 import maya.cmds as cmds
 
 
-def RenameTool(newName, numPad, newNum, suffix):
+def RenameTool(prefix, newName, numPad, newNum, suffix):
     sels = cmds.ls(sl=True)
 
     for iterate in sels:
@@ -15,10 +15,10 @@ def RenameTool(newName, numPad, newNum, suffix):
             number = "0" + number
 
         numWithPadding = number + str(newNum)
-        fullString = newName + '_' + numWithPadding + '_' + suffix;
+        fullString = prefix + "_" + newName + "_" + numWithPadding + "_" + suffix
         cmds.rename(iterate, fullString)
 
         newNum = newNum + 1
 
 
-RenameTool('hand', '00', 8, 'geo')
+RenameTool('L','Leg_Fk', '00', 1, 'Jnt')

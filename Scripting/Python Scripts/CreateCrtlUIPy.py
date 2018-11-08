@@ -63,7 +63,7 @@ def MakeCrtls(index, nameOshape):
             # creates a control
 
             typecrtl = reshape(nameOshape)
-            #colorCrtls(typecrtl, index)
+            # colorCrtls(typecrtl, index)
 
             # renames control and saves it into a string so it can be called later
 
@@ -73,14 +73,23 @@ def MakeCrtls(index, nameOshape):
 
             groupies = cmds.group(reCrtl, world=True, name=(reCrtl + "_Grp"))
 
-            cmds.matchTransform(groupies, selection)
+            # right here you can change the selection of the matched transforms
+            # use next line to match all Transforms
+            # cmds.matchTransform(groupies, selection)
+
+            cmds.matchTransform(groupies, selection, pos=True, rot=False, scl=False)
 
 
     else:
         control = reshape(nameOshape)
         reCrtl = cmds.rename(control, "_Crtl")
-        #colorCrtls(reCrtl, index)
+        # colorCrtls(reCrtl, index)
         groupies = cmds.group(reCrtl, world=True, name=(reCrtl + "_Grp"))
 
 
-MakeCrtls(8, "Squiggle")
+MakeCrtls(6, "Circle")
+# Red=12
+# Blue=6
+
+#notes:want to optimize match transform to do just translate
+#   want to make size option available for controls
