@@ -8,10 +8,10 @@ def colorCrtls(Crtl, color):
     # enable override on shape
     for shape in shapes:
 
-        if cmds.nodeType(shape == "nurbsCurve"):
+        if cmds.nodeType(shape) == "nurbsCurve":
 
-            cmds.setAttr(shape + ".overrideEnabled", 1)
-            cmds.setAttr(shape + ".overrideColor", color)
+            cmds.setAttr((shape + ".overrideEnabled"), 1)
+            cmds.setAttr((shape + ".overrideColor"), color)
 
         else:
 
@@ -63,7 +63,7 @@ def MakeCrtls(index, nameOshape):
             # creates a control
 
             typecrtl = reshape(nameOshape)
-            # colorCrtls(typecrtl, index)
+            colorCrtls(typecrtl, index)
 
             # renames control and saves it into a string so it can be called later
 
