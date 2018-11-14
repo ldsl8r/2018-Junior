@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Whisper Concept Model.ma
-//Last modified: Wed, Nov 14, 2018 11:18:09 AM
+//Last modified: Wed, Nov 14, 2018 01:38:41 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,7 +15,7 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "C80ABF50-4CE6-C4A1-36E9-EA9D6DC338B4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -118.88802615347798 174.86253613476046 -62.225186263305446 ;
+	setAttr ".t" -type "double3" -255.89910488366183 231.07908524178458 -196.40173755880113 ;
 	setAttr ".r" -type "double3" -16.338350522356123 -1574.4011520986323 7.2252242392255007e-06 ;
 	setAttr ".rp" -type "double3" -4.4408920985006262e-16 0 0 ;
 	setAttr ".rpt" -type "double3" 7.0637081411584246e-16 0 -3.5836236740068265e-16 ;
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 66.003071788806494;
-	setAttr ".coi" 128.63059915216172;
+	setAttr ".coi" 328.46974197924646;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -46208,13 +46208,13 @@ createNode transform -n "Deformers" -p "Whisper_Model";
 createNode transform -s -n "front";
 	rename -uid "733B45FB-4096-3663-533F-4EB76A4BB4EE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -161.04778865741289 146.51319745063697 1166.0560264242445 ;
+	setAttr ".t" -type "double3" -96.469332595867712 153.9389697635074 1166.0560264242445 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "88D54B6D-42B2-A5B2-C419-4FB6C65695EE";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1160.3515739103568;
-	setAttr ".ow" 0.0070442241981547478;
+	setAttr ".ow" 279.92478807512907;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -46238,9 +46238,9 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".tp" -type "double3" 20.446430206298835 150.75040435791013 1.1868233680725071 ;
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
-createNode transform -n "Top_Tentacle_Bind_Jnts";
+createNode transform -n "Top_Tentacle_Bind_Jnts_Grp";
 	rename -uid "130E3816-4AD5-73E5-302E-2DA009A148AA";
-createNode joint -n "Top_Tentacle_Spline_IK_Root_01_Jnt" -p "Top_Tentacle_Bind_Jnts";
+createNode joint -n "Top_Tentacle_Spline_IK_Root_01_Jnt" -p "Top_Tentacle_Bind_Jnts_Grp";
 	rename -uid "DB7BBDB8-4567-04C8-CFB1-82B393838E29";
 	setAttr ".t" -type "double3" -30.772413253787555 151.95193481446944 2.5292613506319865 ;
 	setAttr ".r" -type "double3" 0 180 0 ;
@@ -46420,16 +46420,16 @@ createNode ikEffector -n "effector4" -p "Top_Tentacle_Spline_IK_Root_28_Jnt";
 	rename -uid "E128F207-4CD1-16A4-CF72-09B593C4D8DC";
 	setAttr ".v" no;
 	setAttr ".hd" yes;
-createNode ikHandle -n "Top_Tentacle_ikHandle" -p "Top_Tentacle_Bind_Jnts";
+createNode ikHandle -n "Top_Tentacle_ikHandle" -p "Top_Tentacle_Bind_Jnts_Grp";
 	rename -uid "9B28AD01-4C45-E368-E352-67ACDD8EA8BC";
 	setAttr ".t" -type "double3" -163.29361325378756 151.95193481446944 2.5292613506319368 ;
 	setAttr ".r" -type "double3" 0 -1.4033418597069752e-14 0 ;
 	setAttr ".roc" yes;
-createNode transform -n "Front_Tentacle_Bind_Jnts";
+createNode transform -n "Front_Tentacle_Bind_Jnts_Grp";
 	rename -uid "5091B29A-4720-BD46-F842-D5A45BEBF7D1";
-createNode joint -n "Front_Tentacle_Spline_IK_Root_01_Jnt" -p "Front_Tentacle_Bind_Jnts";
+createNode joint -n "Front_Tentacle_Spline_IK_Root_01_Jnt" -p "Front_Tentacle_Bind_Jnts_Grp";
 	rename -uid "4C439A88-42B0-7459-2E78-14A32DA77B0F";
-	setAttr ".t" -type "double3" -28.52775382995943 146.51373291017256 5.7044525146487102 ;
+	setAttr ".t" -type "double3" -28.52775382995943 146.51373291017256 5.7044525146487093 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.5;
@@ -46605,13 +46605,13 @@ createNode ikEffector -n "effector5" -p "Front_Tentacle_Spline_IK_Root_28_Jnt";
 	rename -uid "B81F00C5-434A-2733-A3B5-F1A72EC0131C";
 	setAttr ".v" no;
 	setAttr ".hd" yes;
-createNode ikHandle -n "Front_Tentacle_ikHandle" -p "Front_Tentacle_Bind_Jnts";
+createNode ikHandle -n "Front_Tentacle_ikHandle" -p "Front_Tentacle_Bind_Jnts_Grp";
 	rename -uid "79D6C9C8-4362-72C3-A334-5096749DDEC8";
-	setAttr ".t" -type "double3" -161.04895382995943 146.51373291017336 5.7044525146487359 ;
+	setAttr ".t" -type "double3" -161.04895382995943 146.51373291017336 5.7044525146487342 ;
 	setAttr ".roc" yes;
-createNode transform -n "Back_Tentacle_Bind_Jnts";
+createNode transform -n "Back_Tentacle_Bind_Jnts_Grp";
 	rename -uid "A511C873-41A3-25A2-1911-C4B98643F61C";
-createNode joint -n "Back_Tentacle_Spline_IK_Root_01_Jnt" -p "Back_Tentacle_Bind_Jnts";
+createNode joint -n "Back_Tentacle_Spline_IK_Root_01_Jnt" -p "Back_Tentacle_Bind_Jnts_Grp";
 	rename -uid "B6931B16-4D6C-0FB9-9127-848942843EB2";
 	setAttr ".t" -type "double3" -28.52775382995943 146.51368713380538 -0.50800395011874588 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -46789,17 +46789,34 @@ createNode ikEffector -n "effector6" -p "Back_Tentacle_Spline_IK_Root_28_Jnt";
 	rename -uid "46A99398-4E70-7BD6-C081-5196AA9A792F";
 	setAttr ".v" no;
 	setAttr ".hd" yes;
-createNode ikHandle -n "Back_Tentacle_ikHandle" -p "Back_Tentacle_Bind_Jnts";
+createNode ikHandle -n "Back_Tentacle_ikHandle" -p "Back_Tentacle_Bind_Jnts_Grp";
 	rename -uid "8E511FDD-4A18-50DB-AD05-9293AE85632B";
 	setAttr ".t" -type "double3" -161.04895382995943 146.51368713380538 -0.50800395011874588 ;
 	setAttr ".roc" yes;
 createNode transform -n "Top_Tentacle_Spline_IK_Curve";
 	rename -uid "3C833022-415C-916C-C676-F8A163529403";
+	setAttr -l on ".tx";
+	setAttr -l on ".ty";
+	setAttr -l on ".tz";
+	setAttr -l on ".rx";
+	setAttr -l on ".ry";
+	setAttr -l on ".rz";
+	setAttr -l on ".sx";
+	setAttr -l on ".sy";
+	setAttr -l on ".sz";
 	setAttr ".rp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 	setAttr ".sp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 createNode nurbsCurve -n "Top_Tentacle_Spline_IK_CurveShape" -p "Top_Tentacle_Spline_IK_Curve";
 	rename -uid "F0E154EB-4114-43F7-CF00-69AB41F9EE58";
 	setAttr -k off ".v";
+	setAttr -s 4 ".iog[0].og";
+	setAttr -av ".iog[0].og[6].gid";
+	setAttr -av ".iog[0].og[7].gid";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_CurveShapeOrig" -p "Top_Tentacle_Spline_IK_Curve";
+	rename -uid "A90036E5-4929-F68F-4BF6-9797757F4366";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".cc" -type "nurbsCurve" 
 		3 27 0 no 3
 		32 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -46839,11 +46856,26 @@ createNode nurbsCurve -n "Top_Tentacle_Spline_IK_CurveShape" -p "Top_Tentacle_Sp
 createNode transform -n "Front_Tentacle_Spline_IK_Curve";
 	rename -uid "91EF154B-4EEC-A73F-7CAA-A38865F349B4";
 	setAttr ".t" -type "double3" 2.244659423828125 -5.438201904296875 3.1751911640167236 ;
+	setAttr -l on ".tx";
+	setAttr -l on ".ty";
+	setAttr -l on ".tz";
+	setAttr -l on ".rx";
+	setAttr -l on ".ry";
+	setAttr -l on ".rz";
+	setAttr -l on ".sx";
+	setAttr -l on ".sy";
+	setAttr -l on ".sz";
 	setAttr ".rp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 	setAttr ".sp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 createNode nurbsCurve -n "Front_Tentacle_Spline_IK_CurveShape" -p "Front_Tentacle_Spline_IK_Curve";
 	rename -uid "49EFD2E3-47BD-1078-8571-F3A33A831F03";
 	setAttr -k off ".v";
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_CurveShapeOrig" -p "Front_Tentacle_Spline_IK_Curve";
+	rename -uid "C98F8958-4E9E-4344-8A52-7FA2F4075340";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".cc" -type "nurbsCurve" 
 		3 27 0 no 3
 		32 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -46883,11 +46915,26 @@ createNode nurbsCurve -n "Front_Tentacle_Spline_IK_CurveShape" -p "Front_Tentacl
 createNode transform -n "Back_Tentacle_Spline_IK_Curve";
 	rename -uid "09A648B5-4C41-C335-7EA8-C0ADC15E6EDF";
 	setAttr ".t" -type "double3" 2.244659423828125 -5.4382476806640625 -3.0372653007507324 ;
+	setAttr -l on ".tx";
+	setAttr -l on ".ty";
+	setAttr -l on ".tz";
+	setAttr -l on ".rx";
+	setAttr -l on ".ry";
+	setAttr -l on ".rz";
+	setAttr -l on ".sx";
+	setAttr -l on ".sy";
+	setAttr -l on ".sz";
 	setAttr ".rp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 	setAttr ".sp" -type "double3" -30.77241325378418 151.95193481445313 2.5292613506317139 ;
 createNode nurbsCurve -n "Back_Tentacle_Spline_IK_CurveShape" -p "Back_Tentacle_Spline_IK_Curve";
 	rename -uid "075B8029-43AB-885A-C08A-BFAAF95CE8BA";
 	setAttr -k off ".v";
+	setAttr -s 4 ".iog[0].og";
+	setAttr ".tw" yes;
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_CurveShapeOrig" -p "Back_Tentacle_Spline_IK_Curve";
+	rename -uid "68D4ACEE-4ADF-EB81-6A0C-6FB6F0A39664";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".cc" -type "nurbsCurve" 
 		3 27 0 no 3
 		32 0 0 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
@@ -46924,115 +46971,1102 @@ createNode nurbsCurve -n "Back_Tentacle_Spline_IK_CurveShape" -p "Back_Tentacle_
 		-158.56071335619191 151.95193480674988 2.529261350503492
 		-163.2936096191406 151.9519348144531 2.5292613506317134
 		;
-createNode joint -n "joint1";
+createNode transform -n "Top_Tentacle_Crtl_Jnts_Grp";
+	rename -uid "BEC93474-4EFF-3705-1468-7BB2664F5242";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_01_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "63DD167A-4094-B47E-5AAE-F4BBD1CF237B";
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" -30.772413253784183 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 -1.4033418597069752e-14 0 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -30.772413253784183 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint2" -p "joint1";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_02_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "FB16FDFB-44B0-FC3E-82F8-0FAD6F788037";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -8.8817841970012523e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -57.276652015086427 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -57.276652015086427 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint3" -p "|joint1|joint2";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_03_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "333C3079-41AA-3D72-0193-66879CF53FCD";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -83.780890776388674 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -83.780890776388674 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint4" -p "|joint1|joint2|joint3";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_04_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "FBEA32F6-4199-60B3-1EDF-B39A6B277F66";
-	setAttr ".t" -type "double3" -26.504238761302251 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -110.28512953769092 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -110.28512953769092 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint5" -p "|joint1|joint2|joint3|joint4";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_05_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "0129592A-46D9-410D-BECB-8AA4C8E266B0";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -136.78936829899317 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -136.78936829899317 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint6" -p "|joint1|joint2|joint3|joint4|joint5";
+createNode joint -n "Top_Tentacle_Spline_IK_Crtl_06_Jnt" -p "Top_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "EEAC64BC-4984-3521-5CDF-41931F4B4559";
-	setAttr ".t" -type "double3" -26.504238761302251 0 0 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -163.29360706029541 151.95193481445313 2.5292613506317143 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -163.29360706029541 151.95193481445313 2.5292613506317143 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint7";
+createNode transform -n "Front_Tentacle_Crtl_Jnts_Grp";
+	rename -uid "38C114E2-4DE0-0F52-50E0-DABAF92E1543";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_01_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "87A87215-40BD-BF64-64AA-21927E7FA889";
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" -28.527753829956055 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -28.527753829956055 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint2" -p "joint7";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_02_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "F514456D-4089-85E5-9975-B3BA494ABDD0";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -8.8817841970012523e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -55.031992591258302 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -55.031992591258302 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint3" -p "|joint7|joint2";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_03_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "9C7A2062-4407-02CD-8942-9A95A5D9CD45";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -81.536231352560549 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -81.536231352560549 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint4" -p "|joint7|joint2|joint3";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_04_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "9009E964-4E53-4451-E3B5-C1A16803EBC0";
-	setAttr ".t" -type "double3" -26.504238761302251 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -108.0404701138628 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -108.0404701138628 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint5" -p "|joint7|joint2|joint3|joint4";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_05_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "3527A31A-4B0E-848C-331C-55BCEB125A07";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -134.54470887516504 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -134.54470887516504 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint6" -p "|joint7|joint2|joint3|joint4|joint5";
+createNode joint -n "Front_Tentacle_Spline_IK_Crtl_06_Jnt" -p "Front_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "54E6FDE7-4B18-7C61-FA3C-6E97F5A1C5D2";
-	setAttr ".t" -type "double3" -26.504238761302251 0 0 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -161.04894763646729 146.51373291015625 5.7044525146484375 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -161.04894763646729 146.51373291015625 5.7044525146484375 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint8";
+createNode transform -n "Back_Tentacle_Crtl_Jnts_Grp";
+	rename -uid "D7C4E8BF-4512-EC8A-4BA6-41B2711C565C";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_01_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "7E0D5A50-48F2-38E8-5E19-269B2952A587";
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".uoc" 1;
 	setAttr ".t" -type "double3" -28.527753829956055 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -28.527753829956055 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint2" -p "joint8";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_02_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "9FFFD768-4DEE-42F1-9A1B-33845FEBDC5D";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -8.8817841970012523e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -55.031992591258302 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -55.031992591258302 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint3" -p "|joint8|joint2";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_03_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "FCB3B44A-49B9-526F-A710-89B46C0ECA4B";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -81.536231352560549 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -81.536231352560549 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint4" -p "|joint8|joint2|joint3";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_04_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "A98734C1-4747-1905-4D40-B2B78C234BF3";
-	setAttr ".t" -type "double3" -26.504238761302251 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -108.0404701138628 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -108.0404701138628 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint5" -p "|joint8|joint2|joint3|joint4";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_05_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "32685566-47F4-AAB7-A53E-E3B7C79EE812";
-	setAttr ".t" -type "double3" -26.504238761302243 -5.6843418860808015e-14 -4.4408920985006262e-16 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -134.54470887516504 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -134.54470887516504 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
-createNode joint -n "joint6" -p "|joint8|joint2|joint3|joint4|joint5";
+createNode joint -n "Back_Tentacle_Spline_IK_Crtl_06_Jnt" -p "Back_Tentacle_Crtl_Jnts_Grp";
 	rename -uid "8D8664A3-41BD-8216-F883-00B87121202B";
-	setAttr ".t" -type "double3" -26.504238761302251 0 0 ;
+	addAttr -ci true -sn "liw" -ln "lockInfluenceWeights" -min 0 -max 1 -at "bool";
+	setAttr ".t" -type "double3" -161.04894763646729 146.51368713378906 -0.50800395011901855 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".bps" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 -161.04894763646729 146.51368713378906 -0.50800395011901855 1;
 	setAttr ".radi" 2.5;
+createNode transform -n "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "589B593A-46C2-6517-2662-C9882F063D2E";
+createNode transform -n "Top_Tentacle_Spline_IK_01_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "89D5747A-4036-B9A8-A8A8-DFAD9B760528";
+	setAttr ".t" -type "double3" -30.772413253784183 151.95193481445313 2.5292613506317143 ;
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_01_Crtl" -p "Top_Tentacle_Spline_IK_01_Crtl_Grp";
+	rename -uid "37386F69-4DD3-F366-98E0-5C898CEC9E8B";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_01_CrtlShape" -p "Top_Tentacle_Spline_IK_01_Crtl";
+	rename -uid "02FBB163-4196-382D-7493-B498218184AE";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode transform -n "Top_Tentacle_Spline_IK_02_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "5EE33B56-4197-303F-B740-A6BA560B8E5F";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_02_Crtl" -p "Top_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "F2312128-4B1B-BCC0-D1BB-37AD67E23399";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_02_CrtlShape" -p "Top_Tentacle_Spline_IK_02_Crtl";
+	rename -uid "DE00F7CC-43AC-A50F-35E8-1BAADA10D343";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "33E2A206-4900-DD58-3D3C-A19276993FE2";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302243 -3.3306690738754696e-16 
+		4.4408920985006262e-16 ;
+	setAttr ".rst" -type "double3" -57.276652015086427 151.95193481445313 2.5292613506317148 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "146F3BBA-4CB6-6A43-E4D7-239864224B87";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302243 -3.3306690738754696e-16 
+		8.8817841970012523e-16 ;
+	setAttr ".rst" -type "double3" -57.276652015086427 151.95193481445313 2.5292613506317152 ;
+	setAttr -k on ".w0";
+createNode transform -n "Top_Tentacle_Spline_IK_03_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "85369445-4587-B934-8746-FD9FAC86AAED";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_03_Crtl" -p "Top_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "608CFA01-4AE3-F9A9-278D-948D373785D1";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_03_CrtlShape" -p "Top_Tentacle_Spline_IK_03_Crtl";
+	rename -uid "BF1F4BC4-4E4B-B2ED-690E-5D951C6F1B8A";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "6892A827-48DB-D50C-2808-45980E1131A3";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302233 -2.8754776337791554e-14 
+		-4.4408920985006262e-16 ;
+	setAttr ".rst" -type "double3" -83.780890776388659 151.9519348144531 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "D63F0ED1-46C8-BF1E-2B46-8F97249A01F6";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302219 -5.7176485768195562e-14 
+		-4.4408920985006262e-16 ;
+	setAttr ".rst" -type "double3" -83.780890776388645 151.95193481445307 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode transform -n "Top_Tentacle_Spline_IK_04_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "16CB4EB5-4FEE-A455-B9DE-30936972397E";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_04_Crtl" -p "Top_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "1CC3C076-45B6-48FA-ED24-22893B435968";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_04_CrtlShape" -p "Top_Tentacle_Spline_IK_04_Crtl";
+	rename -uid "D4509213-4A15-356F-EFC3-DB80484B842B";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "73E1ADFB-4A6F-5032-BAC1-7694D4B7D75E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302261 2.808864252301646e-14 0 ;
+	setAttr ".rst" -type "double3" -110.28512953769092 151.95193481445313 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "17A447CE-4B9F-5AB7-59DF-21B78ABE1A6D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302261 2.808864252301646e-14 0 ;
+	setAttr ".rst" -type "double3" -110.28512953769092 151.95193481445313 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode transform -n "Top_Tentacle_Spline_IK_05_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "3107C942-44EC-0B99-965F-F38B98F578DA";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_05_Crtl" -p "Top_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "EB08591F-423B-7CEA-92A6-DEA1FBF078E3";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_05_CrtlShape" -p "Top_Tentacle_Spline_IK_05_Crtl";
+	rename -uid "EE223EA0-45B4-638E-AFCA-28950920EE7A";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "C4F6DFC4-4FC9-1417-4A25-518765A243C5";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302275 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -136.7893682989932 151.95193481445313 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "6437ECF8-4F93-046A-AC2E-47A4E6656595";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302304 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -136.78936829899322 151.95193481445313 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode transform -n "Top_Tentacle_Spline_IK_06_Crtl_Grp" -p "Top_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "68860808-43A9-620E-A6F3-789FDED7B025";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Top_Tentacle_Spline_IK_06_Crtl" -p "Top_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "0D606713-48BF-1620-F9B0-7597AA6D6115";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Top_Tentacle_Spline_IK_06_CrtlShape" -p "Top_Tentacle_Spline_IK_06_Crtl";
+	rename -uid "E515F947-4CB4-D81E-E82C-40A57BFEDDD2";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "D30A2A8C-4AC2-1B02-989D-C19121CFAA6D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.50423876130219 -2.8754776337791554e-14 
+		0 ;
+	setAttr ".rst" -type "double3" -163.29360706029539 151.9519348144531 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint" 
+		-p "Top_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "A853FDA2-4865-24C3-D7FC-F1B6DD499325";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Top_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302162 -5.7176485768195562e-14 
+		0 ;
+	setAttr ".rst" -type "double3" -163.29360706029536 151.95193481445307 2.5292613506317143 ;
+	setAttr -k on ".w0";
+createNode transform -n "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "6D97B37F-47B3-B7A8-F082-67AC7A481F22";
+createNode transform -n "Front_Tentacle_Spline_IK_01_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "D1C00D76-4C07-DF61-0399-8B8A0FA2C99B";
+	setAttr ".t" -type "double3" -28.527753829956055 146.51373291015625 5.7044525146484375 ;
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_01_Crtl" -p "Front_Tentacle_Spline_IK_01_Crtl_Grp";
+	rename -uid "7E266BBA-4393-732A-31B5-0D86241A4E06";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_01_CrtlShape" -p "Front_Tentacle_Spline_IK_01_Crtl";
+	rename -uid "062F6622-42EA-BC61-5F2D-EEAA872F7F40";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode transform -n "Front_Tentacle_Spline_IK_02_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "6F722C1E-481D-F000-0217-3FA7CAE2B0CD";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_02_Crtl" -p "Front_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "600E1754-4480-838D-A882-C18281A06964";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_02_CrtlShape" -p "Front_Tentacle_Spline_IK_02_Crtl";
+	rename -uid "4BBFE6D2-4AEA-9D29-FB3D-FCABFEE1A9AA";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "7F6E86B4-43DE-CD18-18B0-44A57A2450E3";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302243 -3.3306690738754696e-16 
+		-1.7763568394002505e-15 ;
+	setAttr ".rst" -type "double3" -55.031992591258302 146.51373291015625 5.7044525146484357 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "1C89C6BB-481F-2024-9801-008642BDBE42";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302243 -3.3306690738754696e-16 
+		-3.5527136788005009e-15 ;
+	setAttr ".rst" -type "double3" -55.031992591258302 146.51373291015625 5.7044525146484339 ;
+	setAttr -k on ".w0";
+createNode transform -n "Front_Tentacle_Spline_IK_03_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "B2C915FF-41E6-227D-A28A-F6B649B051F7";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_03_Crtl" -p "Front_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "CD63953F-47B5-2744-C32A-37884A2FA9C5";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_03_CrtlShape" -p "Front_Tentacle_Spline_IK_03_Crtl";
+	rename -uid "163CD631-4DEB-1AC9-AB8A-A08109F7C4D0";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "AFC2A03C-43B3-7BA4-0530-61AC266CACF4";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302254 -3.3306690738754696e-16 
+		1.7763568394002505e-15 ;
+	setAttr ".rst" -type "double3" -81.536231352560549 146.51373291015625 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "F02C01C7-49E7-D3CF-4F43-11A9675EE925";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302254 -3.3306690738754696e-16 
+		1.7763568394002505e-15 ;
+	setAttr ".rst" -type "double3" -81.536231352560549 146.51373291015625 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode transform -n "Front_Tentacle_Spline_IK_04_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "CEA1CE38-42F9-5988-7EDE-D894DA846BE7";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_04_Crtl" -p "Front_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "EC97451B-4974-2D00-A51E-8D92ECE5B074";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_04_CrtlShape" -p "Front_Tentacle_Spline_IK_04_Crtl";
+	rename -uid "DC23C27B-4F69-6E92-0FB0-E99DB30C4B39";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "F5630CD7-46E3-C31E-E749-ADAA25BA3906";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302247 2.808864252301646e-14 -8.8817841970012523e-16 ;
+	setAttr ".rst" -type "double3" -108.0404701138628 146.51373291015628 5.7044525146484366 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "4492C861-4414-C993-A64B-4189CE95E05E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302247 5.6510351953420468e-14 
+		-1.7763568394002505e-15 ;
+	setAttr ".rst" -type "double3" -108.0404701138628 146.51373291015631 5.7044525146484357 ;
+	setAttr -k on ".w0";
+createNode transform -n "Front_Tentacle_Spline_IK_05_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "5EC906B5-4BD5-50D2-9FF9-15BA86B15D9B";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_05_Crtl" -p "Front_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "F229ACBF-43CD-E455-288C-24A8F80A2D82";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_05_CrtlShape" -p "Front_Tentacle_Spline_IK_05_Crtl";
+	rename -uid "16BA026C-458B-048B-1763-07A7683E387C";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "D4A7B334-4277-B01C-165F-4883911C1370";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302275 -5.7176485768195562e-14 
+		8.8817841970012523e-16 ;
+	setAttr ".rst" -type "double3" -134.54470887516507 146.51373291015622 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "839064EF-42C5-A98E-656E-88A3081AE05D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302304 -8.5598195198599569e-14 
+		8.8817841970012523e-16 ;
+	setAttr ".rst" -type "double3" -134.5447088751651 146.51373291015619 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode transform -n "Front_Tentacle_Spline_IK_06_Crtl_Grp" -p "Front_Tentacle_Spline_IK_01_Crtls_Grp";
+	rename -uid "281AFE21-4440-97D2-CC99-739120EB6D3C";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Front_Tentacle_Spline_IK_06_Crtl" -p "Front_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "74990A43-468B-3B1C-787E-F4B898832361";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Front_Tentacle_Spline_IK_06_CrtlShape" -p "Front_Tentacle_Spline_IK_06_Crtl";
+	rename -uid "756E79AB-4A66-1F23-348F-EFBB8C56AF9D";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "BAADCF46-4E81-BE18-CF6F-359ED3AD7797";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302219 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -161.04894763646729 146.51373291015622 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint" 
+		-p "Front_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "2DBD18CF-45EF-374C-350D-95BEB77A62A7";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Front_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302219 -2.8754776337791554e-14 
+		0 ;
+	setAttr ".rst" -type "double3" -161.04894763646729 146.51373291015619 5.7044525146484375 ;
+	setAttr -k on ".w0";
+createNode transform -n "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "1AEFF4B7-4826-DD27-84CA-4B84F487F1F5";
+createNode transform -n "Back_Tentacle_Spline_IK_01_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "A18EDEB1-41F5-134A-3379-F8BC492DF6C8";
+	setAttr ".t" -type "double3" -28.527753829956055 146.51368713378906 -0.50800395011901855 ;
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_01_Crtl" -p "Back_Tentacle_Spline_IK_01_Crtl_Grp";
+	rename -uid "DFF1A842-4FD7-AB1C-EBCD-38B4E3E3301A";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_01_CrtlShape" -p "Back_Tentacle_Spline_IK_01_Crtl";
+	rename -uid "B46CA4CA-463D-D253-9987-ADA91ADF9B44";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode transform -n "Back_Tentacle_Spline_IK_02_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "93CCF3B1-45EE-40B0-D5AC-A18581536A35";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_02_Crtl" -p "Back_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "4BDE4BDB-4336-62B5-4EC8-768899866A7A";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_02_CrtlShape" -p "Back_Tentacle_Spline_IK_02_Crtl";
+	rename -uid "B6ACC25D-4389-BC1D-2396-55872F61AF3C";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "0B441D1E-4A23-AB52-4799-018504BCDFCD";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302251 -3.3306690738754696e-16 
+		-1.1102230246251565e-16 ;
+	setAttr ".rst" -type "double3" -55.031992591258302 146.51368713378906 -0.50800395011901867 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_02_Crtl_Grp";
+	rename -uid "0C22F711-4A3F-F170-B773-2DA5285FFBBA";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_01_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302251 -3.3306690738754696e-16 
+		-2.2204460492503131e-16 ;
+	setAttr ".rst" -type "double3" -55.031992591258302 146.51368713378906 -0.50800395011901878 ;
+	setAttr -k on ".w0";
+createNode transform -n "Back_Tentacle_Spline_IK_03_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "7A75E5AA-4EE5-A8A5-28A6-F6B90259F0D8";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_03_Crtl" -p "Back_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "1245BFA0-4169-F056-4E16-4FA7C12B2A7B";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_03_CrtlShape" -p "Back_Tentacle_Spline_IK_03_Crtl";
+	rename -uid "174DB308-4F38-C5DB-D467-5E8EDE50CBFD";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "563BB798-40F5-D2F5-5CEA-25B6B40D6433";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302247 -3.3306690738754696e-16 
+		1.1102230246251565e-16 ;
+	setAttr ".rst" -type "double3" -81.536231352560549 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_03_Crtl_Grp";
+	rename -uid "97937DC2-40FE-9AAF-3B18-F48CE68CD90A";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_02_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302247 -3.3306690738754696e-16 
+		1.1102230246251565e-16 ;
+	setAttr ".rst" -type "double3" -81.536231352560549 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode transform -n "Back_Tentacle_Spline_IK_04_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "A174D4E4-4376-75B3-167B-9DAD11392AD3";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_04_Crtl" -p "Back_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "0D6CCA5B-46E5-C03E-FFCA-EDB8CC7F4A55";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_04_CrtlShape" -p "Back_Tentacle_Spline_IK_04_Crtl";
+	rename -uid "3DA59528-411C-BDDF-556D-C59DE0DD55C3";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "0A0415B7-40F4-D5B7-4452-0C920FF9A7B0";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302233 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -108.04047011386278 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_04_Crtl_Grp";
+	rename -uid "90560587-414D-AB7B-1475-FBA4C819C50F";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_03_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302219 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -108.04047011386277 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode transform -n "Back_Tentacle_Spline_IK_05_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "E9385802-40E0-7D6F-8397-B78D7E86753F";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_05_Crtl" -p "Back_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "B1ACE011-491A-511B-73B4-CC9A2A231EDD";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_05_CrtlShape" -p "Back_Tentacle_Spline_IK_05_Crtl";
+	rename -uid "D2AC72F1-4370-538E-8E00-0B97E717556F";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "2D24E193-457A-49FD-B778-C1BA16C2BB29";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302204 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -134.54470887516499 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_05_Crtl_Grp";
+	rename -uid "A0D44765-4ED6-E2A1-5CF4-DD919181D529";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_04_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302148 -3.3306690738754696e-16 
+		0 ;
+	setAttr ".rst" -type "double3" -134.54470887516493 146.51368713378906 -0.50800395011901855 ;
+	setAttr -k on ".w0";
+createNode transform -n "Back_Tentacle_Spline_IK_06_Crtl_Grp" -p "Back_Tentacle_Spline_IK_01_Crts_Grp";
+	rename -uid "A1046EA8-462E-B43F-C112-72B6426F20C3";
+	setAttr ".rp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 0 -3.3306690738754696e-16 0 ;
+createNode transform -n "Back_Tentacle_Spline_IK_06_Crtl" -p "Back_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "80287A49-4BE3-ED7D-08C3-C2BE05B87E9E";
+	addAttr -ci true -k true -sn "Translate_Constraint" -ln "Translate_Constraint" 
+		-dv 1 -min 0 -max 1 -at "long";
+	addAttr -ci true -k true -sn "Rotate_Constraint" -ln "Rotate_Constraint" -dv 1 -min 
+		0 -max 1 -at "long";
+	setAttr -k on ".Translate_Constraint";
+	setAttr -k on ".Rotate_Constraint";
+createNode nurbsCurve -n "Back_Tentacle_Spline_IK_06_CrtlShape" -p "Back_Tentacle_Spline_IK_06_Crtl";
+	rename -uid "EF626DF4-4B5F-BE41-22DF-9EB11901121D";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".tw" yes;
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "D4C73B21-496B-D601-71C0-1AB0692A0E66";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302304 -3.3306690738754696e-16 
+		1.1102230246251565e-16 ;
+	setAttr ".rst" -type "double3" -161.04894763646729 146.51368713378906 -0.50800395011901844 ;
+	setAttr -k on ".w0";
+createNode parentConstraint -n "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint" 
+		-p "Back_Tentacle_Spline_IK_06_Crtl_Grp";
+	rename -uid "951EDADE-44F4-54B1-B07F-449FAFA5EEE8";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Back_Tentacle_Spline_IK_05_CrtlW0" 
+		-dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -26.504238761302304 -3.3306690738754696e-16 
+		2.2204460492503131e-16 ;
+	setAttr ".rst" -type "double3" -161.04894763646729 146.51368713378906 -0.50800395011901833 ;
+	setAttr -k on ".w0";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "1D3F9D38-42BE-FFDC-E7CA-8E82DF4D42F2";
 	setAttr -s 2 ".lnk";
@@ -51422,6 +52456,489 @@ createNode transformGeometry -n "transformGeometry83";
 		 0 0 1.4962046198943699 0 0 0 0 1;
 createNode ikSplineSolver -n "ikSplineSolver";
 	rename -uid "454ECAA2-4494-AB76-890E-1ABC2B2F2758";
+createNode skinCluster -n "skinCluster2";
+	rename -uid "E794303F-43E0-8CA7-7C3D-07BDCE55F569";
+	setAttr -s 30 ".wl";
+	setAttr ".wl[0:29].w"
+		1 0 1
+		4 0 0.99970939608491816 1 0.00025345624050826965 2 2.8855023663584741e-05 
+		3 8.2926509099594477e-06
+		4 0 0.98866050169489228 1 0.0101572053642347 2 0.00093163792564690052 
+		3 0.00025065501522617895
+		4 0 0.84444548650347617 1 0.14479505076734667 2 0.0086755660722824066 
+		3 0.0020838966568948072
+		4 0 0.38529242944777076 1 0.59188174347079248 2 0.018867447810097023 
+		3 0.0039583792713398019
+		4 0 0.059428309226949291 1 0.9285680394280259 2 0.010190042756978183 
+		3 0.001813608588046589
+		4 0 0.0017232357967596505 1 0.99724184737952359 2 0.00090381503223491296 
+		3 0.00013110179148178718
+		4 0 0.00029606067092557482 1 0.99919836981260945 2 0.00045480461909754526 
+		3 5.0764897367473722e-05
+		4 0 0.0076339394145960582 1 0.95424168124828768 2 0.035342330513916859 
+		3 0.0027820488231994544
+		4 0 0.018377841698664726 1 0.68066089957419906 2 0.28715371584230814 
+		3 0.013807542884828116
+		4 0 0.011167241388343963 1 0.20712682184480602 2 0.76455096260744648 
+		3 0.017154974159403539
+		4 0 0.0016817405724809708 1 0.019742452676851253 2 0.97322730669289093 
+		3 0.00534850005777687
+		4 0 6.0098984982081669e-06 1 5.0800018490270785e-05 2 0.99990219220944943 
+		3 4.0997873562092421e-05
+		4 1 0.001939484326263732 2 0.99301122441872469 3 0.0045973035120209834 
+		4 0.00045198774299052029
+		4 1 0.012762316975158963 2 0.88676291926600415 3 0.094248307777583001 
+		4 0.0062264559812539302
+		4 1 0.017857139849057683 2 0.48214261348817067 3 0.48214310079754891 
+		4 0.017857145865222832
+		4 1 0.0062264458340249556 2 0.094248112324369346 3 0.886763136933434 
+		4 0.012762304908171665
+		4 1 0.00045198603657623231 2 0.0045972846989888435 3 0.99301125087780406 
+		4 0.0019394783866308783
+		4 2 4.0998438658548683e-05 3 0.99990219080491871 4 5.080077056786413e-05 
+		5 6.0099858548962428e-06
+		4 2 0.0053485096827608448 3 0.97322723723346927 4 0.019742508352166281 
+		5 0.0016817447316036362
+		4 2 0.017154982749992907 3 0.76455056142503597 4 0.20712720044639199 
+		5 0.011167255378579148
+		4 2 0.013807536332149274 3 0.28715349164740545 4 0.68066113229116132 
+		5 0.018377839729283998
+		4 2 0.0027820326482282569 3 0.035342089006831397 4 0.95424196930791128 
+		5 0.0076339090370291084
+		4 2 5.0764928976606534e-05 3 0.00045480491318541211 4 0.99919836932101724 
+		5 0.00029606083682086153
+		4 2 0.00013110390062542508 3 0.00090382886694875472 4 0.99724179870717011 
+		5 0.0017232685252557612
+		4 2 0.0018136131650997552 3 0.010190065277782297 4 0.92856776169563904 
+		5 0.059428559861478915
+		4 2 0.0039583793120040395 3 0.018867447677000632 4 0.59188168486150849 
+		5 0.38529248814948686
+		4 2 0.0020838872038872781 3 0.0086755231090929249 4 0.14479408608773264 
+		5 0.84444650359928719
+		4 2 0.00025065373119426728 3 0.00093163299514712676 4 0.010157145692862204 
+		5 0.98866056758079646
+		1 5 1;
+	setAttr -s 6 ".pm";
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 28.527753829956055 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".pm[1]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 55.031992591258302 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".pm[2]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 81.536231352560549 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".pm[3]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 108.0404701138628 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".pm[4]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 134.54470887516504 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".pm[5]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 161.04894763646729 -146.51373291015625 -5.7044525146484375 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 2.244659423828125 -5.438201904296875 3.1751911640167236 1;
+	setAttr -s 6 ".ma";
+	setAttr -s 6 ".dpf[0:5]"  3 3 3 3 3 3;
+	setAttr -s 6 ".lw";
+	setAttr -s 6 ".lw";
+	setAttr ".mi" 4;
+	setAttr ".ucm" yes;
+	setAttr -s 6 ".ifcl";
+	setAttr -s 6 ".ifcl";
+createNode tweak -n "tweak3";
+	rename -uid "23D042BA-4520-5736-50CC-D8A12A0E1CDD";
+createNode objectSet -n "skinCluster2Set";
+	rename -uid "967FD713-41AA-47EC-1029-9790F93979C0";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster2GroupId";
+	rename -uid "BB606EF2-40F7-A429-FC5A-5F8569E65B81";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster2GroupParts";
+	rename -uid "316E4D19-43B1-4A8C-931B-7380088C354F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode objectSet -n "tweakSet3";
+	rename -uid "1DCA1FFD-4076-298A-59B7-97AD44E7247B";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId7";
+	rename -uid "7BEE88A9-4EB2-B426-7BE1-6E838CC6A050";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts7";
+	rename -uid "79B5EF59-45EF-D22D-AC5A-98A4CF83E4E3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode dagPose -n "bindPose2";
+	rename -uid "0970678F-44F5-8B25-2EB2-D4BD7016B092";
+	setAttr -s 7 ".wm";
+	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr -s 7 ".xm";
+	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 -28.527753829956055 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 -55.031992591258302 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[3]" -type "matrix" "xform" 1 1 1 0 0 0 0 -81.536231352560549 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[4]" -type "matrix" "xform" 1 1 1 0 0 0 0 -108.0404701138628 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[5]" -type "matrix" "xform" 1 1 1 0 0 0 0 -134.54470887516504 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[6]" -type "matrix" "xform" 1 1 1 0 0 0 0 -161.04894763646729 146.51373291015625
+		 5.7044525146484375 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr -s 7 ".m";
+	setAttr -s 7 ".p";
+	setAttr -s 7 ".g[0:6]" yes no no no no no no;
+	setAttr ".bp" yes;
+createNode skinCluster -n "skinCluster3";
+	rename -uid "684E843D-41FC-3364-0D10-50B19E88235C";
+	setAttr -s 30 ".wl";
+	setAttr ".wl[0:29].w"
+		1 0 1
+		4 0 0.99970939608491816 1 0.00025345624050826629 2 2.8855023663584341e-05 
+		3 8.292650909959341e-06
+		4 0 0.98866050169489228 1 0.010157205364234666 2 0.0009316379256468964 
+		3 0.00025065501522617803
+		4 0 0.84444548650347628 1 0.14479505076734656 2 0.0086755660722823893 
+		3 0.0020838966568948042
+		4 0 0.3852924294477707 1 0.59188174347079259 2 0.018867447810096992 
+		3 0.0039583792713398002
+		4 0 0.059428309226949166 1 0.92856803942802602 2 0.010190042756978152 
+		3 0.0018136085880465847
+		4 0 0.0017232357967596383 1 0.9972418473795237 2 0.0009038150322349058 
+		3 0.00013110179148178623
+		4 0 0.00029606067092557839 1 0.99919836981260945 2 0.00045480461909755041 
+		3 5.0764897367474339e-05
+		4 0 0.007633939414596092 1 0.95424168124828745 2 0.035342330513916963 
+		3 0.0027820488231994653
+		4 0 0.01837784169866475 1 0.68066089957419851 2 0.28715371584230853 
+		3 0.013807542884828151
+		4 0 0.011167241388343966 1 0.20712682184480583 2 0.7645509626074467 
+		3 0.017154974159403563
+		4 0 0.0016817405724809708 1 0.019742452676851228 2 0.97322730669289093 
+		3 0.005348500057776877
+		4 0 6.0098984982081669e-06 1 5.0800018490270745e-05 2 0.99990219220944943 
+		3 4.0997873562092482e-05
+		4 1 0.0019394843262637304 2 0.99301122441872469 3 0.0045973035120209921 
+		4 0.00045198774299052029
+		4 1 0.012762316975158953 2 0.88676291926600392 3 0.094248307777583223 
+		4 0.0062264559812539293
+		4 1 0.017857139849057641 2 0.48214261348816989 3 0.48214310079754968 
+		4 0.017857145865222804
+		4 1 0.0062264458340249252 2 0.094248112324368929 3 0.88676313693343456 
+		4 0.012762304908171608
+		4 1 0.00045198603657622705 2 0.0045972846989887923 3 0.99301125087780406 
+		4 0.0019394783866308566
+		4 2 4.0998438658550526e-05 3 0.99990219080491871 4 5.080077056786642e-05 
+		5 6.009985854896513e-06
+		4 2 0.0053485096827608838 3 0.97322723723346904 4 0.01974250835216643 
+		5 0.0016817447316036487
+		4 2 0.017154982749992963 3 0.76455056142503519 4 0.20712720044639266 
+		5 0.011167255378579183
+		4 2 0.013807536332149286 3 0.28715349164740489 4 0.68066113229116187 
+		5 0.018377839729284012
+		4 2 0.0027820326482282569 3 0.03534208900683132 4 0.95424196930791128 
+		5 0.0076339090370291084
+		4 2 5.0764928976606534e-05 3 0.0004548049131854113 4 0.99919836932101724 
+		5 0.00029606083682086153
+		4 2 0.00013110390062542508 3 0.00090382886694875331 4 0.99724179870717011 
+		5 0.0017232685252557612
+		4 2 0.0018136131650997552 3 0.010190065277782285 4 0.92856776169563904 
+		5 0.059428559861478915
+		4 2 0.0039583793120040395 3 0.018867447677000611 4 0.59188168486150849 
+		5 0.38529248814948691
+		4 2 0.0020838872038872781 3 0.0086755231090929162 4 0.14479408608773264 
+		5 0.84444650359928719
+		4 2 0.00025065373119426728 3 0.00093163299514712589 4 0.010157145692862204 
+		5 0.98866056758079646
+		1 5 1;
+	setAttr -s 6 ".pm";
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 28.527753829956055 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".pm[1]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 55.031992591258302 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".pm[2]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 81.536231352560549 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".pm[3]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 108.0404701138628 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".pm[4]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 134.54470887516504 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".pm[5]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 161.04894763646729 -146.51368713378906 0.50800395011901855 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 2.244659423828125 -5.4382476806640625 -3.0372653007507324 1;
+	setAttr -s 6 ".ma";
+	setAttr -s 6 ".dpf[0:5]"  3 3 3 3 3 3;
+	setAttr -s 6 ".lw";
+	setAttr -s 6 ".lw";
+	setAttr ".mi" 4;
+	setAttr ".ucm" yes;
+	setAttr -s 6 ".ifcl";
+	setAttr -s 6 ".ifcl";
+createNode tweak -n "tweak4";
+	rename -uid "E0C38CC8-441C-6F7A-71CC-68A07C24FC93";
+createNode objectSet -n "skinCluster3Set";
+	rename -uid "852E89E5-4432-8866-2D5A-A8938C684E15";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster3GroupId";
+	rename -uid "41F7100B-47C4-F1F5-5F1B-7E903729DF1B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster3GroupParts";
+	rename -uid "0295AD4E-44A9-01D2-6043-A8883223B031";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode objectSet -n "tweakSet4";
+	rename -uid "0AF0DCF3-48DD-B5A5-5862-4CBE13EAFA15";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId9";
+	rename -uid "C18562C9-443A-72F8-AAD9-B6AC2137BF4F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts9";
+	rename -uid "3EA1B76C-447A-1F61-D52F-ABB441AAAA49";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode dagPose -n "bindPose3";
+	rename -uid "7ACB7043-4943-6E84-BFB9-E287C42A5AFC";
+	setAttr -s 7 ".wm";
+	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr -s 7 ".xm";
+	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 -28.527753829956055 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 -55.031992591258302 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[3]" -type "matrix" "xform" 1 1 1 0 0 0 0 -81.536231352560549 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[4]" -type "matrix" "xform" 1 1 1 0 0 0 0 -108.0404701138628 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[5]" -type "matrix" "xform" 1 1 1 0 0 0 0 -134.54470887516504 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[6]" -type "matrix" "xform" 1 1 1 0 0 0 0 -161.04894763646729 146.51368713378906
+		 -0.50800395011901855 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr -s 7 ".m";
+	setAttr -s 7 ".p";
+	setAttr -s 7 ".g[0:6]" yes no no no no no no;
+	setAttr ".bp" yes;
+createNode dagPose -n "bindPose4";
+	rename -uid "8770E692-4129-ADC1-4528-9881ED24C8EA";
+	setAttr -s 7 ".wm";
+	setAttr ".wm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr -s 7 ".xm";
+	setAttr ".xm[0]" -type "matrix" "xform" 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+		 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[1]" -type "matrix" "xform" 1 1 1 0 0 0 0 -30.772413253784183 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[2]" -type "matrix" "xform" 1 1 1 0 0 0 0 -57.276652015086427 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[3]" -type "matrix" "xform" 1 1 1 0 0 0 0 -83.780890776388674 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[4]" -type "matrix" "xform" 1 1 1 0 0 0 0 -110.28512953769092 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[5]" -type "matrix" "xform" 1 1 1 0 0 0 0 -136.78936829899317 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr ".xm[6]" -type "matrix" "xform" 1 1 1 0 0 0 0 -163.29360706029541 151.95193481445313
+		 2.5292613506317143 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 1 1 yes;
+	setAttr -s 7 ".m";
+	setAttr -s 7 ".p";
+	setAttr -s 7 ".g[0:6]" yes no no no no no no;
+	setAttr ".bp" yes;
+createNode skinCluster -n "skinCluster4";
+	rename -uid "A9AA998A-43F8-D90B-F73F-B3A1646CDCD0";
+	setAttr -s 30 ".wl";
+	setAttr ".wl[0:29].w"
+		1 0 1
+		4 0 0.99970939608491816 1 0.00025345624050826629 2 2.8855023663584341e-05 
+		3 8.2926509099593325e-06
+		4 0 0.98866050169489228 1 0.010157205364234666 2 0.0009316379256468964 
+		3 0.00025065501522617787
+		4 0 0.84444548650347628 1 0.14479505076734656 2 0.0086755660722823893 
+		3 0.0020838966568948029
+		4 0 0.3852924294477707 1 0.59188174347079259 2 0.018867447810096992 
+		3 0.003958379271339795
+		4 0 0.059428309226949166 1 0.92856803942802602 2 0.010190042756978152 
+		3 0.0018136085880465832
+		4 0 0.0017232357967596383 1 0.9972418473795237 2 0.0009038150322349058 
+		3 0.00013110179148178612
+		4 0 0.00029606067092557839 1 0.99919836981260945 2 0.00045480461909755041 
+		3 5.0764897367474291e-05
+		4 0 0.007633939414596092 1 0.95424168124828745 2 0.035342330513916963 
+		3 0.0027820488231994631
+		4 0 0.01837784169866475 1 0.68066089957419851 2 0.28715371584230853 
+		3 0.013807542884828135
+		4 0 0.011167241388343966 1 0.20712682184480583 2 0.7645509626074467 
+		3 0.017154974159403542
+		4 0 0.0016817405724809708 1 0.019742452676851228 2 0.97322730669289093 
+		3 0.00534850005777687
+		4 0 6.0098984982081669e-06 1 5.0800018490270745e-05 2 0.99990219220944943 
+		3 4.0997873562092421e-05
+		4 1 0.0019394843262637304 2 0.99301122441872469 3 0.0045973035120209834 
+		4 0.00045198774299052029
+		4 1 0.012762316975158956 2 0.88676291926600415 3 0.094248307777583001 
+		4 0.0062264559812539302
+		4 1 0.017857139849057669 2 0.48214261348817067 3 0.48214310079754891 
+		4 0.017857145865222832
+		4 1 0.006226445834024953 2 0.094248112324369346 3 0.886763136933434 
+		4 0.012762304908171665
+		4 1 0.00045198603657623215 2 0.0045972846989888435 3 0.99301125087780406 
+		4 0.0019394783866308783
+		4 2 4.0998438658548683e-05 3 0.99990219080491871 4 5.080077056786413e-05 
+		5 6.0099858548962428e-06
+		4 2 0.0053485096827608448 3 0.97322723723346927 4 0.019742508352166281 
+		5 0.0016817447316036362
+		4 2 0.017154982749992907 3 0.76455056142503597 4 0.20712720044639199 
+		5 0.011167255378579148
+		4 2 0.013807536332149274 3 0.28715349164740545 4 0.68066113229116132 
+		5 0.018377839729283998
+		4 2 0.0027820326482282569 3 0.035342089006831397 4 0.95424196930791128 
+		5 0.0076339090370291084
+		4 2 5.0764928976606534e-05 3 0.00045480491318541211 4 0.99919836932101724 
+		5 0.00029606083682086153
+		4 2 0.00013110390062542508 3 0.00090382886694875472 4 0.99724179870717011 
+		5 0.0017232685252557612
+		4 2 0.0018136131650997552 3 0.010190065277782297 4 0.92856776169563904 
+		5 0.059428559861478915
+		4 2 0.0039583793120040395 3 0.018867447677000632 4 0.59188168486150849 
+		5 0.38529248814948686
+		4 2 0.0020838872038872781 3 0.0086755231090929249 4 0.14479408608773264 
+		5 0.84444650359928719
+		4 2 0.00025065373119426728 3 0.00093163299514712676 4 0.010157145692862204 
+		5 0.98866056758079646
+		1 5 1;
+	setAttr -s 6 ".pm";
+	setAttr ".pm[0]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 30.772413253784183 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".pm[1]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 57.276652015086427 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".pm[2]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 83.780890776388674 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".pm[3]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 110.28512953769092 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".pm[4]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 136.78936829899317 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".pm[5]" -type "matrix" 1 -0 0 -0 -0 1 -0 0 0 -0 1 -0 163.29360706029541 -151.95193481445313 -2.5292613506317143 1;
+	setAttr ".gm" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+	setAttr -s 6 ".ma";
+	setAttr -s 6 ".dpf[0:5]"  3 3 3 3 3 3;
+	setAttr -s 6 ".lw";
+	setAttr -s 6 ".lw";
+	setAttr ".mi" 4;
+	setAttr ".ucm" yes;
+	setAttr -s 6 ".ifcl";
+	setAttr -s 6 ".ifcl";
+createNode objectSet -n "skinCluster4Set";
+	rename -uid "32373113-40D5-76F8-39D8-E9BB54AF4EEB";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "skinCluster4GroupId";
+	rename -uid "F6B37ED6-4A6D-97EF-0AEC-E6AC82D71878";
+	setAttr ".ihi" 0;
+createNode groupParts -n "skinCluster4GroupParts";
+	rename -uid "5601E262-4CBD-C005-A28A-DFB9357D10B6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode tweak -n "tweak5";
+	rename -uid "309101B1-443B-50A1-EEFF-22B39F05F96A";
+createNode objectSet -n "tweakSet5";
+	rename -uid "2E82F213-49A1-9A8D-70BB-95BE4D0A8902";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId11";
+	rename -uid "255BACCE-4B29-17F6-85E1-7EAADF690444";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts11";
+	rename -uid "CF2E4FDA-4D16-D998-EBE9-E2BA8F47FC37";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "cv[*]";
+createNode makeNurbCircle -n "makeNurbCircle77";
+	rename -uid "CCA52B85-46B5-970B-C03F-F6B04CB4EB22";
+createNode makeNurbCircle -n "makeNurbCircle78";
+	rename -uid "5FCA555B-44E4-1F1B-68DE-3CA75391C929";
+createNode makeNurbCircle -n "makeNurbCircle79";
+	rename -uid "C4C0D86A-494F-E41D-1DE5-E3A9DAE2507C";
+createNode makeNurbCircle -n "makeNurbCircle80";
+	rename -uid "C7864163-4BD8-2EB9-E1B9-13809093B837";
+createNode makeNurbCircle -n "makeNurbCircle81";
+	rename -uid "EAB7D4F1-4F22-330F-5667-27B72030A208";
+createNode makeNurbCircle -n "makeNurbCircle82";
+	rename -uid "91678B29-4E7A-DDB9-143C-5BAF647739D1";
+createNode transformGeometry -n "transformGeometry84";
+	rename -uid "10CE3757-4758-2538-0B24-968673F8F8A5";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry85";
+	rename -uid "12072D6B-4227-0E1C-2511-D3A56277452F";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry86";
+	rename -uid "4843AD77-4294-2D51-5EDC-5D8BA9CAF4D8";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry87";
+	rename -uid "55FB0035-4202-FE3A-5B0E-70BDE7DE4B71";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry88";
+	rename -uid "194F0873-460C-DF1E-64CF-15A960AB583A";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry89";
+	rename -uid "EC5798FE-46D1-6A1D-6E07-02926F8888A8";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode makeNurbCircle -n "makeNurbCircle83";
+	rename -uid "8EAE42B8-4D79-3674-1463-A990726B5BFA";
+createNode makeNurbCircle -n "makeNurbCircle84";
+	rename -uid "E71FA986-4FAA-49CC-51E7-9F941E03A84C";
+createNode makeNurbCircle -n "makeNurbCircle85";
+	rename -uid "2A2510B4-4785-C987-B830-68BEE0529D84";
+createNode makeNurbCircle -n "makeNurbCircle86";
+	rename -uid "917786C9-449C-E650-581A-1AB85B199663";
+createNode makeNurbCircle -n "makeNurbCircle87";
+	rename -uid "1221F951-4737-EC6D-6122-97B456B93E60";
+createNode makeNurbCircle -n "makeNurbCircle88";
+	rename -uid "37CD8114-452C-F7D8-36A7-0C8A58459A19";
+createNode transformGeometry -n "transformGeometry90";
+	rename -uid "82FC8FBC-410D-0190-98A8-6CB8EE8D9595";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry91";
+	rename -uid "0046091F-466F-D06F-3298-92967101A967";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry92";
+	rename -uid "1A90D8A4-4616-52AA-6D49-999225D9B498";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry93";
+	rename -uid "93B8E60F-428F-C8D7-AA42-B3AA5713AE65";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry94";
+	rename -uid "DDC521BB-4585-AF73-012C-8482FBAB7CA9";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry95";
+	rename -uid "4842A449-4653-73EF-9588-A0B535F93408";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode makeNurbCircle -n "makeNurbCircle89";
+	rename -uid "A6642A8B-40AD-AB03-94C7-37B2BDD0677B";
+createNode makeNurbCircle -n "makeNurbCircle90";
+	rename -uid "DA4EEC0F-4E7E-F725-173B-4E80C09F6EB0";
+createNode makeNurbCircle -n "makeNurbCircle91";
+	rename -uid "7312108A-4609-CDBA-5E99-4A9DF33285BB";
+createNode makeNurbCircle -n "makeNurbCircle92";
+	rename -uid "F469C811-4323-2336-0DF9-4392EE553A8F";
+createNode makeNurbCircle -n "makeNurbCircle93";
+	rename -uid "B5CE5EE0-4E75-D54A-EB7A-059E7BA9E1AE";
+createNode makeNurbCircle -n "makeNurbCircle94";
+	rename -uid "FBE0B2C7-4933-F3F2-CEBD-A08C83348E99";
+createNode transformGeometry -n "transformGeometry96";
+	rename -uid "4602196E-4C1B-3072-7414-289623A23B29";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry97";
+	rename -uid "3699ECE4-4929-F5B3-48A8-28A5C4488D9D";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry98";
+	rename -uid "BDC64862-4630-996E-3FF8-F4BE123B1F85";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry99";
+	rename -uid "2A3934F5-46FB-5052-ED7E-2EBB47B85467";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry100";
+	rename -uid "0A3FC94F-4A8D-ECFE-A00E-3F9EFEF2F38C";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry101";
+	rename -uid "81C736C4-49AD-9C3B-6A62-C499E572AC69";
+	setAttr ".txf" -type "matrix" 6.6613381477509392e-16 0 -3 0 0 3 0 0 3 0 6.6613381477509392e-16 0
+		 0 0 0 1;
 select -ne :time1;
 	setAttr ".o" 66;
 	setAttr ".unw" 66;
@@ -56425,26 +57942,1007 @@ connectAttr "Back_Tentacle_Spline_IK_Root_01_Jnt.msg" "Back_Tentacle_ikHandle.hs
 connectAttr "effector6.hp" "Back_Tentacle_ikHandle.hee";
 connectAttr "ikSplineSolver.msg" "Back_Tentacle_ikHandle.hsv";
 connectAttr "Back_Tentacle_Spline_IK_CurveShape.ws" "Back_Tentacle_ikHandle.ic";
-connectAttr "joint1.s" "|joint1|joint2.is";
-connectAttr "|joint1|joint2.s" "|joint1|joint2|joint3.is";
-connectAttr "|joint1|joint2|joint3.s" "|joint1|joint2|joint3|joint4.is";
-connectAttr "|joint1|joint2|joint3|joint4.s" "|joint1|joint2|joint3|joint4|joint5.is"
+connectAttr "skinCluster4.og[0]" "Top_Tentacle_Spline_IK_CurveShape.cr";
+connectAttr "tweak5.pl[0].cp[0]" "Top_Tentacle_Spline_IK_CurveShape.twl";
+connectAttr "skinCluster4GroupId.id" "Top_Tentacle_Spline_IK_CurveShape.iog.og[6].gid"
 		;
-connectAttr "|joint1|joint2|joint3|joint4|joint5.s" "|joint1|joint2|joint3|joint4|joint5|joint6.is"
+connectAttr "skinCluster4Set.mwc" "Top_Tentacle_Spline_IK_CurveShape.iog.og[6].gco"
 		;
-connectAttr "joint7.s" "|joint7|joint2.is";
-connectAttr "|joint7|joint2.s" "|joint7|joint2|joint3.is";
-connectAttr "|joint7|joint2|joint3.s" "|joint7|joint2|joint3|joint4.is";
-connectAttr "|joint7|joint2|joint3|joint4.s" "|joint7|joint2|joint3|joint4|joint5.is"
+connectAttr "groupId11.id" "Top_Tentacle_Spline_IK_CurveShape.iog.og[7].gid";
+connectAttr "tweakSet5.mwc" "Top_Tentacle_Spline_IK_CurveShape.iog.og[7].gco";
+connectAttr "skinCluster2.og[0]" "Front_Tentacle_Spline_IK_CurveShape.cr";
+connectAttr "tweak3.pl[0].cp[0]" "Front_Tentacle_Spline_IK_CurveShape.twl";
+connectAttr "skinCluster2GroupId.id" "Front_Tentacle_Spline_IK_CurveShape.iog.og[0].gid"
 		;
-connectAttr "|joint7|joint2|joint3|joint4|joint5.s" "|joint7|joint2|joint3|joint4|joint5|joint6.is"
+connectAttr "skinCluster2Set.mwc" "Front_Tentacle_Spline_IK_CurveShape.iog.og[0].gco"
 		;
-connectAttr "joint8.s" "|joint8|joint2.is";
-connectAttr "|joint8|joint2.s" "|joint8|joint2|joint3.is";
-connectAttr "|joint8|joint2|joint3.s" "|joint8|joint2|joint3|joint4.is";
-connectAttr "|joint8|joint2|joint3|joint4.s" "|joint8|joint2|joint3|joint4|joint5.is"
+connectAttr "groupId7.id" "Front_Tentacle_Spline_IK_CurveShape.iog.og[1].gid";
+connectAttr "tweakSet3.mwc" "Front_Tentacle_Spline_IK_CurveShape.iog.og[1].gco";
+connectAttr "skinCluster3.og[0]" "Back_Tentacle_Spline_IK_CurveShape.cr";
+connectAttr "tweak4.pl[0].cp[0]" "Back_Tentacle_Spline_IK_CurveShape.twl";
+connectAttr "skinCluster3GroupId.id" "Back_Tentacle_Spline_IK_CurveShape.iog.og[0].gid"
 		;
-connectAttr "|joint8|joint2|joint3|joint4|joint5.s" "|joint8|joint2|joint3|joint4|joint5|joint6.is"
+connectAttr "skinCluster3Set.mwc" "Back_Tentacle_Spline_IK_CurveShape.iog.og[0].gco"
+		;
+connectAttr "groupId9.id" "Back_Tentacle_Spline_IK_CurveShape.iog.og[1].gid";
+connectAttr "tweakSet4.mwc" "Back_Tentacle_Spline_IK_CurveShape.iog.og[1].gco";
+connectAttr "transformGeometry84.og" "Top_Tentacle_Spline_IK_01_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctx" "Top_Tentacle_Spline_IK_02_Crtl_Grp.tx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cty" "Top_Tentacle_Spline_IK_02_Crtl_Grp.ty"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctz" "Top_Tentacle_Spline_IK_02_Crtl_Grp.tz"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crx" "Top_Tentacle_Spline_IK_02_Crtl_Grp.rx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cry" "Top_Tentacle_Spline_IK_02_Crtl_Grp.ry"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crz" "Top_Tentacle_Spline_IK_02_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry85.og" "Top_Tentacle_Spline_IK_02_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.t" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.rp" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.rpt" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.r" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.ro" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.s" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.pm" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.Translate_Constraint" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.t" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.rp" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.rpt" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.r" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.ro" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.s" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_01_Crtl.pm" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.Rotate_Constraint" "Top_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctx" "Top_Tentacle_Spline_IK_03_Crtl_Grp.tx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cty" "Top_Tentacle_Spline_IK_03_Crtl_Grp.ty"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctz" "Top_Tentacle_Spline_IK_03_Crtl_Grp.tz"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crx" "Top_Tentacle_Spline_IK_03_Crtl_Grp.rx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cry" "Top_Tentacle_Spline_IK_03_Crtl_Grp.ry"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crz" "Top_Tentacle_Spline_IK_03_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry86.og" "Top_Tentacle_Spline_IK_03_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.t" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.rp" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.rpt" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.r" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.ro" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.s" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.pm" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.Translate_Constraint" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.t" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.rp" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.rpt" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.r" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.ro" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.s" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_02_Crtl.pm" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.Rotate_Constraint" "Top_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctx" "Top_Tentacle_Spline_IK_04_Crtl_Grp.tx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cty" "Top_Tentacle_Spline_IK_04_Crtl_Grp.ty"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctz" "Top_Tentacle_Spline_IK_04_Crtl_Grp.tz"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crx" "Top_Tentacle_Spline_IK_04_Crtl_Grp.rx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cry" "Top_Tentacle_Spline_IK_04_Crtl_Grp.ry"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crz" "Top_Tentacle_Spline_IK_04_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry87.og" "Top_Tentacle_Spline_IK_04_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.t" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.rp" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.rpt" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.r" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.ro" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.s" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.pm" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.Translate_Constraint" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.t" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.rp" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.rpt" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.r" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.ro" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.s" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_03_Crtl.pm" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.Rotate_Constraint" "Top_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctx" "Top_Tentacle_Spline_IK_05_Crtl_Grp.tx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cty" "Top_Tentacle_Spline_IK_05_Crtl_Grp.ty"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctz" "Top_Tentacle_Spline_IK_05_Crtl_Grp.tz"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crx" "Top_Tentacle_Spline_IK_05_Crtl_Grp.rx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cry" "Top_Tentacle_Spline_IK_05_Crtl_Grp.ry"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crz" "Top_Tentacle_Spline_IK_05_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry88.og" "Top_Tentacle_Spline_IK_05_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.t" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.rp" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.rpt" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.r" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.ro" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.s" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.pm" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.Translate_Constraint" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.t" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.rp" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.rpt" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.r" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.ro" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.s" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_04_Crtl.pm" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.Rotate_Constraint" "Top_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctx" "Top_Tentacle_Spline_IK_06_Crtl_Grp.tx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cty" "Top_Tentacle_Spline_IK_06_Crtl_Grp.ty"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctz" "Top_Tentacle_Spline_IK_06_Crtl_Grp.tz"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crx" "Top_Tentacle_Spline_IK_06_Crtl_Grp.rx"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cry" "Top_Tentacle_Spline_IK_06_Crtl_Grp.ry"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crz" "Top_Tentacle_Spline_IK_06_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry89.og" "Top_Tentacle_Spline_IK_06_CrtlShape.cr";
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.t" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.rp" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.rpt" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.r" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.ro" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.s" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.pm" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl.Translate_Constraint" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.t" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.rp" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.rpt" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.r" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.ro" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.s" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Top_Tentacle_Spline_IK_05_Crtl.pm" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Top_Tentacle_Spline_IK_06_Crtl.Rotate_Constraint" "Top_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "transformGeometry90.og" "Front_Tentacle_Spline_IK_01_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctx" "Front_Tentacle_Spline_IK_02_Crtl_Grp.tx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cty" "Front_Tentacle_Spline_IK_02_Crtl_Grp.ty"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctz" "Front_Tentacle_Spline_IK_02_Crtl_Grp.tz"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crx" "Front_Tentacle_Spline_IK_02_Crtl_Grp.rx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cry" "Front_Tentacle_Spline_IK_02_Crtl_Grp.ry"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crz" "Front_Tentacle_Spline_IK_02_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry91.og" "Front_Tentacle_Spline_IK_02_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.t" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.rp" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.rpt" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.r" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.ro" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.s" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.pm" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.Translate_Constraint" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.t" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.rp" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.rpt" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.r" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.ro" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.s" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_01_Crtl.pm" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.Rotate_Constraint" "Front_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctx" "Front_Tentacle_Spline_IK_03_Crtl_Grp.tx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cty" "Front_Tentacle_Spline_IK_03_Crtl_Grp.ty"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctz" "Front_Tentacle_Spline_IK_03_Crtl_Grp.tz"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crx" "Front_Tentacle_Spline_IK_03_Crtl_Grp.rx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cry" "Front_Tentacle_Spline_IK_03_Crtl_Grp.ry"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crz" "Front_Tentacle_Spline_IK_03_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry92.og" "Front_Tentacle_Spline_IK_03_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.t" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.rp" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.rpt" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.r" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.ro" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.s" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.pm" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.Translate_Constraint" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.t" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.rp" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.rpt" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.r" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.ro" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.s" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_02_Crtl.pm" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.Rotate_Constraint" "Front_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctx" "Front_Tentacle_Spline_IK_04_Crtl_Grp.tx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cty" "Front_Tentacle_Spline_IK_04_Crtl_Grp.ty"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctz" "Front_Tentacle_Spline_IK_04_Crtl_Grp.tz"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crx" "Front_Tentacle_Spline_IK_04_Crtl_Grp.rx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cry" "Front_Tentacle_Spline_IK_04_Crtl_Grp.ry"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crz" "Front_Tentacle_Spline_IK_04_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry93.og" "Front_Tentacle_Spline_IK_04_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.t" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.rp" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.rpt" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.r" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.ro" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.s" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.pm" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.Translate_Constraint" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.t" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.rp" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.rpt" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.r" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.ro" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.s" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_03_Crtl.pm" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.Rotate_Constraint" "Front_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctx" "Front_Tentacle_Spline_IK_05_Crtl_Grp.tx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cty" "Front_Tentacle_Spline_IK_05_Crtl_Grp.ty"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctz" "Front_Tentacle_Spline_IK_05_Crtl_Grp.tz"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crx" "Front_Tentacle_Spline_IK_05_Crtl_Grp.rx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cry" "Front_Tentacle_Spline_IK_05_Crtl_Grp.ry"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crz" "Front_Tentacle_Spline_IK_05_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry94.og" "Front_Tentacle_Spline_IK_05_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.t" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.rp" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.rpt" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.r" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.ro" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.s" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.pm" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.Translate_Constraint" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.t" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.rp" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.rpt" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.r" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.ro" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.s" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_04_Crtl.pm" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.Rotate_Constraint" "Front_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctx" "Front_Tentacle_Spline_IK_06_Crtl_Grp.tx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cty" "Front_Tentacle_Spline_IK_06_Crtl_Grp.ty"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctz" "Front_Tentacle_Spline_IK_06_Crtl_Grp.tz"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crx" "Front_Tentacle_Spline_IK_06_Crtl_Grp.rx"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cry" "Front_Tentacle_Spline_IK_06_Crtl_Grp.ry"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crz" "Front_Tentacle_Spline_IK_06_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry95.og" "Front_Tentacle_Spline_IK_06_CrtlShape.cr";
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.t" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.rp" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.rpt" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.r" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.ro" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.s" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.pm" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl.Translate_Constraint" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.t" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.rp" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.rpt" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.r" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.ro" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.s" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Front_Tentacle_Spline_IK_05_Crtl.pm" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Front_Tentacle_Spline_IK_06_Crtl.Rotate_Constraint" "Front_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "transformGeometry96.og" "Back_Tentacle_Spline_IK_01_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctx" "Back_Tentacle_Spline_IK_02_Crtl_Grp.tx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cty" "Back_Tentacle_Spline_IK_02_Crtl_Grp.ty"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.ctz" "Back_Tentacle_Spline_IK_02_Crtl_Grp.tz"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crx" "Back_Tentacle_Spline_IK_02_Crtl_Grp.rx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cry" "Back_Tentacle_Spline_IK_02_Crtl_Grp.ry"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crz" "Back_Tentacle_Spline_IK_02_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry97.og" "Back_Tentacle_Spline_IK_02_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.t" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.rp" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.rpt" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.r" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.ro" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.s" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.pm" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.Translate_Constraint" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.t" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.rp" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.rpt" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.r" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.ro" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.s" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_01_Crtl.pm" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.Rotate_Constraint" "Back_Tentacle_Spline_IK_02_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctx" "Back_Tentacle_Spline_IK_03_Crtl_Grp.tx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cty" "Back_Tentacle_Spline_IK_03_Crtl_Grp.ty"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.ctz" "Back_Tentacle_Spline_IK_03_Crtl_Grp.tz"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crx" "Back_Tentacle_Spline_IK_03_Crtl_Grp.rx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cry" "Back_Tentacle_Spline_IK_03_Crtl_Grp.ry"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crz" "Back_Tentacle_Spline_IK_03_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry98.og" "Back_Tentacle_Spline_IK_03_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.t" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.rp" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.rpt" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.r" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.ro" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.s" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.pm" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.Translate_Constraint" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.t" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.rp" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.rpt" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.r" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.ro" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.s" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_02_Crtl.pm" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.Rotate_Constraint" "Back_Tentacle_Spline_IK_03_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctx" "Back_Tentacle_Spline_IK_04_Crtl_Grp.tx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cty" "Back_Tentacle_Spline_IK_04_Crtl_Grp.ty"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.ctz" "Back_Tentacle_Spline_IK_04_Crtl_Grp.tz"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crx" "Back_Tentacle_Spline_IK_04_Crtl_Grp.rx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cry" "Back_Tentacle_Spline_IK_04_Crtl_Grp.ry"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crz" "Back_Tentacle_Spline_IK_04_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry99.og" "Back_Tentacle_Spline_IK_04_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.t" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.rp" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.rpt" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.r" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.ro" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.s" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.pm" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.Translate_Constraint" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.t" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.rp" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.rpt" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.r" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.ro" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.s" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_03_Crtl.pm" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.Rotate_Constraint" "Back_Tentacle_Spline_IK_04_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctx" "Back_Tentacle_Spline_IK_05_Crtl_Grp.tx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cty" "Back_Tentacle_Spline_IK_05_Crtl_Grp.ty"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.ctz" "Back_Tentacle_Spline_IK_05_Crtl_Grp.tz"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crx" "Back_Tentacle_Spline_IK_05_Crtl_Grp.rx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cry" "Back_Tentacle_Spline_IK_05_Crtl_Grp.ry"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crz" "Back_Tentacle_Spline_IK_05_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry100.og" "Back_Tentacle_Spline_IK_05_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.t" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.rp" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.rpt" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.r" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.ro" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.s" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.pm" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.Translate_Constraint" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.t" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.rp" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.rpt" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.r" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.ro" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.s" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_04_Crtl.pm" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.Rotate_Constraint" "Back_Tentacle_Spline_IK_05_Crtl_Grp_Rotate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctx" "Back_Tentacle_Spline_IK_06_Crtl_Grp.tx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cty" "Back_Tentacle_Spline_IK_06_Crtl_Grp.ty"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.ctz" "Back_Tentacle_Spline_IK_06_Crtl_Grp.tz"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crx" "Back_Tentacle_Spline_IK_06_Crtl_Grp.rx"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cry" "Back_Tentacle_Spline_IK_06_Crtl_Grp.ry"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crz" "Back_Tentacle_Spline_IK_06_Crtl_Grp.rz"
+		;
+connectAttr "transformGeometry101.og" "Back_Tentacle_Spline_IK_06_CrtlShape.cr";
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.t" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.rp" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.rpt" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.r" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.ro" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.s" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.pm" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl.Translate_Constraint" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Translate_Constraint.w0"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.ro" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.pim" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.cpim"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.rp" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp.rpt" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.crt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.t" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.rp" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trp"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.rpt" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].trt"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.r" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tr"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.ro" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tro"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.s" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].ts"
+		;
+connectAttr "Back_Tentacle_Spline_IK_05_Crtl.pm" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tpm"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.tg[0].tw"
+		;
+connectAttr "Back_Tentacle_Spline_IK_06_Crtl.Rotate_Constraint" "Back_Tentacle_Spline_IK_06_Crtl_Grp_Rotate_Constraint.w0"
 		;
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
@@ -56627,6 +59125,186 @@ connectAttr "Transorm_Crtl.Arm_L_IKFK" "L_Arm_FK_02_Crtl_visibility.i";
 connectAttr "makeNurbCircle12.oc" "transformGeometry7.ig";
 connectAttr "transformGeometry56.og" "transformGeometry82.ig";
 connectAttr "transformGeometry8.og" "transformGeometry83.ig";
+connectAttr "skinCluster2GroupParts.og" "skinCluster2.ip[0].ig";
+connectAttr "skinCluster2GroupId.id" "skinCluster2.ip[0].gi";
+connectAttr "bindPose2.msg" "skinCluster2.bp";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_01_Jnt.wm" "skinCluster2.ma[0]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_02_Jnt.wm" "skinCluster2.ma[1]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_03_Jnt.wm" "skinCluster2.ma[2]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_04_Jnt.wm" "skinCluster2.ma[3]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_05_Jnt.wm" "skinCluster2.ma[4]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_06_Jnt.wm" "skinCluster2.ma[5]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_01_Jnt.liw" "skinCluster2.lw[0]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_02_Jnt.liw" "skinCluster2.lw[1]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_03_Jnt.liw" "skinCluster2.lw[2]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_04_Jnt.liw" "skinCluster2.lw[3]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_05_Jnt.liw" "skinCluster2.lw[4]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_06_Jnt.liw" "skinCluster2.lw[5]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_01_Jnt.obcc" "skinCluster2.ifcl[0]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_02_Jnt.obcc" "skinCluster2.ifcl[1]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_03_Jnt.obcc" "skinCluster2.ifcl[2]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_04_Jnt.obcc" "skinCluster2.ifcl[3]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_05_Jnt.obcc" "skinCluster2.ifcl[4]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_06_Jnt.obcc" "skinCluster2.ifcl[5]";
+connectAttr "groupParts7.og" "tweak3.ip[0].ig";
+connectAttr "groupId7.id" "tweak3.ip[0].gi";
+connectAttr "skinCluster2GroupId.msg" "skinCluster2Set.gn" -na;
+connectAttr "Front_Tentacle_Spline_IK_CurveShape.iog.og[0]" "skinCluster2Set.dsm"
+		 -na;
+connectAttr "skinCluster2.msg" "skinCluster2Set.ub[0]";
+connectAttr "tweak3.og[0]" "skinCluster2GroupParts.ig";
+connectAttr "skinCluster2GroupId.id" "skinCluster2GroupParts.gi";
+connectAttr "groupId7.msg" "tweakSet3.gn" -na;
+connectAttr "Front_Tentacle_Spline_IK_CurveShape.iog.og[1]" "tweakSet3.dsm" -na;
+connectAttr "tweak3.msg" "tweakSet3.ub[0]";
+connectAttr "Front_Tentacle_Spline_IK_CurveShapeOrig.ws" "groupParts7.ig";
+connectAttr "groupId7.id" "groupParts7.gi";
+connectAttr "Front_Tentacle_Crtl_Jnts_Grp.msg" "bindPose2.m[0]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_01_Jnt.msg" "bindPose2.m[1]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_02_Jnt.msg" "bindPose2.m[2]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_03_Jnt.msg" "bindPose2.m[3]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_04_Jnt.msg" "bindPose2.m[4]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_05_Jnt.msg" "bindPose2.m[5]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_06_Jnt.msg" "bindPose2.m[6]";
+connectAttr "bindPose2.w" "bindPose2.p[0]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[1]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[2]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[3]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[4]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[5]";
+connectAttr "bindPose2.m[0]" "bindPose2.p[6]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_01_Jnt.bps" "bindPose2.wm[1]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_02_Jnt.bps" "bindPose2.wm[2]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_03_Jnt.bps" "bindPose2.wm[3]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_04_Jnt.bps" "bindPose2.wm[4]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_05_Jnt.bps" "bindPose2.wm[5]";
+connectAttr "Front_Tentacle_Spline_IK_Crtl_06_Jnt.bps" "bindPose2.wm[6]";
+connectAttr "skinCluster3GroupParts.og" "skinCluster3.ip[0].ig";
+connectAttr "skinCluster3GroupId.id" "skinCluster3.ip[0].gi";
+connectAttr "bindPose3.msg" "skinCluster3.bp";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_01_Jnt.wm" "skinCluster3.ma[0]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_02_Jnt.wm" "skinCluster3.ma[1]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_03_Jnt.wm" "skinCluster3.ma[2]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_04_Jnt.wm" "skinCluster3.ma[3]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_05_Jnt.wm" "skinCluster3.ma[4]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_06_Jnt.wm" "skinCluster3.ma[5]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_01_Jnt.liw" "skinCluster3.lw[0]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_02_Jnt.liw" "skinCluster3.lw[1]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_03_Jnt.liw" "skinCluster3.lw[2]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_04_Jnt.liw" "skinCluster3.lw[3]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_05_Jnt.liw" "skinCluster3.lw[4]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_06_Jnt.liw" "skinCluster3.lw[5]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_01_Jnt.obcc" "skinCluster3.ifcl[0]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_02_Jnt.obcc" "skinCluster3.ifcl[1]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_03_Jnt.obcc" "skinCluster3.ifcl[2]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_04_Jnt.obcc" "skinCluster3.ifcl[3]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_05_Jnt.obcc" "skinCluster3.ifcl[4]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_06_Jnt.obcc" "skinCluster3.ifcl[5]";
+connectAttr "groupParts9.og" "tweak4.ip[0].ig";
+connectAttr "groupId9.id" "tweak4.ip[0].gi";
+connectAttr "skinCluster3GroupId.msg" "skinCluster3Set.gn" -na;
+connectAttr "Back_Tentacle_Spline_IK_CurveShape.iog.og[0]" "skinCluster3Set.dsm"
+		 -na;
+connectAttr "skinCluster3.msg" "skinCluster3Set.ub[0]";
+connectAttr "tweak4.og[0]" "skinCluster3GroupParts.ig";
+connectAttr "skinCluster3GroupId.id" "skinCluster3GroupParts.gi";
+connectAttr "groupId9.msg" "tweakSet4.gn" -na;
+connectAttr "Back_Tentacle_Spline_IK_CurveShape.iog.og[1]" "tweakSet4.dsm" -na;
+connectAttr "tweak4.msg" "tweakSet4.ub[0]";
+connectAttr "Back_Tentacle_Spline_IK_CurveShapeOrig.ws" "groupParts9.ig";
+connectAttr "groupId9.id" "groupParts9.gi";
+connectAttr "Back_Tentacle_Crtl_Jnts_Grp.msg" "bindPose3.m[0]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_01_Jnt.msg" "bindPose3.m[1]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_02_Jnt.msg" "bindPose3.m[2]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_03_Jnt.msg" "bindPose3.m[3]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_04_Jnt.msg" "bindPose3.m[4]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_05_Jnt.msg" "bindPose3.m[5]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_06_Jnt.msg" "bindPose3.m[6]";
+connectAttr "bindPose3.w" "bindPose3.p[0]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[1]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[2]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[3]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[4]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[5]";
+connectAttr "bindPose3.m[0]" "bindPose3.p[6]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_01_Jnt.bps" "bindPose3.wm[1]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_02_Jnt.bps" "bindPose3.wm[2]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_03_Jnt.bps" "bindPose3.wm[3]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_04_Jnt.bps" "bindPose3.wm[4]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_05_Jnt.bps" "bindPose3.wm[5]";
+connectAttr "Back_Tentacle_Spline_IK_Crtl_06_Jnt.bps" "bindPose3.wm[6]";
+connectAttr "Top_Tentacle_Crtl_Jnts_Grp.msg" "bindPose4.m[0]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_01_Jnt.msg" "bindPose4.m[1]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_02_Jnt.msg" "bindPose4.m[2]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_03_Jnt.msg" "bindPose4.m[3]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_04_Jnt.msg" "bindPose4.m[4]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_05_Jnt.msg" "bindPose4.m[5]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_06_Jnt.msg" "bindPose4.m[6]";
+connectAttr "bindPose4.w" "bindPose4.p[0]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[1]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[2]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[3]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[4]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[5]";
+connectAttr "bindPose4.m[0]" "bindPose4.p[6]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_01_Jnt.bps" "bindPose4.wm[1]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_02_Jnt.bps" "bindPose4.wm[2]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_03_Jnt.bps" "bindPose4.wm[3]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_04_Jnt.bps" "bindPose4.wm[4]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_05_Jnt.bps" "bindPose4.wm[5]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_06_Jnt.bps" "bindPose4.wm[6]";
+connectAttr "skinCluster4GroupParts.og" "skinCluster4.ip[0].ig";
+connectAttr "skinCluster4GroupId.id" "skinCluster4.ip[0].gi";
+connectAttr "bindPose4.msg" "skinCluster4.bp";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_01_Jnt.wm" "skinCluster4.ma[0]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_02_Jnt.wm" "skinCluster4.ma[1]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_03_Jnt.wm" "skinCluster4.ma[2]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_04_Jnt.wm" "skinCluster4.ma[3]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_05_Jnt.wm" "skinCluster4.ma[4]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_06_Jnt.wm" "skinCluster4.ma[5]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_01_Jnt.liw" "skinCluster4.lw[0]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_02_Jnt.liw" "skinCluster4.lw[1]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_03_Jnt.liw" "skinCluster4.lw[2]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_04_Jnt.liw" "skinCluster4.lw[3]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_05_Jnt.liw" "skinCluster4.lw[4]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_06_Jnt.liw" "skinCluster4.lw[5]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_01_Jnt.obcc" "skinCluster4.ifcl[0]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_02_Jnt.obcc" "skinCluster4.ifcl[1]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_03_Jnt.obcc" "skinCluster4.ifcl[2]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_04_Jnt.obcc" "skinCluster4.ifcl[3]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_05_Jnt.obcc" "skinCluster4.ifcl[4]";
+connectAttr "Top_Tentacle_Spline_IK_Crtl_06_Jnt.obcc" "skinCluster4.ifcl[5]";
+connectAttr "skinCluster4GroupId.msg" "skinCluster4Set.gn" -na;
+connectAttr "Top_Tentacle_Spline_IK_CurveShape.iog.og[6]" "skinCluster4Set.dsm" 
+		-na;
+connectAttr "skinCluster4.msg" "skinCluster4Set.ub[0]";
+connectAttr "tweak5.og[0]" "skinCluster4GroupParts.ig";
+connectAttr "skinCluster4GroupId.id" "skinCluster4GroupParts.gi";
+connectAttr "groupParts11.og" "tweak5.ip[0].ig";
+connectAttr "groupId11.id" "tweak5.ip[0].gi";
+connectAttr "groupId11.msg" "tweakSet5.gn" -na;
+connectAttr "Top_Tentacle_Spline_IK_CurveShape.iog.og[7]" "tweakSet5.dsm" -na;
+connectAttr "tweak5.msg" "tweakSet5.ub[0]";
+connectAttr "Top_Tentacle_Spline_IK_CurveShapeOrig.ws" "groupParts11.ig";
+connectAttr "groupId11.id" "groupParts11.gi";
+connectAttr "makeNurbCircle77.oc" "transformGeometry84.ig";
+connectAttr "makeNurbCircle78.oc" "transformGeometry85.ig";
+connectAttr "makeNurbCircle79.oc" "transformGeometry86.ig";
+connectAttr "makeNurbCircle80.oc" "transformGeometry87.ig";
+connectAttr "makeNurbCircle81.oc" "transformGeometry88.ig";
+connectAttr "makeNurbCircle82.oc" "transformGeometry89.ig";
+connectAttr "makeNurbCircle83.oc" "transformGeometry90.ig";
+connectAttr "makeNurbCircle84.oc" "transformGeometry91.ig";
+connectAttr "makeNurbCircle85.oc" "transformGeometry92.ig";
+connectAttr "makeNurbCircle86.oc" "transformGeometry93.ig";
+connectAttr "makeNurbCircle87.oc" "transformGeometry94.ig";
+connectAttr "makeNurbCircle88.oc" "transformGeometry95.ig";
+connectAttr "makeNurbCircle89.oc" "transformGeometry96.ig";
+connectAttr "makeNurbCircle90.oc" "transformGeometry97.ig";
+connectAttr "makeNurbCircle91.oc" "transformGeometry98.ig";
+connectAttr "makeNurbCircle92.oc" "transformGeometry99.ig";
+connectAttr "makeNurbCircle93.oc" "transformGeometry100.ig";
+connectAttr "makeNurbCircle94.oc" "transformGeometry101.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Whisper_Model_GeoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
