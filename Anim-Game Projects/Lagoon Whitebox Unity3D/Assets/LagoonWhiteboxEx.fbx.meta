@@ -1,9 +1,7 @@
 fileFormatVersion: 2
 guid: a02af2175e8249740a3639244aaaf9e0
-timeCreated: 1539114523
-licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 23
   fileIDToRecycleName:
     100000: Boundary_fence
     100002: Building_1
@@ -163,6 +161,100 @@ ModelImporter:
     100310: Sky_Scraper
     100312: Y_measure2
     100314: Y_measure3
+    100316: Air_Race:AirRace
+    100318: Building_55
+    100320: Building_56
+    100322: Lagoon_BabyBoats:Baby_Boats
+    100324: Lagoon_BulgyTheWhale:group1
+    100326: Lagoon_BulgyTheWhale:pCube1
+    100328: Lagoon_BulgyTheWhale:pCube2
+    100330: Lagoon_BulgyTheWhale:pCube3
+    100332: Lagoon_BulgyTheWhale:pCube4
+    100334: Lagoon_BulgyTheWhale:pCube5
+    100336: Lagoon_BulgyTheWhale:pCube6
+    100338: Lagoon_BulgyTheWhale:pCube7
+    100340: Lagoon_BulgyTheWhale:pCube8
+    100342: Lagoon_BulgyTheWhale:pCylinder1
+    100344: Lagoon_CannibalOneMesh:Cannibal_Geo
+    100346: Lagoon_Centennial_Screamer:Centennial_Screamer_Geo
+    100348: Lagoon_CliffHanger:Building
+    100350: Lagoon_CliffHanger:CliffHanger_Geo
+    100352: Lagoon_CliffHanger:GroundPlane
+    100354: Lagoon_CliffHanger:Support_Structure
+    100356: Lagoon_CliffHanger:Swing_Arms_and_Gondolas
+    100358: Lagoon_CliffHanger:WaterFeature
+    100360: Lagoon_Colossus_the_Fire_Dragon:Colossus_Building
+    100362: Lagoon_Colossus_the_Fire_Dragon:Colossus_Ride_Geo
+    100364: Lagoon_Colossus_the_Fire_Dragon:curve1
+    100366: Lagoon_Colossus_the_Fire_Dragon:curve3
+    100368: Lagoon_Colossus_the_Fire_Dragon:loftedSurface1
+    100370: Lagoon_Colossus_the_Fire_Dragon:Loop_1_Cover
+    100372: Lagoon_Colossus_the_Fire_Dragon:Loop_2_Cover
+    100374: Lagoon_Double_Thunder_Raceway:Double_Thunder_Raceway_Geo
+    100376: Lagoon_DraculasCastle:Draculas_Castle
+    100378: Lagoon_Kontiki:pCube2
+    100380: Lagoon_Low_Poly_Catapult:Catapult_Arch
+    100382: Lagoon_Low_Poly_Catapult:Catapult_Platform
+    100384: Lagoon_Low_Poly_Catapult:Catapult_Ticket_Booth
+    100386: Lagoon_Low_Poly_Catapult:Catapult_Tower_and_Cage
+    100388: Lagoon_Low_Poly_Catapult:Lagoon_Catapult_and_Support_Buildings
+    100390: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_01
+    100392: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_02
+    100394: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_03
+    100396: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_04
+    100398: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_05
+    100400: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_06
+    100402: Lagoon_Low_Poly_Red_Rock_Rally:Low_Poly_Red_Rock_Rally
+    100404: Lagoon_Low_Poly_Red_Rock_Rally:Red_Rock_Rally_Ring_and_Queve
+    100406: Lagoon_Low_Poly_The_Rocket:Blast_Off_Tower
+    100408: Lagoon_Low_Poly_The_Rocket:Re_Entry_Tower
+    100410: Lagoon_Low_Poly_The_Rocket:The_Rocket_Building
+    100412: Lagoon_Low_Poly_The_Rocket:The_Rocket_Entry_Booth
+    100414: Lagoon_Low_Poly_The_Rocket:The_Rocket_Ride
+    100416: Lagoon_Low_Poly_The_Rocket:The_Rocket_Tower
+    100418: Lagoon_Low_Poly_TidalWave:TidalWaveDock
+    100420: Lagoon_Low_Poly_TidalWave:TidalWaveFrame
+    100422: Lagoon_Low_Poly_TidalWave:TidalWaveLowPoly
+    100424: Lagoon_Low_Poly_TidalWave:TidalWaveShipAndDock
+    100426: Lagoon_Paratrooper:Paratrooper
+    100428: Lagoon_Puff_the_Little_Fire_Dragon:Puff_the_little_Fire_Dragon_Geo
+    100430: Lagoon_RockOPlane:pCube10
+    100432: Lagoon_RockOPlane:pCube11
+    100434: Lagoon_RockOPlane:pCube4
+    100436: Lagoon_RockOPlane:pCube5
+    100438: Lagoon_RockOPlane:pCube6
+    100440: Lagoon_RockOPlane:pCube7
+    100442: Lagoon_RockOPlane:pCube8
+    100444: Lagoon_RockOPlane:pCube9
+    100446: Lagoon_RockOPlane:pCylinder1
+    100448: Lagoon_RockOPlane:pCylinder2
+    100450: Lagoon_RockOPlane:pCylinder3
+    100452: Lagoon_Samurai:Samurai
+    100454: Lagoon_SkyFighter:SkyFighter
+    100456: Lagoon_Skyride:Sky_Ride
+    100458: Lagoon_SkyScraper:SkyScraper
+    100460: Lagoon_TerrorRideFacade:pCube4
+    100462: Lagoon_The_Bat:The_Bat
+    100464: Lagoon_Wild_Mouse:Wild_Mouse
+    100466: pCube64
+    100468: pCube65
+    100470: pCube67
+    100472: pCube68
+    100474: pCube69
+    100476: pCube70
+    100478: pCube71
+    100480: pCube72
+    100482: pCube75
+    100484: pCube76
+    100486: pCube77
+    100488: pCube78
+    100490: pCube79
+    100492: pCube80
+    100494: polySurface1
+    100496: pSphere6
+    100498: RockoPlaneModel
+    100500: Y_measure1
+    100502: Lagoon_Colossus_the_Fire_DragonFinal:Collosus_Basic
     400000: Boundary_fence
     400002: Building_1
     400004: Building_10
@@ -321,6 +413,100 @@ ModelImporter:
     400310: Sky_Scraper
     400312: Y_measure2
     400314: Y_measure3
+    400316: Air_Race:AirRace
+    400318: Building_55
+    400320: Building_56
+    400322: Lagoon_BabyBoats:Baby_Boats
+    400324: Lagoon_BulgyTheWhale:group1
+    400326: Lagoon_BulgyTheWhale:pCube1
+    400328: Lagoon_BulgyTheWhale:pCube2
+    400330: Lagoon_BulgyTheWhale:pCube3
+    400332: Lagoon_BulgyTheWhale:pCube4
+    400334: Lagoon_BulgyTheWhale:pCube5
+    400336: Lagoon_BulgyTheWhale:pCube6
+    400338: Lagoon_BulgyTheWhale:pCube7
+    400340: Lagoon_BulgyTheWhale:pCube8
+    400342: Lagoon_BulgyTheWhale:pCylinder1
+    400344: Lagoon_CannibalOneMesh:Cannibal_Geo
+    400346: Lagoon_Centennial_Screamer:Centennial_Screamer_Geo
+    400348: Lagoon_CliffHanger:Building
+    400350: Lagoon_CliffHanger:CliffHanger_Geo
+    400352: Lagoon_CliffHanger:GroundPlane
+    400354: Lagoon_CliffHanger:Support_Structure
+    400356: Lagoon_CliffHanger:Swing_Arms_and_Gondolas
+    400358: Lagoon_CliffHanger:WaterFeature
+    400360: Lagoon_Colossus_the_Fire_Dragon:Colossus_Building
+    400362: Lagoon_Colossus_the_Fire_Dragon:Colossus_Ride_Geo
+    400364: Lagoon_Colossus_the_Fire_Dragon:curve1
+    400366: Lagoon_Colossus_the_Fire_Dragon:curve3
+    400368: Lagoon_Colossus_the_Fire_Dragon:loftedSurface1
+    400370: Lagoon_Colossus_the_Fire_Dragon:Loop_1_Cover
+    400372: Lagoon_Colossus_the_Fire_Dragon:Loop_2_Cover
+    400374: Lagoon_Double_Thunder_Raceway:Double_Thunder_Raceway_Geo
+    400376: Lagoon_DraculasCastle:Draculas_Castle
+    400378: Lagoon_Kontiki:pCube2
+    400380: Lagoon_Low_Poly_Catapult:Catapult_Arch
+    400382: Lagoon_Low_Poly_Catapult:Catapult_Platform
+    400384: Lagoon_Low_Poly_Catapult:Catapult_Ticket_Booth
+    400386: Lagoon_Low_Poly_Catapult:Catapult_Tower_and_Cage
+    400388: Lagoon_Low_Poly_Catapult:Lagoon_Catapult_and_Support_Buildings
+    400390: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_01
+    400392: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_02
+    400394: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_03
+    400396: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_04
+    400398: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_05
+    400400: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_06
+    400402: Lagoon_Low_Poly_Red_Rock_Rally:Low_Poly_Red_Rock_Rally
+    400404: Lagoon_Low_Poly_Red_Rock_Rally:Red_Rock_Rally_Ring_and_Queve
+    400406: Lagoon_Low_Poly_The_Rocket:Blast_Off_Tower
+    400408: Lagoon_Low_Poly_The_Rocket:Re_Entry_Tower
+    400410: Lagoon_Low_Poly_The_Rocket:The_Rocket_Building
+    400412: Lagoon_Low_Poly_The_Rocket:The_Rocket_Entry_Booth
+    400414: Lagoon_Low_Poly_The_Rocket:The_Rocket_Ride
+    400416: Lagoon_Low_Poly_The_Rocket:The_Rocket_Tower
+    400418: Lagoon_Low_Poly_TidalWave:TidalWaveDock
+    400420: Lagoon_Low_Poly_TidalWave:TidalWaveFrame
+    400422: Lagoon_Low_Poly_TidalWave:TidalWaveLowPoly
+    400424: Lagoon_Low_Poly_TidalWave:TidalWaveShipAndDock
+    400426: Lagoon_Paratrooper:Paratrooper
+    400428: Lagoon_Puff_the_Little_Fire_Dragon:Puff_the_little_Fire_Dragon_Geo
+    400430: Lagoon_RockOPlane:pCube10
+    400432: Lagoon_RockOPlane:pCube11
+    400434: Lagoon_RockOPlane:pCube4
+    400436: Lagoon_RockOPlane:pCube5
+    400438: Lagoon_RockOPlane:pCube6
+    400440: Lagoon_RockOPlane:pCube7
+    400442: Lagoon_RockOPlane:pCube8
+    400444: Lagoon_RockOPlane:pCube9
+    400446: Lagoon_RockOPlane:pCylinder1
+    400448: Lagoon_RockOPlane:pCylinder2
+    400450: Lagoon_RockOPlane:pCylinder3
+    400452: Lagoon_Samurai:Samurai
+    400454: Lagoon_SkyFighter:SkyFighter
+    400456: Lagoon_Skyride:Sky_Ride
+    400458: Lagoon_SkyScraper:SkyScraper
+    400460: Lagoon_TerrorRideFacade:pCube4
+    400462: Lagoon_The_Bat:The_Bat
+    400464: Lagoon_Wild_Mouse:Wild_Mouse
+    400466: pCube64
+    400468: pCube65
+    400470: pCube67
+    400472: pCube68
+    400474: pCube69
+    400476: pCube70
+    400478: pCube71
+    400480: pCube72
+    400482: pCube75
+    400484: pCube76
+    400486: pCube77
+    400488: pCube78
+    400490: pCube79
+    400492: pCube80
+    400494: polySurface1
+    400496: pSphere6
+    400498: RockoPlaneModel
+    400500: Y_measure1
+    400502: Lagoon_Colossus_the_Fire_DragonFinal:Collosus_Basic
     2300000: Boundary_fence
     2300002: Building_1
     2300004: Building_10
@@ -477,6 +663,89 @@ ModelImporter:
     2300306: Sky_Scraper
     2300308: Y_measure2
     2300310: Y_measure3
+    2300312: Air_Race:AirRace
+    2300314: Building_55
+    2300316: Building_56
+    2300318: Lagoon_BabyBoats:Baby_Boats
+    2300320: Lagoon_BulgyTheWhale:pCube1
+    2300322: Lagoon_BulgyTheWhale:pCube2
+    2300324: Lagoon_BulgyTheWhale:pCube3
+    2300326: Lagoon_BulgyTheWhale:pCube4
+    2300328: Lagoon_BulgyTheWhale:pCube5
+    2300330: Lagoon_BulgyTheWhale:pCube6
+    2300332: Lagoon_BulgyTheWhale:pCube7
+    2300334: Lagoon_BulgyTheWhale:pCube8
+    2300336: Lagoon_BulgyTheWhale:pCylinder1
+    2300338: Lagoon_CannibalOneMesh:Cannibal_Geo
+    2300340: Lagoon_Centennial_Screamer:Centennial_Screamer_Geo
+    2300342: Lagoon_CliffHanger:Building
+    2300344: Lagoon_CliffHanger:GroundPlane
+    2300346: Lagoon_CliffHanger:Support_Structure
+    2300348: Lagoon_CliffHanger:Swing_Arms_and_Gondolas
+    2300350: Lagoon_CliffHanger:WaterFeature
+    2300352: Lagoon_Colossus_the_Fire_Dragon:Colossus_Building
+    2300354: Lagoon_Colossus_the_Fire_Dragon:Loop_1_Cover
+    2300356: Lagoon_Colossus_the_Fire_Dragon:Loop_2_Cover
+    2300358: Lagoon_Double_Thunder_Raceway:Double_Thunder_Raceway_Geo
+    2300360: Lagoon_DraculasCastle:Draculas_Castle
+    2300362: Lagoon_Kontiki:pCube2
+    2300364: Lagoon_Low_Poly_Catapult:Catapult_Arch
+    2300366: Lagoon_Low_Poly_Catapult:Catapult_Platform
+    2300368: Lagoon_Low_Poly_Catapult:Catapult_Ticket_Booth
+    2300370: Lagoon_Low_Poly_Catapult:Catapult_Tower_and_Cage
+    2300372: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_01
+    2300374: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_02
+    2300376: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_03
+    2300378: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_04
+    2300380: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_05
+    2300382: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_06
+    2300384: Lagoon_Low_Poly_Red_Rock_Rally:Red_Rock_Rally_Ring_and_Queve
+    2300386: Lagoon_Low_Poly_The_Rocket:Blast_Off_Tower
+    2300388: Lagoon_Low_Poly_The_Rocket:Re_Entry_Tower
+    2300390: Lagoon_Low_Poly_The_Rocket:The_Rocket_Building
+    2300392: Lagoon_Low_Poly_The_Rocket:The_Rocket_Entry_Booth
+    2300394: Lagoon_Low_Poly_The_Rocket:The_Rocket_Tower
+    2300396: Lagoon_Low_Poly_TidalWave:TidalWaveDock
+    2300398: Lagoon_Low_Poly_TidalWave:TidalWaveFrame
+    2300400: Lagoon_Low_Poly_TidalWave:TidalWaveShipAndDock
+    2300402: Lagoon_Paratrooper:Paratrooper
+    2300404: Lagoon_Puff_the_Little_Fire_Dragon:Puff_the_little_Fire_Dragon_Geo
+    2300406: Lagoon_RockOPlane:pCube10
+    2300408: Lagoon_RockOPlane:pCube11
+    2300410: Lagoon_RockOPlane:pCube4
+    2300412: Lagoon_RockOPlane:pCube5
+    2300414: Lagoon_RockOPlane:pCube6
+    2300416: Lagoon_RockOPlane:pCube7
+    2300418: Lagoon_RockOPlane:pCube8
+    2300420: Lagoon_RockOPlane:pCube9
+    2300422: Lagoon_RockOPlane:pCylinder1
+    2300424: Lagoon_RockOPlane:pCylinder2
+    2300426: Lagoon_RockOPlane:pCylinder3
+    2300428: Lagoon_Samurai:Samurai
+    2300430: Lagoon_SkyFighter:SkyFighter
+    2300432: Lagoon_Skyride:Sky_Ride
+    2300434: Lagoon_SkyScraper:SkyScraper
+    2300436: Lagoon_TerrorRideFacade:pCube4
+    2300438: Lagoon_The_Bat:The_Bat
+    2300440: Lagoon_Wild_Mouse:Wild_Mouse
+    2300442: pCube64
+    2300444: pCube65
+    2300446: pCube67
+    2300448: pCube68
+    2300450: pCube69
+    2300452: pCube70
+    2300454: pCube71
+    2300456: pCube72
+    2300458: pCube75
+    2300460: pCube76
+    2300462: pCube77
+    2300464: pCube78
+    2300466: pCube79
+    2300468: pCube80
+    2300470: polySurface1
+    2300472: pSphere6
+    2300474: Y_measure1
+    2300476: Lagoon_Colossus_the_Fire_DragonFinal:Collosus_Basic
     3300000: Boundary_fence
     3300002: Building_1
     3300004: Building_10
@@ -633,6 +902,89 @@ ModelImporter:
     3300306: Sky_Scraper
     3300308: Y_measure2
     3300310: Y_measure3
+    3300312: Air_Race:AirRace
+    3300314: Building_55
+    3300316: Building_56
+    3300318: Lagoon_BabyBoats:Baby_Boats
+    3300320: Lagoon_BulgyTheWhale:pCube1
+    3300322: Lagoon_BulgyTheWhale:pCube2
+    3300324: Lagoon_BulgyTheWhale:pCube3
+    3300326: Lagoon_BulgyTheWhale:pCube4
+    3300328: Lagoon_BulgyTheWhale:pCube5
+    3300330: Lagoon_BulgyTheWhale:pCube6
+    3300332: Lagoon_BulgyTheWhale:pCube7
+    3300334: Lagoon_BulgyTheWhale:pCube8
+    3300336: Lagoon_BulgyTheWhale:pCylinder1
+    3300338: Lagoon_CannibalOneMesh:Cannibal_Geo
+    3300340: Lagoon_Centennial_Screamer:Centennial_Screamer_Geo
+    3300342: Lagoon_CliffHanger:Building
+    3300344: Lagoon_CliffHanger:GroundPlane
+    3300346: Lagoon_CliffHanger:Support_Structure
+    3300348: Lagoon_CliffHanger:Swing_Arms_and_Gondolas
+    3300350: Lagoon_CliffHanger:WaterFeature
+    3300352: Lagoon_Colossus_the_Fire_Dragon:Colossus_Building
+    3300354: Lagoon_Colossus_the_Fire_Dragon:Loop_1_Cover
+    3300356: Lagoon_Colossus_the_Fire_Dragon:Loop_2_Cover
+    3300358: Lagoon_Double_Thunder_Raceway:Double_Thunder_Raceway_Geo
+    3300360: Lagoon_DraculasCastle:Draculas_Castle
+    3300362: Lagoon_Kontiki:pCube2
+    3300364: Lagoon_Low_Poly_Catapult:Catapult_Arch
+    3300366: Lagoon_Low_Poly_Catapult:Catapult_Platform
+    3300368: Lagoon_Low_Poly_Catapult:Catapult_Ticket_Booth
+    3300370: Lagoon_Low_Poly_Catapult:Catapult_Tower_and_Cage
+    3300372: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_01
+    3300374: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_02
+    3300376: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_03
+    3300378: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_04
+    3300380: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_05
+    3300382: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_06
+    3300384: Lagoon_Low_Poly_Red_Rock_Rally:Red_Rock_Rally_Ring_and_Queve
+    3300386: Lagoon_Low_Poly_The_Rocket:Blast_Off_Tower
+    3300388: Lagoon_Low_Poly_The_Rocket:Re_Entry_Tower
+    3300390: Lagoon_Low_Poly_The_Rocket:The_Rocket_Building
+    3300392: Lagoon_Low_Poly_The_Rocket:The_Rocket_Entry_Booth
+    3300394: Lagoon_Low_Poly_The_Rocket:The_Rocket_Tower
+    3300396: Lagoon_Low_Poly_TidalWave:TidalWaveDock
+    3300398: Lagoon_Low_Poly_TidalWave:TidalWaveFrame
+    3300400: Lagoon_Low_Poly_TidalWave:TidalWaveShipAndDock
+    3300402: Lagoon_Paratrooper:Paratrooper
+    3300404: Lagoon_Puff_the_Little_Fire_Dragon:Puff_the_little_Fire_Dragon_Geo
+    3300406: Lagoon_RockOPlane:pCube10
+    3300408: Lagoon_RockOPlane:pCube11
+    3300410: Lagoon_RockOPlane:pCube4
+    3300412: Lagoon_RockOPlane:pCube5
+    3300414: Lagoon_RockOPlane:pCube6
+    3300416: Lagoon_RockOPlane:pCube7
+    3300418: Lagoon_RockOPlane:pCube8
+    3300420: Lagoon_RockOPlane:pCube9
+    3300422: Lagoon_RockOPlane:pCylinder1
+    3300424: Lagoon_RockOPlane:pCylinder2
+    3300426: Lagoon_RockOPlane:pCylinder3
+    3300428: Lagoon_Samurai:Samurai
+    3300430: Lagoon_SkyFighter:SkyFighter
+    3300432: Lagoon_Skyride:Sky_Ride
+    3300434: Lagoon_SkyScraper:SkyScraper
+    3300436: Lagoon_TerrorRideFacade:pCube4
+    3300438: Lagoon_The_Bat:The_Bat
+    3300440: Lagoon_Wild_Mouse:Wild_Mouse
+    3300442: pCube64
+    3300444: pCube65
+    3300446: pCube67
+    3300448: pCube68
+    3300450: pCube69
+    3300452: pCube70
+    3300454: pCube71
+    3300456: pCube72
+    3300458: pCube75
+    3300460: pCube76
+    3300462: pCube77
+    3300464: pCube78
+    3300466: pCube79
+    3300468: pCube80
+    3300470: polySurface1
+    3300472: pSphere6
+    3300474: Y_measure1
+    3300476: Lagoon_Colossus_the_Fire_DragonFinal:Collosus_Basic
     4300000: Human_Scale
     4300002: Ground_Plane
     4300004: Boundary_fence
@@ -789,11 +1141,106 @@ ModelImporter:
     4300306: pCube62
     4300308: pCube63
     4300310: Building_54
+    4300312: Y_measure1
+    4300314: polySurface1
+    4300316: Lagoon_RockOPlane:pCylinder1
+    4300318: Lagoon_RockOPlane:pCylinder2
+    4300320: Lagoon_RockOPlane:pCube4
+    4300322: Lagoon_RockOPlane:pCube5
+    4300324: Lagoon_RockOPlane:pCube6
+    4300326: Lagoon_RockOPlane:pCube7
+    4300328: Lagoon_RockOPlane:pCube8
+    4300330: Lagoon_RockOPlane:pCube9
+    4300332: Lagoon_RockOPlane:pCube10
+    4300334: Lagoon_RockOPlane:pCube11
+    4300336: Lagoon_RockOPlane:pCylinder3
+    4300338: pCube64
+    4300340: pCube65
+    4300342: pCube67
+    4300344: pCube68
+    4300346: pCube69
+    4300348: pCube70
+    4300350: pCube71
+    4300352: pCube72
+    4300354: pCube75
+    4300356: pCube76
+    4300358: pCube77
+    4300360: pSphere6
+    4300362: pCube78
+    4300364: pCube79
+    4300366: Building_55
+    4300368: pCube80
+    4300370: Building_56
+    4300372: Lagoon_Low_Poly_Red_Rock_Rally:Red_Rock_Rally_Ring_and_Queve
+    4300374: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_06
+    4300376: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_05
+    4300378: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_04
+    4300380: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_03
+    4300382: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_02
+    4300384: Lagoon_Low_Poly_Red_Rock_Rally:Jeep_01
+    4300386: Lagoon_Low_Poly_TidalWave:TidalWaveShipAndDock
+    4300388: Lagoon_Low_Poly_TidalWave:TidalWaveFrame
+    4300390: Lagoon_Low_Poly_TidalWave:TidalWaveDock
+    4300392: Lagoon_Low_Poly_The_Rocket:The_Rocket_Entry_Booth
+    4300394: Lagoon_Low_Poly_The_Rocket:The_Rocket_Building
+    4300396: Lagoon_Low_Poly_The_Rocket:The_Rocket_Tower
+    4300398: Lagoon_Low_Poly_The_Rocket:Re_Entry_Tower
+    4300400: Lagoon_Low_Poly_The_Rocket:Blast_Off_Tower
+    4300402: Lagoon_Low_Poly_Catapult:Catapult_Platform
+    4300404: Lagoon_Low_Poly_Catapult:Catapult_Arch
+    4300406: Lagoon_Low_Poly_Catapult:Catapult_Ticket_Booth
+    4300408: Lagoon_Low_Poly_Catapult:Catapult_Tower_and_Cage
+    4300410: Lagoon_Double_Thunder_Raceway:Double_Thunder_Raceway_Geo
+    4300412: Lagoon_CliffHanger:GroundPlane
+    4300414: Lagoon_CliffHanger:Support_Structure
+    4300416: Lagoon_CliffHanger:WaterFeature
+    4300418: Lagoon_CliffHanger:Swing_Arms_and_Gondolas
+    4300420: Lagoon_CliffHanger:Building
+    4300422: Lagoon_Puff_the_Little_Fire_Dragon:Puff_the_little_Fire_Dragon_Geo
+    4300424: Lagoon_Kontiki:pCube2
+    4300426: Lagoon_Centennial_Screamer:Centennial_Screamer_Geo
+    4300428: Lagoon_Colossus_the_Fire_Dragon:Loop_1_Cover
+    4300430: Lagoon_Colossus_the_Fire_Dragon:Loop_2_Cover
+    4300432: Lagoon_Colossus_the_Fire_Dragon:Colossus_Building
+    4300434: Lagoon_BulgyTheWhale:pCylinder1
+    4300436: Lagoon_BulgyTheWhale:pCube2
+    4300438: Lagoon_BulgyTheWhale:pCube3
+    4300440: Lagoon_BulgyTheWhale:pCube4
+    4300442: Lagoon_BulgyTheWhale:pCube5
+    4300444: Lagoon_BulgyTheWhale:pCube6
+    4300446: Lagoon_BulgyTheWhale:pCube7
+    4300448: Lagoon_BulgyTheWhale:pCube8
+    4300450: Lagoon_BulgyTheWhale:pCube1
+    4300452: Lagoon_CannibalOneMesh:Cannibal_Geo
+    4300454: Lagoon_Skyride:Sky_Ride
+    4300456: Lagoon_The_Bat:The_Bat
+    4300458: Lagoon_Samurai:Samurai
+    4300460: Lagoon_Wild_Mouse:Wild_Mouse
+    4300462: Lagoon_BabyBoats:Baby_Boats
+    4300464: Air_Race:AirRace
+    4300466: Lagoon_Paratrooper:Paratrooper
+    4300468: Lagoon_SkyScraper:SkyScraper
+    4300470: Lagoon_DraculasCastle:Draculas_Castle
+    4300472: Lagoon_TerrorRideFacade:pCube4
+    4300474: Lagoon_SkyFighter:SkyFighter
+    4300476: Lagoon_Colossus_the_Fire_DragonFinal:Collosus_Basic
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lagoon_BabyBoats_lambert2
+    second: {fileID: 2100000, guid: 75f6d8b60d51c4b42ac6dc51f517e655, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 2ebccbd5ddfd916409250c2329c118bf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -806,6 +1253,8 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -830,11 +1279,15 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -854,7 +1307,6 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
