@@ -6,6 +6,13 @@ class RandPlace:
     def __init__(self):
         pass
 
+    def create(self):
+        self.delete()
+
+    def delete(self):
+        if cmds.window(self.mWin, q=True, exists=True):
+            cmds.deleteUI(self.mWin)
+
     def RandomObjects(self, NumofDuplicates, XrangeMin, XrangeMax, YrangeMin, YrangeMax, ZrangeMin, ZrangeMax):
 
         Objects=[]
@@ -45,6 +52,12 @@ class RandPlace:
         cmds.maxxRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
         cmds.maxyRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
         cmds.maxzRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
+
+        
+
+
+#cmds.button(command=lambda *args: self.GetDupeMove(myIntGrp, minFloatGrp, maxFloatGrp), label="Generate",
+                    parent=self.mCol)
 
 
 
