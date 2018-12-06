@@ -4,14 +4,11 @@ import random
 
 class RandPlace:
     def __init__(self):
-        pass
-
-    def create(self):
-        self.delete()
+        self.mWindow = 'Random Placement'
 
     def delete(self):
-        if cmds.window(self.mWin, q=True, exists=True):
-            cmds.deleteUI(self.mWin)
+        if cmds.window(self.mWindow, q=True, exists=True):
+            cmds.deleteUI(self.mWindow)
 
     def RandomObjects(self, NumofDuplicates, XrangeMin, XrangeMax, YrangeMin, YrangeMax, ZrangeMin, ZrangeMax):
 
@@ -32,10 +29,10 @@ class RandPlace:
             cmds.move(xpos, ypos, zpos, moveStuff)
 
     def CreateRandUI(self):
+        self.delete()
 
         self.mWindow = cmds.window(self.mWindow, title='Duplicate and Random Placement')
         self.mCol = cmds.columnLayout(parent=self.mWindow, adjustableColumn=True)
-        self.nameField = cmds.textField(placeholderText='Enter new name')
 
         self.dupRowLayout = cmds.rowLayout(parent=self.mCol, numberOfColumns=2, adjustableColumn2=True)
         cmds.text(parent=self.dupRowLayout, label="Duplicate")
@@ -53,14 +50,14 @@ class RandPlace:
         self.maxyRange = cmds.floatField (parent=self.rangeRowLayout, value=0)
         self.maxzRange = cmds.floatField (parent=self.rangeRowLayout, value=0)
 
-        cmds.button(parent=mCol, label='Number of Duplicates', command = lambda x: RandomObjects(cmds.intField(self.duplicateIntField, query=True, value=True),
-            cmds.floatField(self.minxRange, query=True, value=True),
-            cmds.floatField(self.maxxRange, query=True, value=True),
-            cmds.floatField(self.minyRange, query=True, value=True),
-            cmds.floatField(self.maxyRange, query=True, value=True),
-            cmds.floatField(self.minzRange, query=True, value=True),
-            cmds.floatField(self.maxzRange, query=True, value=True)))
-        cmds.showWindow(self.mWin)
+        cmds.button(parent=self.mCol, label='Number of Duplicates', command = lambda x: self.RandomObjects(cmds.intField(self.duplicateIntField, query=True, value=True),
+                                cmds.floatField(self.minxRange, query=True, value=True),
+                                cmds.floatField(self.maxxRange, query=True, value=True),
+                                cmds.floatField(self.minyRange, query=True, value=True),
+                                cmds.floatField(self.maxyRange, query=True, value=True),
+                                cmds.floatField(self.minzRange, query=True, value=True),
+                                cmds.floatField(self.maxzRange, query=True, value=True)))
+        cmds.showWindow(self.mWindow)
 
 
 

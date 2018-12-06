@@ -17,7 +17,6 @@ class RenamerUI():
 
         cmds.showWindow(self.mWindow)
 
-
     def delete(self):
         if cmds.window(self.mWindow, q=True, exists=True):
             cmds.deleteUI(self.mWindow)

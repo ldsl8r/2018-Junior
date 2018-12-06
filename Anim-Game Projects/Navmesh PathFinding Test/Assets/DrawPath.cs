@@ -5,41 +5,32 @@ using UnityEngine.AI;
 
 public class DrawPath : MonoBehaviour 
 {
+    //creates variable for Line Renderer
     private LineRenderer lr;
-    public List<NavMeshPath> paths;
+
+    //creates list for 
+    public NavMeshPath path;
 
     public List<Transform> waypoints;
 
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
-        foreach(Transform waypoint in waypoints)
-        {
-            NavMeshPath path = new NavMeshPath();
-            paths.Add(path);
-        }
+        path = new NavMeshPath();
 
         StartCoroutine(Begin());
     }
 
-    void DrawPaths(List<NavMeshPath> paths)
+    void DrawPaths()
     {
-        int corner = 1;
-        foreach(NavMeshPath path in paths)
-        {
-            corner += path.corners.Length;
-        }
-
+        int corner = path.corners.Length;
+        
         if(corner >= 2)
         {
-            lr.positionCount = corner +1;
+            lr.positionCount = corner;
 
-            for(int i=0; i < paths.Capacity; i++)
+            for(int i=0; i < path.corners.Length; i++)
             {
-                for (int y = 0; y < paths[i].corners.Length; y++)
-                {
-                    lr.SetPosition(i+y, paths[i].corners[y]);
-                }
+                lr.SetPosition(i, path.corners[i]);
             }
         }
     }
@@ -48,10 +39,11 @@ public class DrawPath : MonoBehaviour
     {
         for (int i = 0; i < waypoints.Capacity - 1; i++)
         {
-            NavMesh.CalculatePath(waypoints[i].position, waypoints[i+1].position, NavMesh.AllAreas, paths[i]);
-
+            NavMesh.CalculatePath(waypoints[i].position, waypoints[i+1].position, NavMesh.AllAreas, path);
+            lr = waypoints[i].GetComponent<LineRenderer>();
             yield return new WaitForEndOfFrame();
+            DrawPaths();
         }
-        DrawPaths(paths);    
+            
     }
 }
