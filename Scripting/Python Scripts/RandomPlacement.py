@@ -43,21 +43,26 @@ class RandPlace:
 
         self.rangeRowLayout = cmds.rowLayout(parent=self.mCol, numberOfColumns=4)
         cmds.text(parent=self.rangeRowLayout, label="Min Range")
-        cmds.minxRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
-        cmds.minyRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
-        cmds.minzRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
+        self.minxRange = cmds.floatField(parent=self.rangeRowLayout, value=0)
+        self.minyRange = cmds.floatField(parent=self.rangeRowLayout, value=0)
+        self.minzRange = cmds.floatField(parent=self.rangeRowLayout, value=0)
 
         self.rangeRowLayout = cmds.rowLayout(parent=self.mCol, numberOfColumns=4)
         cmds.text(parent=self.rangeRowLayout,label="MaxRange")
-        cmds.maxxRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
-        cmds.maxyRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
-        cmds.maxzRange(cmds.floatField, parent=self.rangeRowLayout, value=0)
+        self.maxxRange = cmds.floatField (parent=self.rangeRowLayout, value=0)
+        self.maxyRange = cmds.floatField (parent=self.rangeRowLayout, value=0)
+        self.maxzRange = cmds.floatField (parent=self.rangeRowLayout, value=0)
 
-        
+        cmds.button(parent=mCol, label='Number of Duplicates', command = lambda x: RandomObjects(cmds.intField(self.duplicateIntField, query=True, value=True),
+            cmds.floatField(self.minxRange, query=True, value=True),
+            cmds.floatField(self.maxxRange, query=True, value=True),
+            cmds.floatField(self.minyRange, query=True, value=True),
+            cmds.floatField(self.maxyRange, query=True, value=True),
+            cmds.floatField(self.minzRange, query=True, value=True),
+            cmds.floatField(self.maxzRange, query=True, value=True)))
+        cmds.showWindow(self.mWin)
 
 
-#cmds.button(command=lambda *args: self.GetDupeMove(myIntGrp, minFloatGrp, maxFloatGrp), label="Generate",
-                    parent=self.mCol)
 
 
 

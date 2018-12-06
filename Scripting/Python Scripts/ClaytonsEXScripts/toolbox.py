@@ -1,3 +1,5 @@
+#Claytons Renamer
+
 import maya.cmds as cmds
 
 class Toolbox():
