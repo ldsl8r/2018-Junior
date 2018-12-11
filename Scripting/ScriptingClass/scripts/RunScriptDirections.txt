@@ -1,0 +1,2 @@
+Run AddPathScript first. After that run any of the scripts by highlighting them all and running them.
+Ive tested them all and they worked in my Maya so I hope it works for every Maya.
