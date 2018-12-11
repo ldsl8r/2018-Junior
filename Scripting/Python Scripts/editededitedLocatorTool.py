@@ -1,6 +1,6 @@
 import maya.cmds as cmds
 
-class LocatorTool():
+class LocatorWindow():
     def __init__(self):
         self.mWin = 'LocWindow'
 
@@ -13,7 +13,7 @@ class LocatorTool():
         cmds.menuItem(parent=self.dropCtrl, label='Bounding Box')
         cmds.menuItem(parent=self.dropCtrl, label='Pivot Point')
         cmds.button(parent=mCol, label='Create Locator',
-                    c=lambda x: self.create_loc(cmds.optionMenu(self.dropCtrl, q=True, select=True)))
+                    c=lambda x: self.create_loc_window(cmds.optionMenu(self.dropCtrl, q=True, select=True)))
 
         cmds.showWindow(self.mWin)
 
@@ -21,19 +21,15 @@ class LocatorTool():
         if cmds.window(self.mWin, exists=True):
             cmds.deleteUI(self.mWin)
 
-    def create_loc(self, option):
+    def create_loc_window(self, option):
         '''Creates a locator at center of selection or pivot based on input.'''
         sels = cmds.ls(sl=True)
 
         # create locator at center of selections
         if option is 1:
-            dups = cmds.duplicate(sels, rr=True)
-            dups = cmds.polyUnite(dups, ch=True, mergeUVSets=True, centerPivot=True)[0]
-            bbox = cmds.xform(dups, boundingBox=True, q=True)
-            pivot = [(bbox[0] + bbox[3]) / 2, (bbox[1] + bbox[4]) / 2, (bbox[2] + bbox[5]) / 2]
 
-            cmds.delete(dups, ch=True)
-            cmds.delete(dups)
+            bbox = cmds.exactWorldBoundingBox(sels)
+            pivot = [(bbox[0] + bbox[3]) / 2, (bbox[1] + bbox[4]) / 2, (bbox[2] + bbox[5]) / 2]
 
             loc = cmds.spaceLocator()[0]
             cmds.xform(loc, translation=pivot, worldSpace=True)
@@ -45,8 +41,7 @@ class LocatorTool():
                 loc = cmds.spaceLocator()[0]
                 cmds.xform(loc, translation=pivot, worldSpace=True)
 
-    cmds.showWindow(self.mWindow)
+        cmds.showWindow(self.mWin)
 
-var = CreateCrtlsUI()
-var.CreateCrtlUI()
-
+var = LocatorWindow()
+var.create()
