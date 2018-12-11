@@ -1,5 +1,4 @@
 sceneSetups:
-- path: C:/Users/10561728/Documents/2018-Junior/Anim-Game Projects/Navmesh PathFinding
-    Test/Assets/Scenes/NavmeshProtoTest.unity
+- path: Assets/WhiteBoxScene.unity
   isLoaded: 1
   isActive: 1

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6B0D62EF-80F7-153B-1423-61DF73C9FD97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Navmesh PathFinding Test", "Assembly-CSharp.csproj", "{6B0D62EF-80F7-153B-1423-61DF73C9FD97}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,14 +1,14 @@
-'''import maya.cmds as cmds
+import maya.cmds as cmds
 
-class RenamerUI():
+class RenamerUI:
     def __init__(self):
         self.mWindow = "RenamerWindow"
 
-    def create(self):
-        self.delete()
+    def delete(self):
+        if cmds.window(self.mWindow, q=True, exists=True):
+            cmds.deleteUI(self.mWindow)
 
-
-    def RenameTool(prefix, newName, numPad, newNum, suffix):
+    def RenameTool(self, prefix, newName, numPad, newNum, suffix):
         sels = cmds.ls(sl=True)
 
         for iterate in sels:
@@ -16,7 +16,7 @@ class RenamerUI():
             number = ''
             poundsigns = len(numPad)
 
-            padding = len(str(numPad)) len(str(newNum))
+            padding = len(str(numPad)) - len(str(newNum))
 
             for var in range(0, padding):
                 number = "0" + number
@@ -27,55 +27,53 @@ class RenamerUI():
 
             newNum = newNum + 1
 
-    def QueryMenuItem(objName):
-
-        text = cmds.optionMenu(objName, q=true, v=true)
-        return text
-
     def CreateRandUI(self):
         self.delete()
 
         self.mWindow = cmds.window(self.mWindow, title='Duplicate and Random Placement')
         self.mainColumn = cmds.columnLayout(parent=self.mWindow, adjustableColumn=True)
 
-        $mainWindow = `window title "Rename Selection" $mainWindow`;
-        string $mainColumn = `columnLayout parent $mainWindow adjustableColumn 1`;
+        cmds.text(parent=self.mainColumn, label="Number Rename Will Start On")
+        self.numToStart = cmds.intField(parent=self.mainColumn, minValue=1, value=7)
 
-        text parent mainColumn label "Number Rename will Star On";
-        numToStart = `intField parent $mainColumn minValue1 value7`;
+        self.prefix = cmds.optionMenu(parent=self.mainColumn, label="Prefix", width=250)
 
-        prefix = optionMenu( parent=self.mainColumn,label="Prefix", width=250)
+        cmds.menuItem(label="L", parent=self.prefix)
+        cmds.menuItem(label="R", parent=self.prefix)
+        cmds.menuItem(label="None", parent=self.prefix)
 
-        cmds.menuItem( label="L")
-        cmds.menuItem( label="R")
-        cmds.menuItem( labe="None")
+        self.MainName = cmds.optionMenu(parent=self.mainColumn, label="Main Name", width=250)
 
-        mainName = optionMenu(parent=self.mainColumn, label="Main Name", width=250)
+        cmds.menuItem(label="Arm", parent=self.MainName)
+        cmds.menuItem(label="Leg", parent=self.MainName)
+        cmds.menuItem(label="Spine", parent=self.MainName)
+        cmds.menuItem(label="Hand", parent=self.MainName)
+        cmds.menuItem(label="Foot", parent=self.MainName)
+        cmds.menuItem(label="Digit", parent=self.MainName)
 
-        cmds.menuItem( label="Arm")
-        cmds.menuItem( label="Leg")
-        cmds.menuItem( label="Spine")
-        cmds.menuItem( label="Hand")
-        cmds.menuItem( label="Foot")
-        cmds.menuItem( label="Digit")
+        self.Suffix = cmds.optionMenu(parent=self.mainColumn, label="Suffix", width=250)
 
-        Suffix = `optionMenu label "Suffix" parent $mainColumn width 250
+        cmds.menuItem(label="Geo", parent=self.Suffix)
+        cmds.menuItem(label="Jnt", parent=self.Suffix)
+        cmds.menuItem(label="Crtl", parent=self.Suffix)
+        cmds.menuItem(label="Grp", parent=self.Suffix)
 
-        cmds.menuItem( label="Geo")
-        cmds.menuItem( label="Jnt")
-        cmds.menuItem( label="Crtl")
-        cmds.menuItem( label="Grp")
+        self.Padding = cmds.optionMenu(parent=self.mainColumn, label="Padding", width=250)
 
-        Padding = `optionMenu label "Padding" parent $mainColumn width 250
+        cmds.menuItem(label="#", parent=self.Padding)
+        cmds.menuItem(label="##", parent=self.Padding)
+        cmds.menuItem(label="###", parent=self.Padding)
 
-        cmds.menuItem(label="")
-        cmds.menuItem(label="#")
-        cmds.menuItem( label="##")
-        cmds.menuItem( label="###")
+        #cmds.button(parent=self.mainColumn, label='Rename', command=lambda x: self.RenameTool(self.QueryMenuItem(prefix), self.QueryMenuItem(MainName), self.QueryMenuItem(Padding), self.QueryIntValue(numToStart), self.QueryMenuItem(Suffix)))
+        cmds.button(parent=self.mainColumn, label='Rename', command=lambda x:
+        self.RenameTool(cmds.optionMenu(self.prefix, query=True, value=True),
+                        cmds.optionMenu(self.MainName, query=True, value=True),
+                        cmds.optionMenu(self.Padding, query=True, value=True),
+                        cmds.intField(self.numToStart, query=True, value=True),
+                        cmds.optionMenu(self.Suffix, query=True, value=True)))
 
-        button = `button parent $mainColumn label "Rename" command "Rename (`QueryMenuItem($prefix)` , `QueryMenuItem($mainName)` , `QueryMenuItem($Padding)` ,  `QueryIntValue($numToStart)` , `QueryMenuItem($Suffix)`); `;
+        cmds.showWindow(self.mWindow)
 
-        showWindow $mainWindow;
+var = RenamerUI()
+var.CreateRandUI()
 
-        RenameWindow()
-'''
