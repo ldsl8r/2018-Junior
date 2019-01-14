@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Lagoon_Bombora.ma
-//Last modified: Mon, Jan 14, 2019 11:32:31 AM
+//Last modified: Mon, Jan 14, 2019 12:13:16 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,8 +14,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "5794D53C-448C-6D43-1B80-9C8DA838A2D6";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -179.20604819602701 428.62637136324861 -19.197135376454831 ;
-	setAttr ".r" -type "double3" -69.338352733613519 3152.2000000000171 -8.2853248389021736e-14 ;
+	setAttr ".t" -type "double3" -319.17442599488083 278.65945228148996 -213.53572162150201 ;
+	setAttr ".r" -type "double3" -35.738352733672812 3117.0000000000109 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "15D465CC-4D02-9439-035E-4AA3E9670F31";
 	setAttr -k off ".v" no;
