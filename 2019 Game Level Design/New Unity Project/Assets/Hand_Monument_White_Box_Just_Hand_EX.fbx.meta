@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 54f3abe0ad6b02840851486a4be9ae3b
-timeCreated: 1548451762
+guid: 1fbcef153bf1e114f964166392d3f4c9
+timeCreated: 1548621787
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: Cairn_1
     100002: Cairn_2
-    100004: Hand_Monolith
+    100004: Hand
     100006: //RootNode
     100008: Sarcophagus
     100010: Scale_Person_6ft
@@ -16,7 +16,7 @@ ModelImporter:
     100016: Shrine_Stand
     400000: Cairn_1
     400002: Cairn_2
-    400004: Hand_Monolith
+    400004: Hand
     400006: //RootNode
     400008: Sarcophagus
     400010: Scale_Person_6ft
@@ -25,7 +25,7 @@ ModelImporter:
     400016: Shrine_Stand
     2300000: Cairn_1
     2300002: Cairn_2
-    2300004: Hand_Monolith
+    2300004: Hand
     2300006: Sarcophagus
     2300008: Scale_Person_6ft
     2300010: Scale_Person_6ft1
@@ -33,20 +33,21 @@ ModelImporter:
     2300014: Shrine_Stand
     3300000: Cairn_1
     3300002: Cairn_2
-    3300004: Hand_Monolith
+    3300004: Hand
     3300006: Sarcophagus
     3300008: Scale_Person_6ft
     3300010: Scale_Person_6ft1
     3300012: Shrine
     3300014: Shrine_Stand
-    4300000: Cairn_1
-    4300002: Cairn_2
-    4300004: Hand_Monolith
-    4300006: Sarcophagus
-    4300008: Scale_Person_6ft
-    4300010: Scale_Person_6ft1
-    4300012: Shrine
-    4300014: Shrine_Stand
+    4300000: Hand
+    4300002: Scale_Person_6ft
+    4300004: Scale_Person_6ft1
+    4300006: Shrine
+    4300008: Shrine_Stand
+    4300010: Cairn_1
+    4300012: Cairn_2
+    4300014: Sarcophagus
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -116,7 +117,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
