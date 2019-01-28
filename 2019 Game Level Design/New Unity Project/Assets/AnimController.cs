@@ -5,6 +5,7 @@ using UnityEngine;
 public class AnimController : MonoBehaviour {
 
 public Animator anim;
+public Animator sarcanim; 
 
 
 	// Use this for initialization
@@ -20,7 +21,7 @@ public Animator anim;
 		}
 		if(Input.GetKeyDown("g"))
 		{
-			anim.Play("MoveSarc");
+			sarcanim.Play("SarcMove");
 		}
 	}
 }
