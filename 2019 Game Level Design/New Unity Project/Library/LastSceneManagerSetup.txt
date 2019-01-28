@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Handtop Monolith Whitebox.unity
-  isLoaded: 1
-  isActive: 1
