@@ -4,13 +4,25 @@ using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
 
+using UnityStandardAssets.Characters.FirstPerson;
+
+
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
     public class FirstPersonController : MonoBehaviour
     {
+        
+//---------------------------->Added Section for Pickups!<-------------------------------------------------
+
         public GameObject trigger;
+
+        public GameObject pickup;
+        
+//--------------------------------------------------------------------------------------------------------            // handle speed change to give an fov kick
+ 
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -225,16 +237,27 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_Input.Normalize();
             }
 
-            if(Input.GetMouseButtonDown(0))
-            {
-                trigger.SetActive(true);
-            }
 
+            //---------------------------->Added Section for Pickups!<-------------------------------------------------
+            if(Input.GetMouseButtonDown(0))
+            {  
+                if(pickup!=null)
+                    {
+                        pickup.GetComponent<PickupandHold>().Throw();
+                    }
+                else
+                    {
+                        trigger.SetActive(true);
+                    }
+            }
             else if(Input.GetMouseButtonUp(0))
             {
                 trigger.SetActive(false);
             }
-            // handle speed change to give an fov kick
+
+            //--------------------------------------------------------------------------------------------------------            // handle speed change to give an fov kick
+       
+       
             // only if the player is going to a run, is running and the fovkick is to be used
             if (m_IsWalking != waswalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0)
             {
