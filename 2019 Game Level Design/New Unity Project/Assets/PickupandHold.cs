@@ -6,19 +6,20 @@ public class PickupandHold : MonoBehaviour {
 
     public Transform theDest;
 
-    private void OnMouseDown()
+    public Rigidbody rb;
+    private void Start()
     {
-        GetComponent<BoxCollider>().enabled = false;
-        GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = theDest.position;
-        this.transform.parent = GameObject.Find("PickupDestination").transform;
+        rb = GetComponent<Rigidbody>();
     }
-
-    private void OnMouseUp()
+    private void OnTriggerEnter(Collider other)
     {
-        this.transform.parent = null;
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<BoxCollider>().enabled = true;
-        
+        if (other.tag == "Player")
+        {
+            rb.useGravity = false;
+            rb.isKinematic = true;
+            transform.parent = theDest;
+            transform.rotation = theDest.rotation;
+            transform.position = theDest.position;
+        }
     }
 }
