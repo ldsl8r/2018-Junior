@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Sand_Buggy.ma
-//Last modified: Sat, Feb 02, 2019 09:47:43 AM
+//Last modified: Sat, Feb 02, 2019 04:41:54 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "41039E9A-4395-0480-3723-67A78D502746";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 4.0193039730140407 15.647376671191962 -0.44902364160208519 ;
-	setAttr ".r" -type "double3" -65.138352894416471 3708.1999999984132 0 ;
+	setAttr ".t" -type "double3" 11.246445053046937 5.3294761822717245 11.828533131005392 ;
+	setAttr ".r" -type "double3" -17.138352894437521 3652.5999999984015 2.6182755991713979e-15 ;
 	setAttr ".rp" -type "double3" 0 -1.1102230246251565e-16 0 ;
 	setAttr ".rpt" -type "double3" -6.2413659532223335e-18 3.9864116471597235e-17 8.4991232263087729e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
