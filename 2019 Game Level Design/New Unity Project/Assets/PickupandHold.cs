@@ -21,7 +21,7 @@ public class PickupandHold : MonoBehaviour {
     {
         if (other.tag == "Player")
             {
-                Player.GetComponent<FirstPersonController>().pickup = gameObject;
+                Player.GetComponent<CharacterPickup>().pickup = gameObject;
                 rb.useGravity = false;
                 rb.isKinematic = true;
                 transform.parent = theDest;
@@ -33,7 +33,7 @@ public class PickupandHold : MonoBehaviour {
 
     public void Throw()
         {
-            Player.GetComponent<FirstPersonController>().pickup = null;
+            Player.GetComponent<CharacterPickup>().pickup = null;
             transform.parent = null;
             rb.isKinematic = false;
             rb.useGravity = true;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44661236, g: 0.49645352, b: 0.5748383, a: 1}
+  m_IndirectSpecularColor: {r: 0.44661283, g: 0.49645424, b: 0.57483906, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1015,6 +1015,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 641978076}
+--- !u!1 &711447883 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+  m_PrefabInternal: {fileID: 515819168}
+--- !u!114 &711447885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 711447883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34561639d02d6b4db44b88f4de60d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger: {fileID: 1737781954}
+  pickup: {fileID: 1490423217}
 --- !u!1001 &787930967
 Prefab:
   m_ObjectHideFlags: 0
@@ -1527,9 +1544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1304c4345bf0224e8a628f74ee94fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 711447883}
   theDest: {fileID: 529042269}
   rb: {fileID: 1490423219}
-  thrust: 100
+  thrust: -1000
 --- !u!54 &1490423219
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1752,6 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1304c4345bf0224e8a628f74ee94fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   theDest: {fileID: 529042269}
   rb: {fileID: 0}
   thrust: 0
