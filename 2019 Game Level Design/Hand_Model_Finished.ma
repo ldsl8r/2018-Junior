@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Hand_Rough_2_Finished.ma
-//Last modified: Tue, Feb 12, 2019 10:58:48 AM
+//Name: Hand_Model_Finished.ma
+//Last modified: Tue, Feb 12, 2019 11:02:24 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "5BB7A457-48EE-6DED-2F18-239BA036B71A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -42.751521757064154 142.05039796703278 219.23940973239877 ;
-	setAttr ".r" -type "double3" 322.46164728336998 4673.7999999996937 -1.199725241711606e-15 ;
+	setAttr ".t" -type "double3" -23.094218109862172 155.2252164346892 209.66773142748769 ;
+	setAttr ".r" -type "double3" 318.86164728336837 4318.9999999996344 4.970373701776622e-17 ;
 	setAttr ".rp" -type "double3" 1.3877787807814457e-16 -8.8817841970012523e-16 -8.8817841970012523e-16 ;
 	setAttr ".rpt" -type "double3" -1.1259840340173342e-15 -9.2100295782727949e-16 -7.2985680222988532e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
@@ -6829,7 +6829,7 @@ createNode mesh -n "LandingShape" -p "Landing";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
-	setAttr ".pv" -type "double2" 0.4982680118891053 0.28134608942113887 ;
+	setAttr ".pv" -type "double2" 0.49816581606864935 0.52158861234784126 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 167 ".uvst[0].uvsp[0:166]" -type "float2" 0.52768368 0.97777444
 		 0.48378479 0.97776729 0.98134774 0.11444 0.99633163 0.048428096 0.48378754 0.96066922
@@ -8133,4 +8133,4 @@ connectAttr "Hand_and_PoolShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "LandingShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Landing_StrutsShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
-// End of Hand_Rough_2_Finished.ma
+// End of Hand_Model_Finished.ma
