@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Level Environment Model.ma
-//Last modified: Wed, Feb 13, 2019 10:48:26 AM
+//Last modified: Wed, Feb 13, 2019 11:28:51 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,13 +14,13 @@ fileInfo "license" "education";
 createNode transform -s -n "persp";
 	rename -uid "DC7BD733-4CCD-1E99-CD11-71B75F8889D4";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 804.8870474771561 837.6524688489701 780.78104620864292 ;
-	setAttr ".r" -type "double3" -17.138352729255946 442.19999999972663 1.1717721939729319e-14 ;
+	setAttr ".t" -type "double3" 633.36938776059435 958.10197455175842 624.84423249281542 ;
+	setAttr ".r" -type "double3" -21.338352729269449 440.59999999970887 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "56BDB18E-441E-A7BA-3685-08A76024D614";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1573.6049220142236;
+	setAttr ".coi" 1308.3328999914877;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
