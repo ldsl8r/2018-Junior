@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Carrier Whitebox.ma
-//Last modified: Mon, Feb 25, 2019 02:15:25 PM
+//Last modified: Mon, Feb 25, 2019 02:18:29 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,8 +14,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "91C1306C-4763-A2AD-D25C-80B932769B1D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 47.803031044398281 37.24249392424835 68.838946528726723 ;
-	setAttr ".r" -type "double3" -9.9383527359327655 -367.39999999982604 4.0090843644921748e-16 ;
+	setAttr ".t" -type "double3" 25.397797054202073 89.595615581086008 15.639339620975733 ;
+	setAttr ".r" -type "double3" -59.73835273593339 -416.99999999982356 1.1679495875137502e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E53A39AF-40F1-890A-AFC4-9C98E3BFEBC1";
 	setAttr -k off ".v" no;
