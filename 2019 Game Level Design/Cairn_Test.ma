@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Cairn_Test.ma
-//Last modified: Thu, Mar 14, 2019 09:43:14 AM
+//Last modified: Thu, Mar 14, 2019 05:04:24 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "60A3E9A4-4A6F-A514-EE61-609A54C91B1A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.61170880063577759 9.1766691353097229 5.5209398042759243 ;
-	setAttr ".r" -type "double3" -44.738352729273835 1070.9999999986239 -2.8176756086988505e-15 ;
+	setAttr ".t" -type "double3" 3.6767326416196546 2.5360578934816811 -0.7044149063661469 ;
+	setAttr ".r" -type "double3" 30.261647270663321 1194.9999999985496 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E41DA50C-4CAE-81CB-8CD7-F2B7C520931A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 7.3812763376319577;
+	setAttr ".coi" 2.8676475471708094;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
