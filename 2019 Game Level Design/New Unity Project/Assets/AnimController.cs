@@ -14,14 +14,28 @@ public Animator sarcanim;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		if(Input.GetKeyDown("f"))
 		{
-			anim.Play("Explode");
+			anim.Play("Stage 1");
 		}
 		if(Input.GetKeyDown("g"))
 		{
-			sarcanim.Play("SarcMove");
+			anim.Play("Stage 2");
 		}
+		if(Input.GetKeyDown("h"))
+		{
+			anim.Play("Stage 3");
+		}
+		if(Input.GetKeyDown("j"))
+		{
+			anim.Play("Blast Off");
+		}
+		if(Input.GetKeyDown("r"))
+		{
+			anim.Play("Idle");
+		}
+
 	}
 }
