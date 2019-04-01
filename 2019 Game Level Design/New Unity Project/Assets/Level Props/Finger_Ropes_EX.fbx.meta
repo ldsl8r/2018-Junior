@@ -3,12 +3,20 @@ guid: 959c81b3fa1fd7149b3104ccddf01ffd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Banners
+    100002: Finger_Ropes
+    100004: //RootNode
+    400000: Banners
+    400002: Finger_Ropes
+    400004: //RootNode
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
+    2100002: lambert8
+    2300000: Banners
+    2300002: Finger_Ropes
+    3300000: Banners
+    3300002: Finger_Ropes
     4300000: Finger_Ropes
+    4300002: Banners
   externalObjects: {}
   materials:
     importMaterials: 1
