@@ -128,6 +128,12 @@
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>D:/2018-Junior/2019 Game Level Design/New Unity Project/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Postprocessing.Editor">
+ <HintPath>D:/2018-Junior/2019 Game Level Design/New Unity Project/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Postprocessing.Runtime">
+ <HintPath>D:/2018-Junior/2019 Game Level Design/New Unity Project/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Unity Update/2018.1.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
  </Reference>
