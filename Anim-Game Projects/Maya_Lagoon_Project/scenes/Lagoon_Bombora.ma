@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Lagoon_Bombora.ma
-//Last modified: Wed, Apr 10, 2019 12:31:42 PM
+//Last modified: Wed, Apr 10, 2019 02:18:52 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -1529,22 +1529,6 @@ createNode mesh -n "polySurfaceShape1" -p "Bombora";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "left";
-	rename -uid "2EDE98E9-45DB-8D94-3E1D-17BF6CC76EAF";
-	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1000.1 0 0 ;
-	setAttr ".r" -type "double3" 0 -89.999999999999986 0 ;
-createNode camera -n "leftShape" -p "left";
-	rename -uid "0A8E3D91-40FC-32DD-01FE-48BC313031CD";
-	setAttr -k off ".v";
-	setAttr ".rnd" no;
-	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
-	setAttr ".imn" -type "string" "left1";
-	setAttr ".den" -type "string" "left1_depth";
-	setAttr ".man" -type "string" "left1_mask";
-	setAttr ".hc" -type "string" "viewSet -ls %camera";
-	setAttr ".o" yes;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "E72F8871-4C0C-19AB-D6D0-F4A0E4DDC1CE";
 	setAttr -s 2 ".lnk";
