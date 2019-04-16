@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: ea41dd41f47b68b46aa2273860415ddd
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Back_of_Hand
+    100002: Finger_Geo_Grp
+    100004: //RootNode
+    100006: Hand_Palm_Geo_Grp
+    100008: Index_Finger
+    100010: Landing
+    100012: Landing_Struts
+    100014: Middle_Finger
+    100016: Palm_Heel
+    100018: Palm_Index
+    100020: Palm_Middle_Ring
+    100022: Palm_Pinky
+    100024: Palm_Thumb
+    100026: Paml_Bottom_Center
+    100028: Pinky_Finger
+    100030: Pool
+    100032: Ring_Finger
+    100034: Stairs
+    100036: Thumb
+    100038: Wrist_Forearm
+    400000: Back_of_Hand
+    400002: Finger_Geo_Grp
+    400004: //RootNode
+    400006: Hand_Palm_Geo_Grp
+    400008: Index_Finger
+    400010: Landing
+    400012: Landing_Struts
+    400014: Middle_Finger
+    400016: Palm_Heel
+    400018: Palm_Index
+    400020: Palm_Middle_Ring
+    400022: Palm_Pinky
+    400024: Palm_Thumb
+    400026: Paml_Bottom_Center
+    400028: Pinky_Finger
+    400030: Pool
+    400032: Ring_Finger
+    400034: Stairs
+    400036: Thumb
+    400038: Wrist_Forearm
+    2100000: Landing_and_Stairs_lambert
+    2100002: Pool_lambert
+    2100004: lambert1
+    2100006: Palm_Index_lambert
+    2100008: Palm_Middle_Ring_lambert
+    2100010: Palm_Pinky_lambert
+    2100012: Palm_Heel_lambert
+    2100014: Back_Of_Hand_lambert
+    2100016: Wrist_Forearm_lambert
+    2100018: Paml_Bottom_Center_lambert
+    2100020: Thumb_lambert
+    2100022: Index_Finger_lambert
+    2100024: Middle_Finger_lambert
+    2100026: Ring_Finger_lambert
+    2100028: Pinky_Finger_lambert
+    2300000: Back_of_Hand
+    2300002: Index_Finger
+    2300004: Landing
+    2300006: Landing_Struts
+    2300008: Middle_Finger
+    2300010: Palm_Heel
+    2300012: Palm_Index
+    2300014: Palm_Middle_Ring
+    2300016: Palm_Pinky
+    2300018: Palm_Thumb
+    2300020: Paml_Bottom_Center
+    2300022: Pinky_Finger
+    2300024: Pool
+    2300026: Ring_Finger
+    2300028: Stairs
+    2300030: Thumb
+    2300032: Wrist_Forearm
+    3300000: Back_of_Hand
+    3300002: Index_Finger
+    3300004: Landing
+    3300006: Landing_Struts
+    3300008: Middle_Finger
+    3300010: Palm_Heel
+    3300012: Palm_Index
+    3300014: Palm_Middle_Ring
+    3300016: Palm_Pinky
+    3300018: Palm_Thumb
+    3300020: Paml_Bottom_Center
+    3300022: Pinky_Finger
+    3300024: Pool
+    3300026: Ring_Finger
+    3300028: Stairs
+    3300030: Thumb
+    3300032: Wrist_Forearm
+    4300000: Landing
+    4300002: Landing_Struts
+    4300004: Stairs
+    4300006: Pool
+    4300008: Palm_Thumb
+    4300010: Palm_Index
+    4300012: Palm_Middle_Ring
+    4300014: Palm_Pinky
+    4300016: Palm_Heel
+    4300018: Back_of_Hand
+    4300020: Wrist_Forearm
+    4300022: Paml_Bottom_Center
+    4300024: Thumb
+    4300026: Index_Finger
+    4300028: Middle_Finger
+    4300030: Ring_Finger
+    4300032: Pinky_Finger
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
