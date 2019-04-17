@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon Final Map", "Assembly-CSharp.csproj", "{A39C2C85-F6E9-2952-5ADD-8AFE3D54FDD3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon Final Map", "Assembly-CSharp-firstpass.csproj", "{8928C489-2982-0E90-2CF3-204BACFEB1EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lagoon Final Map", "Assembly-CSharp-Editor-firstpass.csproj", "{6E98D86E-3A34-9451-3D21-5678320A5F95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{A39C2C85-F6E9-2952-5ADD-8AFE3D54FDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A39C2C85-F6E9-2952-5ADD-8AFE3D54FDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A39C2C85-F6E9-2952-5ADD-8AFE3D54FDD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8928C489-2982-0E90-2CF3-204BACFEB1EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8928C489-2982-0E90-2CF3-204BACFEB1EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8928C489-2982-0E90-2CF3-204BACFEB1EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8928C489-2982-0E90-2CF3-204BACFEB1EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E98D86E-3A34-9451-3D21-5678320A5F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E98D86E-3A34-9451-3D21-5678320A5F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E98D86E-3A34-9451-3D21-5678320A5F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E98D86E-3A34-9451-3D21-5678320A5F95}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
