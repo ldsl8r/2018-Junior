@@ -8,8 +8,8 @@ public class CameraController : MonoBehaviour {
 	public Vector2 panLimit;
 
 	public float scrollSpeed = 20f;
-	public float minY = 2;
-	public float maxY = 20;
+	public float minY = 20;
+	public float maxY = 80;
 
 	// Update is called once per frame
 	void Update () {
