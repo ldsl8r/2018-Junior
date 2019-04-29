@@ -55,6 +55,7 @@
      <Compile Include="Assets\CharacterPickup.cs" />
      <Compile Include="Assets\MonolithAnimTrigger.cs" />
      <Compile Include="Assets\PickupandHold.cs" />
+     <Compile Include="Assets\QuitApp.cs" />
      <Compile Include="Assets\UIAppear.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>D:/2018-Junior/2019 Game Level Design/New Unity Project/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
