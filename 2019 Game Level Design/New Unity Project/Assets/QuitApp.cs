@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class QuitApp : MonoBehaviour {
 
-	 void Update()
+	private void Update()
     {
-        if (Input.GetKey("I"))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            Application.Quit();
+            if(Application.isEditor)
+            {
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            else
+            {
+                Application.Quit();
+            }
         }
     }
 }
