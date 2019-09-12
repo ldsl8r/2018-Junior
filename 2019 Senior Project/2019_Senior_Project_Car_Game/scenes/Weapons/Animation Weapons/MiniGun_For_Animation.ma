@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: MiniGun_For_Animation.ma
-//Last modified: Tue, Sep 10, 2019 04:32:38 PM
+//Last modified: Thu, Sep 12, 2019 02:26:38 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
@@ -15,17 +15,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E93409B9-4D86-A4A5-8CF6-369BB6FE693E";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 37.568491395565971 18.578964115096284 -4.068374516344039 ;
-	setAttr ".r" -type "double3" -27.338352727165002 1178.1999999996585 -2.5444437451708134e-14 ;
+	setAttr ".t" -type "double3" 26.612012845246426 10.587836601368174 7.3742740818287302 ;
+	setAttr ".r" -type "double3" -17.138352727644921 1163.7999999995241 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "5D329AC6-4139-8753-7CCC-12839FE620D1";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 43.796768586440187;
+	setAttr ".coi" 27.43897926562499;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 2.1870990775088943 -7.8227870437734373 0.3799702376523682 ;
+	setAttr ".tp" -type "double3" -0.00025391578674316406 0.31882485269507477 -0.14559030101728304 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 createNode transform -s -n "top";
 	rename -uid "B608C651-40BF-FA03-8C46-38B7C37037CF";
@@ -47,38 +47,40 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "C62044F6-4B08-AC34-8808-18BD196A1A4D";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.1870990775088939 -10.185017844642193 1000.3906673313485 ;
+	setAttr ".t" -type "double3" 0.092590684110312849 4.0942122326690127 1000.498209197701 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "86D92C16-450D-E008-FBD7-16B1B3B493C8";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".coi" 1000.247294284299;
-	setAttr ".ow" 9.0976949323687624;
+	setAttr ".coi" 997.2471350027929;
+	setAttr ".ow" 5.9851091796466456;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
-	setAttr ".tp" -type "double3" 2.1870990775088939 -10.185017844642193 0.14337304704950871 ;
+	setAttr ".tp" -type "double3" 0.18520128726959229 4.322651720461903 3.2510741949081421 ;
 	setAttr ".hc" -type "string" "viewSet -f %camera";
 	setAttr ".o" yes;
 createNode transform -s -n "side";
 	rename -uid "51551C32-4D0B-391C-132B-3291C3EA92EC";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1964364409363 -2.729336915663044 0.17368868506546109 ;
+	setAttr ".t" -type "double3" 1000.3100321916842 4.4510685396544076 2.2782870143461809 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "BC93D599-4049-F7BE-2C3E-59A3AB0B58CA";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
-	setAttr ".coi" 998.00933736342733;
-	setAttr ".ow" 17.28307511268002;
+	setAttr ".coi" 1000.3102861074709;
+	setAttr ".ow" 8.6750210792365898;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
-	setAttr ".tp" -type "double3" 2.1870990775088934 -2.729336915663044 0.17368868506523949 ;
+	setAttr ".tp" -type "double3" -0.00025391578674316406 4.1951539878225903 6.1464723794697917 ;
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 createNode transform -n "Minigun_Grp";
 	rename -uid "B801AD23-4D30-EF94-2AD7-0EB7AEC190CF";
+	setAttr ".rp" -type "double3" 0.023484146222472191 0.39503016430372195 0.64965619156368559 ;
+	setAttr ".sp" -type "double3" 0.023484146222472191 0.39503016430372195 0.64965619156368559 ;
 createNode transform -n "Main_Body" -p "Minigun_Grp";
 	rename -uid "55FEA5E1-4327-D0ED-2DCF-B6AB5057AA3D";
 	setAttr ".rp" -type "double3" 0.18520122939725228 0.2498983701219275 -0.80677956373657222 ;
@@ -4445,22 +4447,25 @@ createNode mesh -n "Barrel_ClusterShape" -p "Barrel_Cluster";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
+createNode transform -n "Muzzle_Blast_Empty" -p "Barrel_Cluster";
+	rename -uid "B93A7963-439B-4B8C-A7B1-BC9509E1798C";
+	setAttr ".t" -type "double3" 0 0.46597314529955725 9.8422052806142126 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2D93EA74-40AA-EBA8-3112-439AD257E093";
-	setAttr -s 64 ".lnk";
-	setAttr -s 64 ".slnk";
+	rename -uid "9C8EA8F5-4C3D-6471-2651-D7A9CBA7D7C6";
+	setAttr -s 251 ".lnk";
+	setAttr -s 251 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "F790C3FA-4484-AD5C-ADC5-9B85C20C24C8";
+	rename -uid "50D818E5-4268-06AD-2D45-C1ADA9161D1C";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "F3A0C189-4B46-A248-CBAC-C2966494ACC4";
+	rename -uid "C35AC7B2-4989-294D-D2CA-31877E86621C";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "65C4A91F-47F2-BD87-4D75-BB975AEB2292";
-	setAttr -s 3 ".dli[1:2]"  1 2;
-	setAttr -s 3 ".dli";
+	rename -uid "21D09FCE-4FA5-7307-EF3E-67B161984870";
+	setAttr -s 9 ".dli[1:8]"  1 2 3 4 5 6 7 8;
+	setAttr -s 9 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "383D1950-4BFD-1D12-B79F-08A974293B83";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "C2825EDC-4D28-DA03-10B1-4E972CA694CD";
+	rename -uid "C74BDCA2-4D8B-422F-B34A-618909D54533";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "9592FF5E-4AAF-6AAF-0AF2-9C8A6069DA3B";
 	setAttr ".g" yes;
@@ -4512,7 +4517,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "C9464EC5-4CAA-DFF8-74C3-359F1AFDCE6C";
-	setAttr ".b" -type "string" "playbackOptions -min 1 -max 98 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 4 -max 91 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode renderLayerManager -n "Gun_Mount:renderLayerManager";
 	rename -uid "BB78A7D4-4EF3-348E-C212-058D8F0964A6";
@@ -5289,9 +5294,2527 @@ createNode gameFbxExporter -n "gameExporterPreset3";
 	setAttr ".ebm" yes;
 	setAttr ".fv" -type "string" "FBX201800";
 	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+createNode lambert -n "lambert2";
+	rename -uid "C5C865BC-40ED-887E-980A-7786540C3173";
+createNode shadingEngine -n "Gun_Mount_SwivelSG";
+	rename -uid "3A31EBEC-42C2-12D0-8BC7-28B039D11D7F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "materialInfo1";
+	rename -uid "69FA327A-41D4-9D38-D0F8-1AB2B579CF73";
+createNode renderLayerManager -n "Gun_Mount1:renderLayerManager";
+	rename -uid "BF97B212-4CC3-D3F0-842D-FA9579B4EC25";
+createNode renderLayer -n "Gun_Mount1:defaultRenderLayer";
+	rename -uid "2AAFD0D3-41DC-CD13-C754-76894BACE6BB";
+	setAttr ".g" yes;
+createNode displayLayer -n "Gun_Mount1:RefLayer";
+	rename -uid "0596E4F1-4EFD-745A-A062-5FB4CFB1C6C2";
+	setAttr ".dt" 2;
+	setAttr ".do" 1;
+createNode renderLayerManager -n "Gun_Mount1:M134_MiniGun:renderLayerManager";
+	rename -uid "84A530AD-46C2-C8FB-819C-07824A01EB72";
+createNode renderLayer -n "Gun_Mount1:M134_MiniGun:defaultRenderLayer";
+	rename -uid "5177E5BD-449F-BF02-6CC3-DD8ADC606AB4";
+	setAttr ".g" yes;
+createNode lambert -n "Gun_Mount1:lambert2";
+	rename -uid "88B808AC-4402-68D4-B27E-028487EDC35D";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:lambert2SG";
+	rename -uid "26111899-4F4C-B193-5BB7-A7893F1F7A86";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo1";
+	rename -uid "BF7B2F8F-4C75-2EC4-DA80-E3B7959FC761";
+createNode lambert -n "Gun_Mount1:lambert3";
+	rename -uid "E14E7A44-49EF-3183-B4F2-F4A3A6B2F547";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:lambert3SG";
+	rename -uid "5D1CFDF2-455B-5865-EFE9-8FAE7D4CFAC7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo2";
+	rename -uid "EFACDBFE-428F-25F6-CC72-C5935C46383B";
+createNode lambert -n "Gun_Mount1:lambert4";
+	rename -uid "1721C751-475E-196D-9D1D-CF9C36B37488";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:lambert4SG";
+	rename -uid "3E373D17-4F77-EA49-25AB-32A30A7A8F79";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo3";
+	rename -uid "46004821-4999-17E4-A0E2-27B10532F1BE";
+createNode lambert -n "Gun_Mount1:lambert5";
+	rename -uid "6CF9F946-4DBD-8956-2EEE-6F86C0EE2800";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:lambert5SG";
+	rename -uid "DC9D57CC-48A4-7230-7468-11BC70A57FD4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo4";
+	rename -uid "F0E2B9FE-4C05-D56A-ACE5-6BB02A15D835";
+createNode lambert -n "Gun_Mount1:lambert6";
+	rename -uid "B8142B8D-4FBB-FAAC-3E38-1CAF48E69127";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:lambert6SG";
+	rename -uid "8F823976-4646-D79E-8D38-66A05FC57BA8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo5";
+	rename -uid "B90026A0-4A11-B3C2-47D2-6AB82D80EC5F";
+createNode lambert -n "Gun_Mount1:lambert7";
+	rename -uid "B1987509-4C5E-7E92-1B86-758D48AD08CA";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:lambert7SG";
+	rename -uid "2E2A0BA7-4E17-F983-F33E-55AB8A4350AC";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo6";
+	rename -uid "18968D09-426E-43D0-563F-7E9328465CC4";
+createNode lambert -n "Gun_Mount1:lambert8";
+	rename -uid "46A43E58-4975-B11B-6321-D7ACE43D444E";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:lambert8SG";
+	rename -uid "F60D6D76-4CFC-3509-CA05-7486E05DD779";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo7";
+	rename -uid "25729BC1-41D0-F124-5715-EBB51BE95A9A";
+createNode lambert -n "Gun_Mount1:lambert9";
+	rename -uid "063F58BF-436B-F31E-A821-49A45EF5EC9C";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:lambert9SG";
+	rename -uid "A1EB3557-4E60-D6B7-5251-418BE403CA56";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo8";
+	rename -uid "6119531A-40E0-45B6-FF91-CBB7749C283C";
+createNode lambert -n "Gun_Mount1:lambert10";
+	rename -uid "CE37E59C-4D42-08D0-F3CF-B3A5F476F858";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:lambert10SG";
+	rename -uid "A1389DFE-460D-878B-60BD-B29F6F2B3D34";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo9";
+	rename -uid "CA4973BD-459D-58F4-830D-00AA4A14F419";
+createNode lambert -n "Gun_Mount1:lambert11";
+	rename -uid "B211AC62-491B-5B43-0B69-03985EC74F65";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:lambert11SG";
+	rename -uid "75462DC2-4DB2-59F9-3563-C482EC3F7897";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo10";
+	rename -uid "AEF9648C-4942-5463-4C69-B981AFEE5A69";
+createNode lambert -n "Gun_Mount1:lambert12";
+	rename -uid "A84C054B-4D9B-9F62-7EDB-4EBA8FD2BCA2";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:lambert12SG";
+	rename -uid "F16282E8-44D5-74B3-473E-F89AF60F37FD";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo11";
+	rename -uid "A0CAE769-439D-CC67-8549-5FA2CD158D9D";
+createNode lambert -n "Gun_Mount1:lambert13";
+	rename -uid "77C4B437-45E2-E1C8-EFBA-3992D41D702E";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:lambert13SG";
+	rename -uid "09797585-416C-2C4C-34B9-72BC5FA9A196";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo12";
+	rename -uid "ABEFE1CD-4031-8B39-FA2A-7EAC44CBACB1";
+createNode lambert -n "Gun_Mount1:lambert14";
+	rename -uid "64BB4E4A-43F2-4F21-601F-03A99E19EDC0";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:lambert14SG";
+	rename -uid "3717F2A7-449E-F494-125E-C5B7E48040AD";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo13";
+	rename -uid "0DD54001-4077-A839-B175-C48C55FDE195";
+createNode lambert -n "Gun_Mount1:lambert15";
+	rename -uid "2EA426B7-49E6-8A3F-FFC4-42888B57DDA5";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:lambert15SG";
+	rename -uid "125731D4-4485-7E57-42C0-16964BB9D6C8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo14";
+	rename -uid "70D64550-438D-1025-1166-FA9E648DCDEB";
+createNode lambert -n "Gun_Mount1:lambert16";
+	rename -uid "B94EABED-430E-A00F-1B09-AE93AD4D6EA0";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:lambert16SG";
+	rename -uid "7B638A06-4783-D00B-D8CE-798FD2F85820";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:materialInfo15";
+	rename -uid "13E7ADAD-4969-EC2C-D28C-E29D138E474A";
+createNode renderLayerManager -n "Gun_Mount1:Railgun_Cannon:renderLayerManager";
+	rename -uid "17659DBA-4943-AB86-D940-F19A2D27A40D";
+createNode renderLayer -n "Gun_Mount1:Railgun_Cannon:defaultRenderLayer";
+	rename -uid "E17974C9-4CA7-B1FA-CBD7-8EA92DCFE834";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:Railgun_Cannon:groupId12";
+	rename -uid "F68002D2-4A3F-6E83-38FE-0CA327F3EF7C";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:Railgun_Cannon:groupId15";
+	rename -uid "9A54686D-4A3A-D82E-0F13-498AC4446EDC";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:Railgun_Cannon:lambert2";
+	rename -uid "CD41F5D3-4FA7-2D1E-83D5-0AA65978CFDC";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon:lambert2SG";
+	rename -uid "BB06F911-40AB-60F3-7BB3-68BA018337A9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon:materialInfo1";
+	rename -uid "A70D7891-4F90-8CD0-7265-37ADB79375A4";
+createNode lambert -n "Gun_Mount1:Railgun_Cannon:lambert3";
+	rename -uid "FF367FA5-4A23-EE99-9F1C-D38FC6FDBF41";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon:lambert3SG";
+	rename -uid "177117C7-4D2C-5346-0153-0F919F2101A1";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon:materialInfo2";
+	rename -uid "9832073D-4913-4D9C-4DC8-379F3E7F1B31";
+createNode lambert -n "Gun_Mount1:Railgun_Cannon:lambert4";
+	rename -uid "6AA2D826-4203-6248-EB65-F6B337C8E000";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon:lambert4SG";
+	rename -uid "79281702-4F3C-513D-6B8B-479CDC89CE0D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon:materialInfo3";
+	rename -uid "DF20ABAF-47C0-D9E8-8C9D-7DA6438E14E6";
+createNode renderLayerManager -n "Gun_Mount1:Railgun_Cannon:M134_MiniGun:renderLayerManager";
+	rename -uid "26B0ECCC-4EAB-0FBA-0425-8EBD962C5439";
+createNode renderLayer -n "Gun_Mount1:Railgun_Cannon:M134_MiniGun:defaultRenderLayer";
+	rename -uid "18B79EDE-43FD-5D10-D8C1-01A1BC56CBC4";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:Railgun_Cannon1:renderLayerManager";
+	rename -uid "30B820B7-4473-4018-2069-D4978B165D77";
+createNode renderLayer -n "Gun_Mount1:Railgun_Cannon1:defaultRenderLayer";
+	rename -uid "E7854FE7-4F31-CABF-57B8-15A3F352C325";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:Railgun_Cannon1:groupId12";
+	rename -uid "5A221758-4A49-2DEE-8703-CD93C1330FC8";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:Railgun_Cannon1:groupId15";
+	rename -uid "CD9193F8-4D57-109F-5C2F-B3BA663393C5";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:Railgun_Cannon1:lambert2";
+	rename -uid "ABA897E6-47E7-FCD0-05DA-7A8BC784B1A2";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon1:lambert2SG";
+	rename -uid "512F96D3-4651-CE6E-D17C-3384E718CF92";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon1:materialInfo1";
+	rename -uid "82C8D82E-41C0-07C0-AEEF-F5B6D56DDAB6";
+createNode lambert -n "Gun_Mount1:Railgun_Cannon1:lambert3";
+	rename -uid "4E3EEECB-49C9-18F8-A944-5296EF4BEA10";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon1:lambert3SG";
+	rename -uid "85693580-46AE-773E-23FF-AD869A9B4635";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon1:materialInfo2";
+	rename -uid "960970CD-4793-D456-E97E-87AD06B896C7";
+createNode lambert -n "Gun_Mount1:Railgun_Cannon1:lambert4";
+	rename -uid "7E0B14B4-4B6F-DB38-77BF-8A90D6535CA8";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:Railgun_Cannon1:lambert4SG";
+	rename -uid "7677341C-489B-409E-0DAA-48B7613FA120";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Railgun_Cannon1:materialInfo3";
+	rename -uid "897B0DCD-45A1-0037-AF6E-3C9A38D66785";
+createNode renderLayerManager -n "Gun_Mount1:Railgun_Cannon1:M134_MiniGun:renderLayerManager";
+	rename -uid "FD6A9A62-43EF-AE69-C017-6BAE4210329A";
+createNode renderLayer -n "Gun_Mount1:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer";
+	rename -uid "DFE46C4D-4383-B9C3-3FB3-8689358C7C89";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:Lineup:renderLayerManager";
+	rename -uid "C85E3A3E-4161-4C90-7982-F88E5220591A";
+createNode renderLayer -n "Gun_Mount1:Lineup:defaultRenderLayer";
+	rename -uid "6A5E06A9-4D41-3F0F-9E9D-D9BF53F0061E";
+	setAttr ".g" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo4";
+	rename -uid "2A934CD9-44DF-B42B-6A0B-F3B7D4BBF8E9";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn3SG";
+	rename -uid "231B849E-4275-5F6A-BEB5-99A1E1A9AE3A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert3SG";
+	rename -uid "1FE6D44D-4D8C-DCF0-743E-97A32E456BDF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo6";
+	rename -uid "4E1C02F1-40CA-7A3D-4327-D38247CC47CC";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__White";
+	rename -uid "12128E86-446B-BB24-A2E5-83A018622A2B";
+	setAttr ".c" -type "float3" 1 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn2SG";
+	rename -uid "CA2D89EE-4178-1989-6A95-CBAC39A0FC53";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo2";
+	rename -uid "583EAFBF-4403-8547-A047-36B83B5BD4AE";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert4SG";
+	rename -uid "8369DE65-4347-E99C-1414-90A6CB45DFE5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo7";
+	rename -uid "3A292B3D-4A30-4330-98E0-F3B0BD8EB182";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert4";
+	rename -uid "84989479-4A27-385E-53A1-0E91EFB0B500";
+	setAttr ".c" -type "float3" 0.5 0.21154165 0 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn5SG";
+	rename -uid "5BDC3932-4F22-E454-7A9D-ECBA7629D4B0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo8";
+	rename -uid "5B965F16-4B3D-4D06-5C18-35BD355B47B5";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__blinn5";
+	rename -uid "2F5ED40E-482D-5561-886C-B49A97FD6D73";
+	setAttr ".c" -type "float3" 1 0 0 ;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo3";
+	rename -uid "213B3ED1-4B60-D008-FF29-3392D446171C";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert2SG";
+	rename -uid "8E1D758C-4F88-3546-C9BC-B89D466071D9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo1";
+	rename -uid "6A153D1E-48F9-1B77-C638-C9821090E9FC";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn1SG";
+	rename -uid "2828A6B8-458A-0F69-3C9F-67AE582A4A6B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn4SG";
+	rename -uid "79034B12-4E3B-7F18-151D-D6BA611BA041";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo5";
+	rename -uid "094F86EB-4347-A372-1FDD-F2B8D0985B8E";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Windows";
+	rename -uid "AB4EF82F-4B49-8202-1013-1DB3FD160F05";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn7SG";
+	rename -uid "C0AA33E9-42DA-4587-9F89-E985C31FC6F3";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo13";
+	rename -uid "8064141A-4901-E4A1-23AB-7283EB248783";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Tire_Metal";
+	rename -uid "77CA8E08-4BD4-B745-9243-97B446C549C4";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn4SG1";
+	rename -uid "0E3DBE26-4BC4-CE19-5AD7-8CB842C4CF9F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo9";
+	rename -uid "B4D6C8DE-4D1F-4133-F562-23863C13FBCC";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn8SG";
+	rename -uid "2954917E-4403-B388-B433-CBAFAC30FA3C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo16";
+	rename -uid "34BF3EAC-41A3-F6FB-075F-5BB562611137";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert8SG";
+	rename -uid "E3F21C28-4F7F-0DC7-3AB2-D5825DD5742D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo15";
+	rename -uid "952CE994-4272-F10D-03E5-31B6C9B5471A";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__TailLights";
+	rename -uid "B2E89760-4F3A-5E80-7E26-8FB7B8655EBA";
+	setAttr ".c" -type "float3" 1 0 0 ;
+	setAttr ".ic" -type "float3" 0.40645161 0.40645161 0.40645161 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn6SG";
+	rename -uid "95A11B34-49D0-F94B-5023-C99762EC08AB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo11";
+	rename -uid "A0AAC8F5-44B6-E837-F1ED-DBA8D4B8158E";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn9SG";
+	rename -uid "D16DCF08-4BF5-B91C-F8EF-418DA8157C67";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo17";
+	rename -uid "ABF944F7-410C-D243-98A0-2AA0C6829180";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert7SG";
+	rename -uid "B45E5409-47F5-84F4-FD03-988326626A0C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo14";
+	rename -uid "0720F411-4A94-A522-BB6C-F994F1266DE7";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__Lights";
+	rename -uid "6E0E6744-4038-9D40-2685-EBA82A828799";
+	setAttr ".ic" -type "float3" 0.50967741 0.50967741 0.50967741 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn5SG1";
+	rename -uid "84345DBE-41F6-0AE1-9BF0-19B9AC8D6F68";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo10";
+	rename -uid "4D9FA192-422E-E435-C6A8-58AF25468887";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Rusty_Metal";
+	rename -uid "F2ABF137-4A4D-71D9-2284-8CA50DCA7915";
+	setAttr ".c" -type "float3" 0.29159999 0.092600003 0.051399998 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert6SG";
+	rename -uid "738DAF41-4DD2-A79C-E986-2C9B5B504EB5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo12";
+	rename -uid "86254AFF-4192-F725-5D97-839577BFF5D9";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__Tire_Rubber";
+	rename -uid "B2F04094-451F-1B52-0428-63820D95401B";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn2SG1";
+	rename -uid "344F0184-4C78-9A70-AA3C-88A68BCE9E38";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo19";
+	rename -uid "04D73C90-4856-C0E3-9800-A8B28C30E0E1";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn1SG1";
+	rename -uid "12DE7D60-4C78-F151-0525-3391136032BD";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo18";
+	rename -uid "F748EFF3-42B8-86D7-BFE5-828EF90AE1BF";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn4SG2";
+	rename -uid "4FE6DC29-4633-DDAD-15AC-678328194590";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo22";
+	rename -uid "C40C4C11-4D16-6E82-119F-25862DC096D7";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Window";
+	rename -uid "E85BF357-4223-1842-43F7-A7927552A7CA";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__blinn3SG1";
+	rename -uid "FA607731-4625-66A5-6253-5DB32688F127";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo21";
+	rename -uid "E3895C4D-4773-5DE3-EE2B-E99D1E7C2871";
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert2SG1";
+	rename -uid "81F7B771-4691-20D2-EEE3-3BA8AF192D30";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo20";
+	rename -uid "2094024B-46F4-5C41-9623-55A326CFB74B";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__Tire_Rubber1";
+	rename -uid "7ACC1CA4-4F03-A384-47F8-DEA133C2D920";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG";
+	rename -uid "FEA8FC64-4F0B-6665-9FE9-6F9310A417E9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo38";
+	rename -uid "25287F03-4D8A-05DB-F395-C49C4CD2EE21";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert18";
+	rename -uid "2851A58A-4C01-3A4B-06B6-CAA3C1CA4581";
+createNode shadingEngine -n "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG";
+	rename -uid "DE745C4E-47F7-E0F5-ADC7-76878F5D8CA5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo36";
+	rename -uid "49FBF69B-4011-AE93-6328-7DA65BCF942B";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert8";
+	rename -uid "B5F5EF47-4665-96F8-1CB7-94BA84624521";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG";
+	rename -uid "3E3574E9-4D83-21DA-8AD5-B6A11BB2F46A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo35";
+	rename -uid "0231BCC4-4762-F505-38A7-A2A8D4CFB314";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert11";
+	rename -uid "7F55BAED-47DC-D428-8C46-E9860AC0B692";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG";
+	rename -uid "8F6726A6-4FD3-5FF3-8771-9899E79431A4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo37";
+	rename -uid "14E12A4B-4AB1-A8CD-EDC6-679282F20D85";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert7";
+	rename -uid "4EC4D022-42C6-BF41-9335-5EBB12A232DF";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Front_SuspensionSG";
+	rename -uid "ECF428D1-429E-E3AE-CF8E-A59C28C20EC8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo25";
+	rename -uid "4296D9A3-40F5-8C2C-C9F9-32A16898ABEA";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert15";
+	rename -uid "00185523-468D-2CBD-917E-DDA72ABE5C5E";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__F_L_TireSG1";
+	rename -uid "F7E1CF24-457A-0C1A-92C3-6BBA07F80FB7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo27";
+	rename -uid "FECBCBD4-4B1F-EF73-169E-8B90CDFC2642";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert5";
+	rename -uid "4FC6D088-41BB-59A7-9093-9F9851BA9B4F";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__pCube5SG";
+	rename -uid "B5EA96B0-4660-AAB0-B599-BF921F16FED9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo34";
+	rename -uid "D14FD75D-4382-9310-16A5-1D8D42DA0845";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert10";
+	rename -uid "CE82DC21-4D20-D646-9ACA-1F885667FD26";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__pCylinder3SG";
+	rename -uid "74B22C65-4E09-4C84-3D80-45B53B34981F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo23";
+	rename -uid "88926533-481C-0AD6-64C0-4AB775EA8D22";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert3";
+	rename -uid "7B833C37-4D34-2BBC-5FC2-56A037DB7328";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__F_L_TireSG";
+	rename -uid "6F98DDBF-4CEC-4501-DD6B-0DA5CC72B8DD";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo26";
+	rename -uid "73338239-4C1F-A915-D1D5-3281F545F328";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert9";
+	rename -uid "98C659FF-41B3-60E3-BDE5-119BF3E99933";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Hood_ShellSG3";
+	rename -uid "B9F16944-4288-EB80-763E-4281B65C2190";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo31";
+	rename -uid "AB4272A8-4C3D-A1DE-1541-7AB691CA0142";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert12";
+	rename -uid "6AADB0FA-4C19-9920-B44B-F8AE37F35257";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Dash_BoardSG";
+	rename -uid "4C523E23-4FA5-60B7-398F-8F89504E2D12";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo32";
+	rename -uid "EF71012D-4005-3DF4-A9C4-EEB1E2E26911";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert13";
+	rename -uid "4C69D9DD-40AA-D4CB-74C3-FB8FE97A1A17";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__EngineSG";
+	rename -uid "2A1842A7-46F7-E349-06C2-549F8411E000";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo33";
+	rename -uid "E64E19AD-4E3F-B988-77FE-5AA35C514612";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert6";
+	rename -uid "9D9A1585-4D1E-B29E-28F1-3A81733BE65C";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Hood_ShellSG";
+	rename -uid "25F22D0B-438F-C076-FAC5-1CB405104F92";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo28";
+	rename -uid "F98CAFE4-4B7A-3CDC-28DF-91BAD515C09A";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert2";
+	rename -uid "EE2A5F15-4F40-D1CD-498E-F9BA67941944";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Hood_ShellSG1";
+	rename -uid "4FB213C8-42C1-3BD9-D280-188492F47088";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo29";
+	rename -uid "25842B19-4FD2-A8E4-9400-62AFA6AFAB90";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert16";
+	rename -uid "641A870B-49E0-6FAB-651E-CF957C7FBD76";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Hood_ShellSG2";
+	rename -uid "1577974E-40C5-C64A-935F-1D8CDC73BA12";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo30";
+	rename -uid "C93D37A3-4913-BEFA-5A1C-219C03580F3E";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert17";
+	rename -uid "F09EDFA0-4D46-5C50-37AC-57AC7F5CD860";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__Front_AxleSG";
+	rename -uid "FE0866D9-4093-1822-021B-E694F82A1924";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo24";
+	rename -uid "DDA4AEA6-492B-8387-0CEB-C194AA25E560";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert14";
+	rename -uid "E4E7A212-46F0-3144-9EB5-918B7F2A2313";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert8SG1";
+	rename -uid "72D9F40F-43E3-7F22-2AF5-39B4CC264BC2";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo40";
+	rename -uid "9EFD931B-4302-F368-7C56-41A5FDF3CF06";
+createNode lambert -n "Gun_Mount1:Lineup:pasted__lambert19";
+	rename -uid "D203B9CF-4FC7-83AD-143C-84AAD0BEE6A3";
+	setAttr ".c" -type "float3" 0.48699999 0.44923839 0.346744 ;
+createNode shadingEngine -n "Gun_Mount1:Lineup:pasted__lambert5SG";
+	rename -uid "D0573D6A-450D-A9C8-5F66-D7979C798DA2";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:pasted__materialInfo39";
+	rename -uid "C214E090-4273-1A1F-089E-A482C91E2E44";
+createNode displayLayer -n "Gun_Mount1:Lineup:pasted__GEO_YA";
+	rename -uid "E858C919-4E6E-C29B-614B-71B69C641FEB";
+	setAttr ".do" 1;
+createNode shadingEngine -n "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG";
+	rename -uid "C2C1F71F-4534-437D-36F1-2A8C2E9DA3EE";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:Lineup:JeepRubiconFull:materialInfo1";
+	rename -uid "AF77EF21-44AC-243B-56EE-C185D601D992";
+createNode file -n "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F";
+	rename -uid "59E38596-4BB1-1AC3-2290-ECB2110C2160";
+	setAttr ".ftn" -type "string" "lambert4SG_albedo.jpg";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D";
+	rename -uid "10C3E69B-43CD-65E7-4FF2-AE818087263A";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation:renderLayerManager";
+	rename -uid "1FF3C40E-46CF-9A28-0A40-E5A9D6A0C022";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation:defaultRenderLayer";
+	rename -uid "3A13DA29-4645-A830-75A9-1EBB4FD3F4FC";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:groupId7";
+	rename -uid "09A1DAD9-4286-AA98-FC92-709B2134BC39";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:Lineup:pasted__Black";
+	rename -uid "B771B765-4152-D347-3F5E-3780A8347D18";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Black1";
+	rename -uid "2B13156D-4A3E-A893-ABA3-1AB2402B1469";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Blue";
+	rename -uid "B5E28585-415B-110B-6E3E-5285FE0E510C";
+	setAttr ".c" -type "float3" 0 0 0.1 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Blue1";
+	rename -uid "8A0F2273-4B41-E38D-0CC5-D9AC5D46A646";
+	setAttr ".c" -type "float3" 0 0 0.25400001 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Car_Main_Color";
+	rename -uid "6FFA1DD7-4C52-6697-CB8A-2794B828C3F1";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Chrome";
+	rename -uid "549D44A7-4508-1A0E-A79E-478D765983C9";
+	setAttr ".c" -type "float3" 0.88999999 0.88999999 0.88999999 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Chrome1";
+	rename -uid "B2181637-452B-A2AB-3CF5-D5AD2DDDA5E9";
+	setAttr ".c" -type "float3" 0.45100001 0.45100001 0.45100001 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Frame_Metal";
+	rename -uid "5D4B008D-489B-63DA-4785-ACAEBEC57E44";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:Lineup:pasted__Game_Jeep";
+	rename -uid "4F208EE5-46D3-0FD0-245E-A6ACA3D49FF6";
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Glass";
+	rename -uid "ABAE2E40-4F50-848D-1067-0F8BB26574C6";
+	setAttr ".it" -type "float3" 0.79020977 0.79020977 0.79020977 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__GunMetal";
+	rename -uid "3360DE13-4178-6C08-A6E7-35AB4510300E";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode blinn -n "Gun_Mount1:Lineup:pasted__Gunmetal";
+	rename -uid "36EEF2CA-464E-AAAE-F604-75BF712C3FCB";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1";
+	rename -uid "944B4583-4A86-0B2A-84C6-EABBD4E1952F";
+createNode nodeGraphEditorInfo -n "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "1142E71C-446B-5C1C-3054-2CB301E1515E";
+	setAttr ".def" no;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -910.71424952575273 175.44778682474893 ;
+	setAttr ".tgi[0].vh" -type "double2" 452.38093440494924 388.0406136763263 ;
+	setAttr -s 33 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[0].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[1].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[2].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[3].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[4].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[5].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[6].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[7].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[8].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[9].y" -160;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[10].y" -160;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[11].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[12].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[13].y" -160;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[14].y" -160;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[15].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
+	setAttr ".tgi[0].ni[16].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[16].y" -160;
+	setAttr ".tgi[0].ni[16].nvs" 1923;
+	setAttr ".tgi[0].ni[17].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[17].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[17].nvs" 1923;
+	setAttr ".tgi[0].ni[18].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[18].y" -160;
+	setAttr ".tgi[0].ni[18].nvs" 1923;
+	setAttr ".tgi[0].ni[19].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[19].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[19].nvs" 1923;
+	setAttr ".tgi[0].ni[20].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[20].y" -1857.142822265625;
+	setAttr ".tgi[0].ni[20].nvs" 1923;
+	setAttr ".tgi[0].ni[21].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[21].y" 791.4285888671875;
+	setAttr ".tgi[0].ni[21].nvs" 1923;
+	setAttr ".tgi[0].ni[22].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[22].y" 2622.857177734375;
+	setAttr ".tgi[0].ni[22].nvs" 1923;
+	setAttr ".tgi[0].ni[23].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[23].y" 1242.857177734375;
+	setAttr ".tgi[0].ni[23].nvs" 1923;
+	setAttr ".tgi[0].ni[24].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[24].y" -562.85711669921875;
+	setAttr ".tgi[0].ni[24].nvs" 1923;
+	setAttr ".tgi[0].ni[25].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[25].y" 2162.857177734375;
+	setAttr ".tgi[0].ni[25].nvs" 1923;
+	setAttr ".tgi[0].ni[26].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[26].y" -111.42857360839844;
+	setAttr ".tgi[0].ni[26].nvs" 1923;
+	setAttr ".tgi[0].ni[27].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[27].y" -1014.2857055664063;
+	setAttr ".tgi[0].ni[27].nvs" 1923;
+	setAttr ".tgi[0].ni[28].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[28].y" -2227.142822265625;
+	setAttr ".tgi[0].ni[28].nvs" 1923;
+	setAttr ".tgi[0].ni[29].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[29].y" 1702.857177734375;
+	setAttr ".tgi[0].ni[29].nvs" 1923;
+	setAttr ".tgi[0].ni[30].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[30].y" 3082.857177734375;
+	setAttr ".tgi[0].ni[30].nvs" 1923;
+	setAttr ".tgi[0].ni[31].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[31].y" 340;
+	setAttr ".tgi[0].ni[31].nvs" 1923;
+	setAttr ".tgi[0].ni[32].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[32].y" -1465.7142333984375;
+	setAttr ".tgi[0].ni[32].nvs" 1923;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:renderLayerManager";
+	rename -uid "40DF5988-460F-1BD0-C29F-1CB15A0691D1";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:defaultRenderLayer";
+	rename -uid "681F5A23-4DE9-0B61-C5F8-27A22AB298EA";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:renderLayerManager";
+	rename -uid "024A4F28-4758-FAAE-EA75-A3853F4E38FC";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:defaultRenderLayer";
+	rename -uid "2149F0F3-4D7A-798D-0CC8-12AA4D1052E3";
+	setAttr ".g" yes;
+createNode displayLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:RefLayer";
+	rename -uid "D3D828A8-489B-D288-F76B-8189C09479EB";
+	setAttr ".dt" 2;
+	setAttr ".do" 1;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:M134_MiniGun:renderLayerManager";
+	rename -uid "4D454A31-4AAF-6D2A-C703-39B0C51A4AB3";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:M134_MiniGun:defaultRenderLayer";
+	rename -uid "A41D1A4B-4367-C1BC-A090-5BADECA7CB0C";
+	setAttr ".g" yes;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2";
+	rename -uid "6C977AEA-400D-2B7C-EE72-4E8A2FA6A0C6";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG";
+	rename -uid "C5ED8E81-402D-DAB9-08FC-1F8136DF12E5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo1";
+	rename -uid "D810976E-41EE-9C8A-7D74-89850A0888A4";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3";
+	rename -uid "A6078586-4A1B-08C5-4E14-4CB019BEFE29";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG";
+	rename -uid "9D753FA4-4F63-C05B-9B52-4BB7BC0858FA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo2";
+	rename -uid "494295BF-4216-3333-492F-0BB230296293";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4";
+	rename -uid "EEE9ECF7-4159-024A-5EF1-86BA694048B0";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG";
+	rename -uid "963FCFC4-457F-9F74-D421-A1A48124EF79";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo3";
+	rename -uid "B5DDCD20-4DE3-18C9-E30C-DF95BA37599B";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5";
+	rename -uid "4EDDC4A0-4203-1F92-6AD0-208639F99ED5";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG";
+	rename -uid "724852EE-4026-8229-006C-0C8532F376C0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo4";
+	rename -uid "5A442E76-4679-2272-2627-30B088FECCF8";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6";
+	rename -uid "7DABBF59-400D-A5FF-3FA9-E78DFCD5FABA";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG";
+	rename -uid "1766F8D6-4ED5-3FA3-4A4C-A1BD9E90852C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo5";
+	rename -uid "EBD91ACD-4A21-7B28-3422-788E2E93EF1A";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7";
+	rename -uid "DF4C51B0-4269-F4B2-AFB5-F18F8A5CF5A8";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG";
+	rename -uid "2CFB51CB-4B4D-CBCE-B83D-228B097AB759";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo6";
+	rename -uid "5CCA3AB4-4DD0-A6C2-48D9-01B6E8EAB579";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8";
+	rename -uid "DC577E63-4356-DEFE-4065-3CADF6C0BC74";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG";
+	rename -uid "D5FD2BED-4F6C-16F0-0288-079175CCDF63";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo7";
+	rename -uid "88397FF5-48B5-118F-9BDE-4A822E4956F3";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9";
+	rename -uid "F598BA8D-4177-482E-D157-8E8708F08B44";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG";
+	rename -uid "DC702741-497D-8E8A-2577-388F8DFFDDD5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo8";
+	rename -uid "07F3AD44-4159-9848-25F8-E6913626B67E";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10";
+	rename -uid "E5CCAB33-47C1-6985-81F1-559D022A7A56";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG";
+	rename -uid "3ABC6841-40AB-14C3-2B43-E38C19BE06FB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo9";
+	rename -uid "95924A8E-46F7-AA50-94F6-CDA1D1625F67";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11";
+	rename -uid "31269BEC-4DD9-590B-6A76-C4974A66F054";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG";
+	rename -uid "59D799B6-4C52-68E3-6C6C-45A77FCAA313";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo10";
+	rename -uid "ED19F1C2-46A3-D8D6-8390-ECA8355641A7";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12";
+	rename -uid "A23D8A46-4918-4C9E-A662-AAB73735AF2A";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG";
+	rename -uid "33AC5B0A-4CF1-58BA-984C-558CDF4FFF30";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo11";
+	rename -uid "5C5AD9F9-4F33-5C79-8B56-CDB4C52A05CC";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13";
+	rename -uid "B2152C4D-4939-D740-DE81-B792A6289DFD";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG";
+	rename -uid "4EF87809-48BB-1147-2235-D6A97B26567F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo12";
+	rename -uid "712A012E-4167-B4C6-4FF0-3BB7BC8F09A2";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14";
+	rename -uid "D98450E5-4A87-945B-E527-138D17973DA4";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG";
+	rename -uid "6DECCE8D-4987-B450-D3EB-27B6CFF98FA2";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo13";
+	rename -uid "3E6C0EC9-4833-E09F-6A5C-3780B5AD3D11";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15";
+	rename -uid "4C4D96E1-4929-4360-0D93-B79C984878BF";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG";
+	rename -uid "8E5934C9-4F89-7CE7-CD46-7B810CD25872";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo14";
+	rename -uid "64D7E002-4263-0579-E77C-2EAA391EC195";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16";
+	rename -uid "72D5F154-4548-DE67-3957-2BB1746C03AF";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG";
+	rename -uid "659683E1-4B94-D2A1-526F-45B80723591D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo15";
+	rename -uid "BC8308FE-437B-5610-1E69-5CAB33508D83";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:renderLayerManager";
+	rename -uid "7BB30E44-4814-1136-365D-579DE96446D3";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:defaultRenderLayer";
+	rename -uid "85F2C18F-4AF7-35FC-86AA-C7886205517A";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:groupId12";
+	rename -uid "389BFD78-4D0D-6CF5-195D-8DB665D290A5";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:groupId15";
+	rename -uid "0AE7A568-455C-BE71-2974-E2A7C94304FB";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2";
+	rename -uid "13A6BC48-4DD3-8F13-768A-EEAD117EC957";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG";
+	rename -uid "338AA2F0-4F96-D978-5F97-57B2687F2569";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo1";
+	rename -uid "2B1D8C32-49E2-D095-28D2-9AA86CAE2C72";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3";
+	rename -uid "7D73B834-4195-4F6F-7AAD-E5ACD3242C8C";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG";
+	rename -uid "64896EFA-43D9-0CB8-9952-5DB6DD799D68";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo2";
+	rename -uid "6F0562EC-46FA-64CE-D548-E2B7439D288D";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4";
+	rename -uid "F993AD4D-4FF9-13A0-5A47-9589BD1284E1";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG";
+	rename -uid "63251B47-45CB-E849-77B2-59A91F465EE9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo3";
+	rename -uid "C8C98467-403A-E603-DFCB-14BB68AC3E24";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:M134_MiniGun:renderLayerManager";
+	rename -uid "A9D99249-4DEA-C20A-4C1B-F8AD325698C3";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer";
+	rename -uid "1272F0E6-410D-DC73-8233-B18C383FA64E";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:renderLayerManager";
+	rename -uid "8ACF7125-4782-700D-16F4-BD91EA4C820A";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:defaultRenderLayer";
+	rename -uid "74773405-41B6-7D55-CEDE-F98980F757C5";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:groupId12";
+	rename -uid "D5D44576-4A73-00D9-1574-5AB60FA5FDBF";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:groupId15";
+	rename -uid "2E769B63-4EB1-7535-EF70-49A49A4C9F56";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2";
+	rename -uid "BD1C7F98-45B1-300B-D75C-76A584E2B77E";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG";
+	rename -uid "35E3BA7E-493D-D3CC-B32D-A2891BADCC61";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo1";
+	rename -uid "ED23F01B-4233-7021-BEA6-9CACEE954A81";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3";
+	rename -uid "0B3B2E37-4193-EAEA-7D7F-358AA24493FA";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG";
+	rename -uid "2D7A3370-4CD8-4EE6-F220-0CB43F56CFC7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo2";
+	rename -uid "2CEA1742-4337-63F2-F6B0-5EA3725FD2FE";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4";
+	rename -uid "DBCE3F84-4E19-96D3-4454-6881AE293D29";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG";
+	rename -uid "586DF95E-4680-B17C-B521-3AB1D87E72EC";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo3";
+	rename -uid "36B7AB4A-4749-4F1A-2F7C-2AA81F6A83C3";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:M134_MiniGun:renderLayerManager";
+	rename -uid "1C820255-4ECB-1AC4-C9C8-E593509669EA";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer";
+	rename -uid "F4C20CCD-490E-6766-2097-F2BFF58E886F";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:renderLayerManager";
+	rename -uid "4E5048C5-48AD-5451-BDA2-58AE853BAD5C";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:defaultRenderLayer";
+	rename -uid "D8745C07-4219-2710-716E-7F8BB6F9B9A8";
+	setAttr ".g" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo4";
+	rename -uid "128F39A0-4766-8E8F-89C2-1593CE43750E";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG";
+	rename -uid "659C6F2D-4507-BC79-5538-38A9176241A0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG";
+	rename -uid "79B25BF9-4896-C0DB-B655-F697FCC5A712";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo6";
+	rename -uid "5E8828E9-4CA8-5915-3906-5AB699B1A4E7";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__White";
+	rename -uid "F75B953C-4342-3C0E-A473-459C42B9A7DE";
+	setAttr ".c" -type "float3" 1 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG";
+	rename -uid "1AB50C38-4381-7EC4-31C7-BEA84C082829";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo2";
+	rename -uid "96F32C58-42DE-6634-145A-30A74046A969";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG";
+	rename -uid "6A31F24A-486C-6621-86A0-7DBBA41EB93D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo7";
+	rename -uid "36361DCA-4D44-1B2E-1EF2-598CF126DC99";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4";
+	rename -uid "AE143D0D-48A0-6A57-D1C7-B3BEA24A37D8";
+	setAttr ".c" -type "float3" 0.5 0.21154165 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG";
+	rename -uid "0F38C576-484A-872D-5C88-0EBA8B408172";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo8";
+	rename -uid "DACE1943-4EC2-D1F1-C50E-A199396746A5";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5";
+	rename -uid "7A3AC6A5-46F1-46ED-15F1-BCA7130C3654";
+	setAttr ".c" -type "float3" 1 0 0 ;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo3";
+	rename -uid "0C3184A8-4759-4F81-6D82-92BC9ECF10F3";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG";
+	rename -uid "21C58910-448C-06F6-4F57-908ED46414E0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo1";
+	rename -uid "79492E86-4B88-6972-C85D-939EF07F7AF6";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG";
+	rename -uid "CBA933B9-4B72-61BF-6A31-258EAB6D31D0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG";
+	rename -uid "6D0863B5-4AC1-D9E0-ECEF-77AD0BA0A7F3";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo5";
+	rename -uid "5121F911-49DE-BED5-77BD-95A738C35FE4";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Windows";
+	rename -uid "16282D0F-44B7-8488-4BBE-FB8D157FB4C2";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG";
+	rename -uid "8DC36657-48D2-1C77-E7C0-58BC1025AB7E";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo13";
+	rename -uid "07D14AFF-4D8E-B521-A5EF-6391B6D16B62";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Metal";
+	rename -uid "803E72CF-4AA0-0A74-794C-48A682B6A833";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1";
+	rename -uid "31DAC16A-490A-C072-6A16-56A5E49AEF11";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo9";
+	rename -uid "A868267D-4ABD-ADA0-9571-899613949747";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG";
+	rename -uid "E6971CA4-43EF-A1B6-5C07-19BFB90E85C7";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo16";
+	rename -uid "121032A3-4E8C-3511-DC3F-28BF6A4DCCF5";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG";
+	rename -uid "1F464AFA-414D-14AE-5569-0BBFCCACF260";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo15";
+	rename -uid "C5C69619-4DF0-88D8-45E7-399B797A1E77";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__TailLights";
+	rename -uid "2279979D-4EED-7438-61AB-B094E159B39F";
+	setAttr ".c" -type "float3" 1 0 0 ;
+	setAttr ".ic" -type "float3" 0.40645161 0.40645161 0.40645161 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG";
+	rename -uid "E45DE838-4F76-32EF-E952-FCAF87AC4898";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo11";
+	rename -uid "046E8BD7-4DB6-9799-4EB2-D19AA5C11742";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG";
+	rename -uid "527CF4E2-48AE-C794-11B2-E9BC73D5C198";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo17";
+	rename -uid "516F2427-4C3C-8029-9B16-5B91F191EB46";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG";
+	rename -uid "40C7429B-4499-41B3-47BB-1D8503B57379";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo14";
+	rename -uid "53212366-4C8D-B07A-E655-D0BA041DED71";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Lights";
+	rename -uid "DE43C94F-4FBA-F272-895A-3595A08602C1";
+	setAttr ".ic" -type "float3" 0.50967741 0.50967741 0.50967741 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1";
+	rename -uid "9E52A43D-4B2F-51EF-B677-CD957D3C242B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo10";
+	rename -uid "6EEFD189-4076-0186-B2D2-65B5D309FE7A";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Rusty_Metal";
+	rename -uid "BE585735-4ED6-C821-2BB7-3FAD94544225";
+	setAttr ".c" -type "float3" 0.29159999 0.092600003 0.051399998 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG";
+	rename -uid "90DD54DA-49AA-E1B8-EBB8-E790EBC04D85";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo12";
+	rename -uid "1CD8A2FA-4262-8F12-DE61-1B99BD92DFB4";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber";
+	rename -uid "BF69A9CB-44A8-F51C-67F1-FAB23319A130";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1";
+	rename -uid "07D689BD-4AF2-CD53-3122-57843C0378F6";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo19";
+	rename -uid "EA325434-466F-230D-F622-359121685E50";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1";
+	rename -uid "3F2E6A08-4485-EE06-3D5F-ACBBF62C9D89";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo18";
+	rename -uid "73FCDFFF-424D-58D8-1DA6-778012B7BA7E";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2";
+	rename -uid "9D6833CE-48AF-95AF-19C2-6CB85FB52932";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo22";
+	rename -uid "1CF207A4-4B10-B31F-8795-5C81485B1DBF";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Window";
+	rename -uid "995DC468-446D-011E-6AFA-2882F2AE883D";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1";
+	rename -uid "6F3B075C-4DE3-18FD-7E0F-B39AB5B2C3CA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo21";
+	rename -uid "092714DF-4F75-52DD-F750-158827BAF13C";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1";
+	rename -uid "E9CEA015-4F29-5214-E38A-D7BDA7938A1A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo20";
+	rename -uid "61CC9888-4AD1-754E-52DA-4891B1743AF1";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber1";
+	rename -uid "91A4109D-4827-8219-8112-1BAAF500BBA6";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG";
+	rename -uid "6005607B-45A8-449B-521E-2E903FBB6B80";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo38";
+	rename -uid "176CD016-4B13-F6EB-3168-E18CEA35FA3B";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert18";
+	rename -uid "4055EECD-448E-690C-D051-6F97936C5AE3";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG";
+	rename -uid "7D3139A8-4788-57B2-121F-AD9B0BC0B7FF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo36";
+	rename -uid "B5E9F0E4-4FCE-5CC2-5EAE-508907BA7A55";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8";
+	rename -uid "34CFDC86-4213-1B77-552F-03AD65DCCE45";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG";
+	rename -uid "B0B78388-4178-B35E-6364-E0AC6617F979";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo35";
+	rename -uid "DF0C59FF-4397-849D-15E3-FB8BCA6C16F6";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert11";
+	rename -uid "3B7155FA-488F-E622-57F3-CB8544FA0BA6";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG";
+	rename -uid "4C8590B6-4855-8FB7-F7AD-9E9A296EF492";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo37";
+	rename -uid "7CA60553-4A4A-31A0-1CAC-FC8EA7B2BC65";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7";
+	rename -uid "85B08E15-4EBC-63F8-1902-BA9C73C4848D";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG";
+	rename -uid "4012C7FC-4732-8969-51D0-88930D18E71B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo25";
+	rename -uid "CB599C4F-4165-A4FB-C9B2-A7B32A2A475A";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert15";
+	rename -uid "3F888EF6-41E3-9563-4D1E-69B4618540EE";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1";
+	rename -uid "0D07786C-477F-0A81-92A2-5394B1D45E99";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo27";
+	rename -uid "B1624BC5-4055-359A-6DE9-BA9F602BF1A7";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5";
+	rename -uid "FC7092AC-433D-2B88-3DE3-F9BAAF40DDF4";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG";
+	rename -uid "2DDD28AD-4BB2-A7D5-0836-FBA3BA42F646";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo34";
+	rename -uid "97B2EF94-4A7F-EA18-8636-3D879494ECD0";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert10";
+	rename -uid "FA358A7C-4B45-98CF-7428-A6921E2BBBB7";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG";
+	rename -uid "63DDD2E5-44E2-E8FB-3BED-B7AC3C326AFC";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo23";
+	rename -uid "AFC74C74-4D4D-7EB5-A26E-1581421919C5";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3";
+	rename -uid "D6C95AC7-4974-5701-2D55-B9AE728343CA";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG";
+	rename -uid "EE426ADD-45C1-082C-1718-C189A5CC1A8F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo26";
+	rename -uid "8BF24F51-429C-23E7-9E81-C4AB20F904B3";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert9";
+	rename -uid "507C99A3-473F-683A-587A-B98CDF538CE7";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3";
+	rename -uid "ADB48EE4-4F68-745B-D242-A3ADBF0A82CC";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo31";
+	rename -uid "3BABADF4-4111-ADD0-D491-B39B1FA84614";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert12";
+	rename -uid "3925ABDB-4D8F-9BA4-BF90-4899DFA10B63";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG";
+	rename -uid "32DB16D3-4F8B-299E-B7A4-078AAFD887EB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo32";
+	rename -uid "2DAD4C32-4DCE-34D4-1EEE-39A0EF34A2B1";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert13";
+	rename -uid "AFDECBA9-417A-642A-FFF0-B79F57CAD277";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG";
+	rename -uid "07F85C8F-435A-C580-A21C-7EB1F38F9AF8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo33";
+	rename -uid "11F5096E-4E0D-7D4D-75A8-07AAB1E8D5E4";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6";
+	rename -uid "81E820A6-4A69-16D8-0BAD-A09C1578AED9";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG";
+	rename -uid "5F8B0345-442C-ED32-7AC6-63A00ADE3E76";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo28";
+	rename -uid "17F81FFA-410D-2D17-0664-B0B1FED17DA1";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2";
+	rename -uid "78D65D40-4531-AD2A-BCED-B3AAF09F6EDB";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1";
+	rename -uid "2CD951C9-4DF3-2004-747E-008829FFFBBB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo29";
+	rename -uid "B7DE47BF-419B-A839-683A-E994505FA38B";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert16";
+	rename -uid "D1FCDBD6-4B9B-5127-D062-FE8DC7031F6D";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2";
+	rename -uid "0AC5D647-4847-7F8C-D754-078B0DDC3A5A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo30";
+	rename -uid "4D14DAF5-45C7-BA9E-49D4-A99A316403C1";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert17";
+	rename -uid "D4AB51EF-4282-06E6-EAF9-4CA7E9DCEF4B";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG";
+	rename -uid "02A7CF0E-4C37-54AA-1F9D-0C8122DCC68A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo24";
+	rename -uid "37ADA61D-4BD5-AB47-6676-388F97264E67";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert14";
+	rename -uid "BF2135E4-4448-3D26-A818-9BBAF5B4AC2A";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1";
+	rename -uid "39144EBC-4F8C-27DD-B099-0B9DC9A64D30";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo40";
+	rename -uid "4A66E458-4340-7C2E-4FD6-0FB8483E6B72";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert19";
+	rename -uid "06E8DFB4-41E7-B23F-EB50-45B39C5E9B88";
+	setAttr ".c" -type "float3" 0.48699999 0.44923839 0.346744 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG";
+	rename -uid "241A97FA-4936-8184-4083-21A730D9CFE9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo39";
+	rename -uid "5FE889B3-4492-246D-8B2D-E29D519B3BE1";
+createNode displayLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GEO_YA";
+	rename -uid "A5253197-415F-A3D5-4BBC-6A9C8E4F1DDC";
+	setAttr ".do" 1;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG";
+	rename -uid "806A5F0A-407A-0C11-1EAF-1894CDF45FC6";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1";
+	rename -uid "DDB94BA3-40EF-93A6-7A7F-4D9AF746C350";
+createNode file -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F";
+	rename -uid "F3313119-4E3F-6CCC-3C27-2AAD934BA066";
+	setAttr ".ftn" -type "string" "lambert4SG_albedo.jpg";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D";
+	rename -uid "7A7B30F0-42E9-17E8-3E9F-4F8976311D57";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:MiniGun_For_Animation:renderLayerManager";
+	rename -uid "0BA15533-4D88-A4A0-6CEF-DE803A414D45";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer";
+	rename -uid "8EBBE6D7-42AA-8E91-1CBC-FC881666CC5A";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:groupId7";
+	rename -uid "181FE022-452C-0C95-9427-0597FD1ECCD2";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black";
+	rename -uid "B59BBC1E-4D47-E052-260D-9B8FE3DEBFF8";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black1";
+	rename -uid "E6353F00-4951-4BF7-4B8A-09A7E96B8467";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue";
+	rename -uid "EF5352D1-457D-CCAD-78B9-6F9EE06A25DD";
+	setAttr ".c" -type "float3" 0 0 0.1 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue1";
+	rename -uid "776D8E84-41D8-1749-193A-B384D7C9E802";
+	setAttr ".c" -type "float3" 0 0 0.25400001 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Car_Main_Color";
+	rename -uid "BC664EDA-4A80-275D-FC85-9F8B757DC6D9";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome";
+	rename -uid "975F9362-4A82-B174-2ED3-4A921F3BE5CE";
+	setAttr ".c" -type "float3" 0.88999999 0.88999999 0.88999999 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome1";
+	rename -uid "57EDB359-4B38-39EA-817B-F7B9E0879DDF";
+	setAttr ".c" -type "float3" 0.45100001 0.45100001 0.45100001 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Frame_Metal";
+	rename -uid "651B25E9-4124-5437-3FA9-13834594217B";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Game_Jeep";
+	rename -uid "350B64DA-473B-65BD-C515-99BE04FDDB13";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Glass";
+	rename -uid "16AD05EA-4268-BC65-5DC7-7B84545981C9";
+	setAttr ".it" -type "float3" 0.79020977 0.79020977 0.79020977 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GunMetal";
+	rename -uid "06B6C8F1-4A12-1841-F74C-6E9F2B8111EC";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Gunmetal";
+	rename -uid "69DCD2A6-454B-1E2A-302D-5688E64A6AC6";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1";
+	rename -uid "7E925B5F-4D83-D1F1-02F9-6BAB0CC51FCA";
+createNode nodeGraphEditorInfo -n "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "E0140778-4807-3FE2-FF21-84B8710DF70D";
+	setAttr ".def" no;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -910.71424952575273 175.44778682474893 ;
+	setAttr ".tgi[0].vh" -type "double2" 452.38093440494924 388.0406136763263 ;
+	setAttr -s 33 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[0].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[1].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[2].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[3].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[4].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[5].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[6].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[7].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[8].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[9].y" -160;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[10].y" -160;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[11].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[12].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[13].y" -160;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[14].y" -160;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[15].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
+	setAttr ".tgi[0].ni[16].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[16].y" -160;
+	setAttr ".tgi[0].ni[16].nvs" 1923;
+	setAttr ".tgi[0].ni[17].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[17].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[17].nvs" 1923;
+	setAttr ".tgi[0].ni[18].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[18].y" -160;
+	setAttr ".tgi[0].ni[18].nvs" 1923;
+	setAttr ".tgi[0].ni[19].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[19].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[19].nvs" 1923;
+	setAttr ".tgi[0].ni[20].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[20].y" -1857.142822265625;
+	setAttr ".tgi[0].ni[20].nvs" 1923;
+	setAttr ".tgi[0].ni[21].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[21].y" 791.4285888671875;
+	setAttr ".tgi[0].ni[21].nvs" 1923;
+	setAttr ".tgi[0].ni[22].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[22].y" 2622.857177734375;
+	setAttr ".tgi[0].ni[22].nvs" 1923;
+	setAttr ".tgi[0].ni[23].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[23].y" 1242.857177734375;
+	setAttr ".tgi[0].ni[23].nvs" 1923;
+	setAttr ".tgi[0].ni[24].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[24].y" -562.85711669921875;
+	setAttr ".tgi[0].ni[24].nvs" 1923;
+	setAttr ".tgi[0].ni[25].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[25].y" 2162.857177734375;
+	setAttr ".tgi[0].ni[25].nvs" 1923;
+	setAttr ".tgi[0].ni[26].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[26].y" -111.42857360839844;
+	setAttr ".tgi[0].ni[26].nvs" 1923;
+	setAttr ".tgi[0].ni[27].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[27].y" -1014.2857055664063;
+	setAttr ".tgi[0].ni[27].nvs" 1923;
+	setAttr ".tgi[0].ni[28].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[28].y" -2227.142822265625;
+	setAttr ".tgi[0].ni[28].nvs" 1923;
+	setAttr ".tgi[0].ni[29].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[29].y" 1702.857177734375;
+	setAttr ".tgi[0].ni[29].nvs" 1923;
+	setAttr ".tgi[0].ni[30].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[30].y" 3082.857177734375;
+	setAttr ".tgi[0].ni[30].nvs" 1923;
+	setAttr ".tgi[0].ni[31].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[31].y" 340;
+	setAttr ".tgi[0].ni[31].nvs" 1923;
+	setAttr ".tgi[0].ni[32].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[32].y" -1465.7142333984375;
+	setAttr ".tgi[0].ni[32].nvs" 1923;
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation1:gameExporterPreset1";
+	rename -uid "01E6A323-411C-D349-E423-DD8620F4BAFD";
+	setAttr ".pn" -type "string" "Model Default";
+	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
+	setAttr ".ebm" yes;
+	setAttr ".inc" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+	setAttr ".exf" -type "string" "Minigun_Animations_EX";
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation1:gameExporterPreset2";
+	rename -uid "6F754CD2-46E1-7739-BB25-888644F7F382";
+	setAttr ".pn" -type "string" "Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 2;
+	setAttr -s 3 ".ac";
+	setAttr ".ac[0].acn" -type "string" "Deploy";
+	setAttr ".ac[0].acs" 1;
+	setAttr ".ac[0].ace" 40;
+	setAttr ".ac[1].acn" -type "string" "Firing Sequence";
+	setAttr ".ac[1].acs" 45;
+	setAttr ".ac[1].ace" 57;
+	setAttr ".ac[2].acn" -type "string" "Withdraw";
+	setAttr ".ac[2].acs" 62;
+	setAttr ".ac[2].ace" 98;
+	setAttr ".spt" 2;
+	setAttr ".ic" no;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+	setAttr ".exf" -type "string" "Minigun Animation EX";
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation1:gameExporterPreset3";
+	rename -uid "2F1405D6-4AFB-D14F-6801-A8A19804E36E";
+	setAttr ".pn" -type "string" "TE Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 3;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:renderLayerManager";
+	rename -uid "BC40488F-4435-0297-329E-BA8C11280CED";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:defaultRenderLayer";
+	rename -uid "CE558165-4B2C-53EA-54FD-E3A91A97A099";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:renderLayerManager";
+	rename -uid "1767CF45-4F95-2A8D-04E0-D5BCD85900C2";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:defaultRenderLayer";
+	rename -uid "C5DF7BCD-4523-9138-B8A7-A980AB03F213";
+	setAttr ".g" yes;
+createNode displayLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:RefLayer";
+	rename -uid "7362D1F0-467B-BDF4-F94C-4ABA7976D7E9";
+	setAttr ".dt" 2;
+	setAttr ".do" 1;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:M134_MiniGun:renderLayerManager";
+	rename -uid "40DE03CF-409B-B4B0-921A-BB8619E0F9EC";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:M134_MiniGun:defaultRenderLayer";
+	rename -uid "A4973884-4E2B-8E9A-4E54-16B50F112EC0";
+	setAttr ".g" yes;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2";
+	rename -uid "A0CF6FDC-4803-0052-DD9A-97BC4F2594A6";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG";
+	rename -uid "5409BC00-41E5-A036-0AE3-B98FA6E54D9E";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo1";
+	rename -uid "D7DDB3C8-4889-ACB7-2902-C396D123483A";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3";
+	rename -uid "2F58E6A2-42F3-0CC9-3FC6-0393AFB60365";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG";
+	rename -uid "2996ED37-48CC-C49F-9978-1896099B3BDA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo2";
+	rename -uid "3F46572F-43F7-2DFE-F038-2DAA6D9F9E5F";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4";
+	rename -uid "C1C5CEC5-4173-AA34-9980-D99B684BFDF0";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG";
+	rename -uid "19CA1DB1-4071-F6C3-8C64-29A56B9C9307";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo3";
+	rename -uid "8117106A-4BA5-FD30-9F49-168F0E902DBF";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5";
+	rename -uid "CC0874F4-485F-7B56-1738-24B3355E4441";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG";
+	rename -uid "692504DA-4F57-1A05-01B2-BFA998F0B193";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo4";
+	rename -uid "2707332B-4808-4092-E2FB-8BA6DBAACBBF";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6";
+	rename -uid "CF36B09C-4BCF-92B9-8B11-A19C9EB9A2CF";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG";
+	rename -uid "5ACABD35-44BB-2532-0A67-63B255C959F5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo5";
+	rename -uid "F39A70A3-4952-9D88-899C-A99FEDA6B78D";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7";
+	rename -uid "DD2F58AF-4A17-B6A6-E707-ED9F275A1535";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG";
+	rename -uid "47DD5B08-4D2B-3654-DA03-8D865F26D465";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo6";
+	rename -uid "47E8C20C-40FB-F1FF-A1DA-06A8F167849C";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8";
+	rename -uid "1D9293E1-4F7B-3557-084A-D28C2F861946";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG";
+	rename -uid "18E5832E-4913-56DD-1440-67AC649C3B01";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo7";
+	rename -uid "D91AC22B-4608-C95C-D106-B78A26EABC47";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9";
+	rename -uid "193415DD-4600-54BC-E2CF-97B80EC19A5B";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG";
+	rename -uid "A7389446-499F-C8BC-48BC-398C89020522";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo8";
+	rename -uid "2E1C2201-4845-51E9-8C8D-BCADD533BE99";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10";
+	rename -uid "2B392F0B-4C2F-5336-D688-0EB429B056C1";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG";
+	rename -uid "541DD906-42BD-0928-F671-23B187552861";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo9";
+	rename -uid "5AEA4142-46BD-CE35-289E-5FAC97399957";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11";
+	rename -uid "1A74BD55-4DFE-81DE-2C92-CA9CF5D77523";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG";
+	rename -uid "D0BAB015-478B-3111-E7CF-5BB17B0D86B1";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo10";
+	rename -uid "C589EFD0-4DCD-DB74-E0A7-2DA9B684DEDD";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12";
+	rename -uid "185EA230-4C7F-DF49-F8EC-C7AB1044CABF";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG";
+	rename -uid "EABEF53B-4A3B-AE93-BCCE-C38D16BD24F5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo11";
+	rename -uid "58BAAB68-45F9-7482-0EBA-7A84206C32AC";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13";
+	rename -uid "D85E25CA-46AC-FF4E-8AAA-57991CE1599E";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG";
+	rename -uid "8A3B07DE-4D32-1183-F484-DF9AC9280C39";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo12";
+	rename -uid "DEA136CC-4FC0-0DE3-BF83-0896EE370236";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14";
+	rename -uid "197CE10D-439B-3C05-99B8-08B91EE23D3D";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG";
+	rename -uid "AE68BE20-48F9-9B01-EE88-2D9564F8F348";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo13";
+	rename -uid "015EAFA9-4904-4B2F-45F3-B6B3C24FC09B";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15";
+	rename -uid "02FC67F8-4DED-6D9B-AA28-0496A3A7E0F4";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG";
+	rename -uid "66410BA7-4502-ECEC-4C46-DC86F024EEC4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo14";
+	rename -uid "6ECD5440-4CD9-BDDC-7065-6F9811ABDF54";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16";
+	rename -uid "A020736D-4A5B-7571-6540-3F9E0D70ADED";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG";
+	rename -uid "8C87F62B-4EB9-6B87-C3BC-58BBF521B4C0";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo15";
+	rename -uid "36BC68BF-4D35-8276-CE2B-65AFA47C64EC";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:renderLayerManager";
+	rename -uid "83D95E66-4E73-219E-3455-AABF8CB285AF";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:defaultRenderLayer";
+	rename -uid "0CB718F3-4B47-A163-528A-FFBAA5162E01";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:groupId12";
+	rename -uid "28C6A0E6-4219-BCB9-0F24-C288F1FF6C6D";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:groupId15";
+	rename -uid "30D36D76-4869-D38E-2E30-E6AD543CEA5A";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2";
+	rename -uid "3785E123-45C9-2324-6F0C-7A927193A970";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG";
+	rename -uid "9C2BCBC7-488E-2181-3B31-42BDB59A495A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo1";
+	rename -uid "C9C8A1C5-4AB7-A8D1-E43D-FBA8EC09009E";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3";
+	rename -uid "0AFD931A-44FD-2B02-7E58-E28B684437D0";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG";
+	rename -uid "6EDAC548-41FA-A865-23CE-9C98FC42A81A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo2";
+	rename -uid "F3CD5AA1-4002-9BB7-8D75-EC811DB1323F";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4";
+	rename -uid "24452BB6-4163-5529-79AD-BDBF1CCA1242";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG";
+	rename -uid "F13B1614-4674-9D49-8BA4-FBAD98331FEA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo3";
+	rename -uid "9184ED84-45A3-14F7-DEAF-B0B3EFC3D6FC";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:M134_MiniGun:renderLayerManager";
+	rename -uid "5001067F-4FC8-447F-623D-27945FB20613";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer";
+	rename -uid "BBC55141-4C25-C6C9-90D4-EC96FB4754A4";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:renderLayerManager";
+	rename -uid "D9E2BB4E-4212-6173-70EB-F4B16B7E9179";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:defaultRenderLayer";
+	rename -uid "13E23541-4F2D-2EEB-E343-AFBBFD6CC8B7";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:groupId12";
+	rename -uid "9C0144F0-4D01-ECEE-5611-E4981E3AEED9";
+	setAttr ".ihi" 0;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:groupId15";
+	rename -uid "47343D41-4857-7F99-66A4-1AA85873E23D";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2";
+	rename -uid "1B8F464E-448D-B344-00FA-449C49003791";
+	setAttr ".c" -type "float3" 0.77999997 0.77999997 0.77999997 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG";
+	rename -uid "3DDBD660-4450-5BDE-BE3B-5CB631737ED9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo1";
+	rename -uid "095FEC4E-4375-2539-3144-7EB926C7E762";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3";
+	rename -uid "97C89851-4583-CCA6-637A-EDB933DC844B";
+	setAttr ".c" -type "float3" 0.23100001 0.23100001 0.23100001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG";
+	rename -uid "0B045500-4648-235C-E0B5-D7B478CC04B4";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo2";
+	rename -uid "34ADCFE0-4E4D-4DB1-3F00-B29FB10E26D6";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4";
+	rename -uid "AA24CDA0-47E8-5F9F-769F-A292FAE65CCE";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG";
+	rename -uid "C1A79F6D-4C2B-BAF0-9022-CABD05FCF435";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo3";
+	rename -uid "A7DB8B0A-4136-B8D5-384B-D59602C8FCB2";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:M134_MiniGun:renderLayerManager";
+	rename -uid "36CB26DF-4C19-2516-0C1D-E5A29E02F9BA";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer";
+	rename -uid "7FAB6659-42F2-A0AC-21FC-9B871520ED13";
+	setAttr ".g" yes;
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:renderLayerManager";
+	rename -uid "704E544F-4FA5-DFA1-768A-B4B4171A5B82";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:defaultRenderLayer";
+	rename -uid "6E55C929-4466-DECC-F066-DD8B25E2F35E";
+	setAttr ".g" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo4";
+	rename -uid "30471D31-4E42-E945-78A2-1B8C02951526";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG";
+	rename -uid "23492944-4C16-7CD4-CEEA-0B8E682D7EB3";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG";
+	rename -uid "665ED079-4FDE-3261-7623-F5B9E790699F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo6";
+	rename -uid "884BCE81-465E-6530-92C8-F9BE7993A02E";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__White";
+	rename -uid "ECB481A1-49CC-8308-81AF-3B989D3305D1";
+	setAttr ".c" -type "float3" 1 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG";
+	rename -uid "9343A497-45FB-7603-7D58-9E9958D2E28A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo2";
+	rename -uid "CC9332E8-4C7B-E996-87B9-A4A2D709247A";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG";
+	rename -uid "7A0B7E2D-4E4B-A255-A918-E9820560747E";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo7";
+	rename -uid "988A55A2-4374-E2D9-B317-808ED958F38D";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4";
+	rename -uid "5FE86923-404A-8409-29A7-52B8BB63BEE1";
+	setAttr ".c" -type "float3" 0.5 0.21154165 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG";
+	rename -uid "9CE30B86-4CCB-BC19-E5EF-49A39E93353F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo8";
+	rename -uid "3796221B-4371-83AF-AEE0-F69521DE8752";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5";
+	rename -uid "6029B23F-46D8-C9C9-E89D-7FB4F40B3CEC";
+	setAttr ".c" -type "float3" 1 0 0 ;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo3";
+	rename -uid "F4633AB0-48DC-9A94-A708-35A848FC3672";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG";
+	rename -uid "E52EBB18-49ED-BF54-0D59-C59AED445C78";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo1";
+	rename -uid "51EECC9B-4A1B-D7DB-9523-EBB2793AF2F8";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG";
+	rename -uid "A3DC72E0-47C1-9363-E0BC-F6A57A9D6B7B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG";
+	rename -uid "FC5D2A04-4A03-26BE-5BB2-6D87F7C24212";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo5";
+	rename -uid "1DA5AEF7-41F1-1B0A-203D-0A863DD9268D";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Windows";
+	rename -uid "08EF88DD-4C4B-EA77-9F3A-6AA36BECF5F1";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG";
+	rename -uid "42F886BB-423D-59B8-D55E-3DB52DF1DAC9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo13";
+	rename -uid "8A4F03EE-4577-7F05-664E-64B7E6F72415";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Metal";
+	rename -uid "52A62148-4002-8DA8-95D8-1A84FE279FCC";
+	setAttr ".c" -type "float3" 0.34099999 0.34099999 0.34099999 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1";
+	rename -uid "E1F146EC-4C88-CC4F-5E18-6AA7CEBD0C1B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo9";
+	rename -uid "B23DBC20-48DF-B84A-C32E-C5BF78C221CA";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG";
+	rename -uid "8E5C975E-4251-800E-1C76-128997721269";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo16";
+	rename -uid "4EF61FF7-424D-4039-F3E3-7F971889F3F4";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG";
+	rename -uid "6B3A21DA-425D-77CC-88B7-918B57D63EEC";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo15";
+	rename -uid "1C82CE2D-49D1-3A3D-7DC2-0C87C2E81222";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__TailLights";
+	rename -uid "D730EA7C-43EC-171B-7F5B-199254013130";
+	setAttr ".c" -type "float3" 1 0 0 ;
+	setAttr ".ic" -type "float3" 0.40645161 0.40645161 0.40645161 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG";
+	rename -uid "081F89F1-4AB5-F582-F9FE-2EB0F7F68BB8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo11";
+	rename -uid "623446BE-4A98-5EDA-CFD9-A89F32D11253";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG";
+	rename -uid "B9E425A6-4853-9526-9103-B58A957AC3E5";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo17";
+	rename -uid "49155835-46B8-6901-8E56-68A775A4FF18";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG";
+	rename -uid "33BA223C-4950-D0D4-0F8C-DD920CF9AB79";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo14";
+	rename -uid "7102E810-4B90-19FC-BB23-D797E28B2678";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Lights";
+	rename -uid "972A81AB-4B7A-3137-4972-189F83E7426F";
+	setAttr ".ic" -type "float3" 0.50967741 0.50967741 0.50967741 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1";
+	rename -uid "F76D142A-4CDD-870C-E3F4-D4A1AEC71B12";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo10";
+	rename -uid "AE6947E2-4FA1-CD87-D022-AAB5459309BE";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Rusty_Metal";
+	rename -uid "5953DB7C-42A8-78D2-8451-1880C5B2972D";
+	setAttr ".c" -type "float3" 0.29159999 0.092600003 0.051399998 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG";
+	rename -uid "E2CA20C8-43E2-3FC7-B748-AC83CFDA42AA";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo12";
+	rename -uid "6ECE5A85-4613-CED2-6FFD-21A96D57B152";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber";
+	rename -uid "D70C769D-42C6-0707-B2B2-F5876BFD4275";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1";
+	rename -uid "8839A93C-4E4C-F771-6E53-94865951B37D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo19";
+	rename -uid "A1D3AA36-4ECE-89A0-A893-C3857FF36975";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1";
+	rename -uid "2C82A8EE-4B69-100E-CC1F-219F927CF938";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo18";
+	rename -uid "50F63A8B-490A-0D5F-F782-33B545B67229";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2";
+	rename -uid "3AB629FB-4FA1-605C-9E37-57928C70EEC9";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo22";
+	rename -uid "B2CE80ED-4CB0-97C7-AAE2-A2B5D114887C";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Window";
+	rename -uid "E16A57CA-41A9-7F60-F20C-FAA58047BD07";
+	setAttr ".c" -type "float3" 0 1 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1";
+	rename -uid "BE4049B2-4663-D3F2-61F8-BF97BE960189";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo21";
+	rename -uid "4C877189-4D77-1C2F-0ADA-7AB8CB62F164";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1";
+	rename -uid "C38DCA87-4A92-CF7C-66B9-878FB04E824E";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo20";
+	rename -uid "9A714579-4BD0-71DC-D023-0C980285A8C9";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber1";
+	rename -uid "130A37FC-4DB0-24A6-A0C8-13A6D4A4A034";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG";
+	rename -uid "1C38952F-4F01-1230-6A0A-999CB1AA5680";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo38";
+	rename -uid "BB40CFCA-47E9-09B4-D081-019A68FF5D37";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert18";
+	rename -uid "1ED9A8E9-4D27-F254-EC84-B99DF3A69D1E";
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG";
+	rename -uid "9FAC24DE-4A11-3ED9-6467-458D53E00B9D";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo36";
+	rename -uid "EE98AA4F-40DE-2E3F-71B4-6593645C08B3";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8";
+	rename -uid "64CC8D96-4347-0E02-3647-81A21925A5E7";
+	setAttr ".c" -type "float3" 0.23454787 0.25015786 0.254152 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG";
+	rename -uid "AFCB7AF3-4B00-5D1C-0339-F2B48828C18C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo35";
+	rename -uid "7A47E7BD-45A7-6FF3-FBDA-068CD9533F5D";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert11";
+	rename -uid "0DC66D7A-4D1C-0F1B-56CE-1A87CAC42C52";
+	setAttr ".c" -type "float3" 0.049706705 0.049706705 0.051269881 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG";
+	rename -uid "377F152A-4839-698E-D98C-8083111C196F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo37";
+	rename -uid "F028FE8B-41E6-B3D9-0943-EAAC4210C686";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7";
+	rename -uid "675214E5-4AC9-9C20-0FF1-EE9D814FD7AD";
+	setAttr ".c" -type "float3" 0.1999 0.21510001 0.228 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG";
+	rename -uid "2DA9961E-4936-5A82-65E2-929FE90013C8";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo25";
+	rename -uid "2CAF1DEE-446E-9E1C-53EA-10B5E399B346";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert15";
+	rename -uid "80041C08-4087-8212-EE55-079D175537CA";
+	setAttr ".c" -type "float3" 0.31400001 0.0012560026 0.0012560026 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1";
+	rename -uid "9B9B5FA0-47FD-0E20-F97F-BA9FB67E5D9B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo27";
+	rename -uid "B4CB01E2-4781-A925-3976-5CA3F1F52EE5";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5";
+	rename -uid "110CB701-4601-B35E-1244-F182980442D5";
+	setAttr ".c" -type "float3" 0.73400003 0.67748201 0.67748201 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG";
+	rename -uid "8A78773A-43A6-C35A-3DF7-6F889FD4D21F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo34";
+	rename -uid "78B10C02-4A1A-9FAF-F962-51BB4C26C21C";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert10";
+	rename -uid "DBE1E94E-4D63-77AF-E037-519979401379";
+	setAttr ".c" -type "float3" 0.4166036 0.43200001 0.241056 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG";
+	rename -uid "8DFD9AC9-4AC5-5DEB-0137-F58D003A1BDF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo23";
+	rename -uid "B3D86F45-4CC3-E997-3D75-BFA39AD5B443";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3";
+	rename -uid "DC382ACB-4B26-07F9-4AB0-048A42E311DB";
+	setAttr ".c" -type "float3" 0.76700002 0.61553031 0 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG";
+	rename -uid "EF657BC7-4C73-218C-EB34-1588C0D8C13C";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo26";
+	rename -uid "38FE587D-48B5-4420-19D8-EA964B4A5F47";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert9";
+	rename -uid "0FDEE772-4962-0F82-B821-5787246DD828";
+	setAttr ".c" -type "float3" 0.064000003 0.064000003 0.064000003 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3";
+	rename -uid "5E2D8882-43CA-4FCD-273D-87BB191F30A6";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo31";
+	rename -uid "573DEBC8-4EAE-F98F-484A-91B34BC48427";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert12";
+	rename -uid "25C87635-4DFD-34BB-1FF1-3CB5352B54A1";
+	setAttr ".c" -type "float3" 0.66500002 0.18753001 0.18930452 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG";
+	rename -uid "A95B9820-4536-0F17-C873-0CABBAC1494A";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo32";
+	rename -uid "44270BBF-43DF-58F3-D055-98A43EDF7277";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert13";
+	rename -uid "4C70D367-4F3C-9D35-0DA4-1096744C7B80";
+	setAttr ".c" -type "float3" 0.249798 0.38952166 0.52700001 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG";
+	rename -uid "886C340E-4C8E-B6DD-1281-89854CFBD5ED";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo33";
+	rename -uid "DDEF101F-49C4-CE6F-42A8-BD88FF978129";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6";
+	rename -uid "5A3C0024-41F9-F2D8-CD3A-4EA0E1F6952A";
+	setAttr ".c" -type "float3" 0.21325786 0.31200001 0.18969601 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG";
+	rename -uid "D62C3590-44C1-822C-B1AB-EA82D4A12C22";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo28";
+	rename -uid "71553A09-4B27-943F-24A6-E68C445A0D13";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2";
+	rename -uid "117D1ADE-4825-719C-2E27-FE8F4C61CAC3";
+	setAttr ".c" -type "float3" 0.15093599 0.24169724 0.331 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1";
+	rename -uid "27F610C0-4A8A-B6B8-8C1B-2E882B03DF2B";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo29";
+	rename -uid "4AA7296E-4925-B58E-6B99-728B400282DE";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert16";
+	rename -uid "AAEAC184-4866-28AE-D5F8-8E8B25EEE885";
+	setAttr ".c" -type "float3" 0.11172401 0.52700001 0.25828868 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2";
+	rename -uid "A66945D4-472D-4E3A-946D-4BA56FF3B9BF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo30";
+	rename -uid "F8D381EB-4297-9006-C06B-3BA04DBD39E1";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert17";
+	rename -uid "96ABE7EF-4BFB-7D7B-771C-10B7E7E2854E";
+	setAttr ".c" -type "float3" 0 0.96153331 1 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG";
+	rename -uid "F62C6CF7-44F0-FC1E-317A-4A82BF69DCEF";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo24";
+	rename -uid "B1D3130B-4373-FDFE-7607-A497AA6759CB";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert14";
+	rename -uid "CA8859E6-44C3-1B6B-9B9F-7DAC1CA05367";
+	setAttr ".c" -type "float3" 0.27000001 0.26190001 0.26593167 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1";
+	rename -uid "312126A9-494E-92D7-6630-1A8CB343EE53";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo40";
+	rename -uid "47C6EA09-4BA1-8FD8-B124-12BB3E7DA6B7";
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert19";
+	rename -uid "F4AAA212-4C58-158D-1A8A-DCAC84546C19";
+	setAttr ".c" -type "float3" 0.48699999 0.44923839 0.346744 ;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG";
+	rename -uid "F983020E-4DF7-F429-26C9-5C8C3BC53A5F";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo39";
+	rename -uid "F9CD140F-4E51-E252-F4C6-FFB40E224476";
+createNode displayLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GEO_YA";
+	rename -uid "BEB836AE-4195-B2D4-6D7B-71B258B0446F";
+	setAttr ".do" 1;
+createNode shadingEngine -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG";
+	rename -uid "CEEB02CE-4A20-37EF-2A9C-9E9F3A56FDDB";
+	setAttr ".ihi" 0;
+	setAttr ".ro" yes;
+createNode materialInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1";
+	rename -uid "AD995FDA-4044-C71E-0594-87A58194E279";
+createNode file -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F";
+	rename -uid "7F721A88-486D-EE90-991B-0D814A6AD0FD";
+	setAttr ".ftn" -type "string" "lambert4SG_albedo.jpg";
+	setAttr ".cs" -type "string" "sRGB";
+createNode place2dTexture -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D";
+	rename -uid "095B4116-436E-A2E3-FC58-9EB6EF2D92D9";
+createNode renderLayerManager -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:MiniGun_For_Animation:renderLayerManager";
+	rename -uid "A0FA7588-408F-14E7-D588-A08B5872819A";
+createNode renderLayer -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer";
+	rename -uid "8759725A-4DE6-9069-E9D0-1B9B4E1AFDF8";
+	setAttr ".g" yes;
+createNode groupId -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:groupId7";
+	rename -uid "4AA100B8-477C-C74F-20BA-E69C0262A9CA";
+	setAttr ".ihi" 0;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black";
+	rename -uid "ABE9DE1B-4724-8AD6-3B89-2594A4D792F5";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black1";
+	rename -uid "58D92E64-480A-7D66-BC3E-0398A3CDFE9A";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue";
+	rename -uid "9832F658-43A5-BB85-6284-369A4EA2E741";
+	setAttr ".c" -type "float3" 0 0 0.1 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue1";
+	rename -uid "8311E462-46D4-C814-9194-7FA2603AD768";
+	setAttr ".c" -type "float3" 0 0 0.25400001 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Car_Main_Color";
+	rename -uid "E751CD76-48F2-0E79-20FD-2AB8BD328510";
+	setAttr ".c" -type "float3" 0 0 0 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome";
+	rename -uid "30AD18D6-400A-972A-8750-FFBD5A0AD569";
+	setAttr ".c" -type "float3" 0.88999999 0.88999999 0.88999999 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome1";
+	rename -uid "6A1CDDA3-4E06-F1AE-C5BE-43A03085AFAF";
+	setAttr ".c" -type "float3" 0.45100001 0.45100001 0.45100001 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Frame_Metal";
+	rename -uid "EA7D37ED-4F4E-CC4C-4FE5-088991B9D821";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Game_Jeep";
+	rename -uid "E1703043-4ED8-8C30-5FA4-93AC881C1A83";
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Glass";
+	rename -uid "A3BEA940-4F34-B1C7-B081-DA839A5B0B25";
+	setAttr ".it" -type "float3" 0.79020977 0.79020977 0.79020977 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GunMetal";
+	rename -uid "E9B0DADC-411F-7587-2B13-47A3AA750C27";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode blinn -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Gunmetal";
+	rename -uid "4CBBA23F-4CE1-DAEB-2705-12936DC5EDA7";
+	setAttr ".c" -type "float3" 0.122 0.122 0.122 ;
+createNode lambert -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1";
+	rename -uid "BCBD60C7-4A1E-D4AC-1A8A-528A0EB63C7B";
+createNode nodeGraphEditorInfo -n "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo";
+	rename -uid "0378B6FB-44C1-AEA6-5B84-7D98D178F17C";
+	setAttr ".def" no;
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -910.71424952575273 175.44778682474893 ;
+	setAttr ".tgi[0].vh" -type "double2" 452.38093440494924 388.0406136763263 ;
+	setAttr -s 33 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[0].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[0].nvs" 1923;
+	setAttr ".tgi[0].ni[1].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[1].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[1].nvs" 1923;
+	setAttr ".tgi[0].ni[2].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[2].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[2].nvs" 1923;
+	setAttr ".tgi[0].ni[3].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[3].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[3].nvs" 1923;
+	setAttr ".tgi[0].ni[4].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[4].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[4].nvs" 1923;
+	setAttr ".tgi[0].ni[5].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[5].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[5].nvs" 1923;
+	setAttr ".tgi[0].ni[6].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[6].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[6].nvs" 1923;
+	setAttr ".tgi[0].ni[7].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[7].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[7].nvs" 1923;
+	setAttr ".tgi[0].ni[8].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[8].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[8].nvs" 1923;
+	setAttr ".tgi[0].ni[9].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[9].y" -160;
+	setAttr ".tgi[0].ni[9].nvs" 1923;
+	setAttr ".tgi[0].ni[10].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[10].y" -160;
+	setAttr ".tgi[0].ni[10].nvs" 1923;
+	setAttr ".tgi[0].ni[11].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[11].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[11].nvs" 1923;
+	setAttr ".tgi[0].ni[12].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[12].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[12].nvs" 1923;
+	setAttr ".tgi[0].ni[13].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[13].y" -160;
+	setAttr ".tgi[0].ni[13].nvs" 1923;
+	setAttr ".tgi[0].ni[14].x" -131.42857360839844;
+	setAttr ".tgi[0].ni[14].y" -160;
+	setAttr ".tgi[0].ni[14].nvs" 1923;
+	setAttr ".tgi[0].ni[15].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[15].y" -465.71429443359375;
+	setAttr ".tgi[0].ni[15].nvs" 1923;
+	setAttr ".tgi[0].ni[16].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[16].y" -160;
+	setAttr ".tgi[0].ni[16].nvs" 1923;
+	setAttr ".tgi[0].ni[17].x" -422.85714721679688;
+	setAttr ".tgi[0].ni[17].y" -164.28572082519531;
+	setAttr ".tgi[0].ni[17].nvs" 1923;
+	setAttr ".tgi[0].ni[18].x" -438.57144165039063;
+	setAttr ".tgi[0].ni[18].y" -160;
+	setAttr ".tgi[0].ni[18].nvs" 1923;
+	setAttr ".tgi[0].ni[19].x" -115.71428680419922;
+	setAttr ".tgi[0].ni[19].y" 141.42857360839844;
+	setAttr ".tgi[0].ni[19].nvs" 1923;
+	setAttr ".tgi[0].ni[20].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[20].y" -1857.142822265625;
+	setAttr ".tgi[0].ni[20].nvs" 1923;
+	setAttr ".tgi[0].ni[21].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[21].y" 791.4285888671875;
+	setAttr ".tgi[0].ni[21].nvs" 1923;
+	setAttr ".tgi[0].ni[22].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[22].y" 2622.857177734375;
+	setAttr ".tgi[0].ni[22].nvs" 1923;
+	setAttr ".tgi[0].ni[23].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[23].y" 1242.857177734375;
+	setAttr ".tgi[0].ni[23].nvs" 1923;
+	setAttr ".tgi[0].ni[24].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[24].y" -562.85711669921875;
+	setAttr ".tgi[0].ni[24].nvs" 1923;
+	setAttr ".tgi[0].ni[25].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[25].y" 2162.857177734375;
+	setAttr ".tgi[0].ni[25].nvs" 1923;
+	setAttr ".tgi[0].ni[26].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[26].y" -111.42857360839844;
+	setAttr ".tgi[0].ni[26].nvs" 1923;
+	setAttr ".tgi[0].ni[27].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[27].y" -1014.2857055664063;
+	setAttr ".tgi[0].ni[27].nvs" 1923;
+	setAttr ".tgi[0].ni[28].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[28].y" -2227.142822265625;
+	setAttr ".tgi[0].ni[28].nvs" 1923;
+	setAttr ".tgi[0].ni[29].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[29].y" 1702.857177734375;
+	setAttr ".tgi[0].ni[29].nvs" 1923;
+	setAttr ".tgi[0].ni[30].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[30].y" 3082.857177734375;
+	setAttr ".tgi[0].ni[30].nvs" 1923;
+	setAttr ".tgi[0].ni[31].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[31].y" 340;
+	setAttr ".tgi[0].ni[31].nvs" 1923;
+	setAttr ".tgi[0].ni[32].x" -318.57144165039063;
+	setAttr ".tgi[0].ni[32].y" -1465.7142333984375;
+	setAttr ".tgi[0].ni[32].nvs" 1923;
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation2:gameExporterPreset1";
+	rename -uid "7DBE5984-4BFA-FFF5-916C-4D8EE533973B";
+	setAttr ".pn" -type "string" "Model Default";
+	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
+	setAttr ".ebm" yes;
+	setAttr ".inc" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+	setAttr ".exf" -type "string" "Minigun_Animations_EX";
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation2:gameExporterPreset2";
+	rename -uid "336FD1BE-47C0-4E4D-FF2E-0CB1C9DEB34F";
+	setAttr ".pn" -type "string" "Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 2;
+	setAttr -s 3 ".ac";
+	setAttr ".ac[0].acn" -type "string" "Deploy";
+	setAttr ".ac[0].acs" 1;
+	setAttr ".ac[0].ace" 40;
+	setAttr ".ac[1].acn" -type "string" "Firing Sequence";
+	setAttr ".ac[1].acs" 45;
+	setAttr ".ac[1].ace" 57;
+	setAttr ".ac[2].acn" -type "string" "Withdraw";
+	setAttr ".ac[2].acs" 62;
+	setAttr ".ac[2].ace" 98;
+	setAttr ".spt" 2;
+	setAttr ".ic" no;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+	setAttr ".exf" -type "string" "Minigun Animation EX";
+createNode gameFbxExporter -n "Gun_Mount1:MiniGun_For_Animation2:gameExporterPreset3";
+	rename -uid "AFECDA98-4FF0-840A-00EE-97AC534E5B6C";
+	setAttr ".pn" -type "string" "TE Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 3;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+createNode gameFbxExporter -n "Gun_Mount1:gameExporterPreset1";
+	rename -uid "64113DF2-4BA5-27DF-B6A5-16B1C16B955D";
+	setAttr ".pn" -type "string" "Model Default";
+	setAttr ".ils" yes;
+	setAttr ".ebm" yes;
+	setAttr ".inc" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+createNode gameFbxExporter -n "Gun_Mount1:gameExporterPreset2";
+	rename -uid "8D7F413B-498E-8E5D-1652-31BDA8FDC0DA";
+	setAttr ".pn" -type "string" "Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
+	setAttr ".eti" 2;
+	setAttr -s 2 ".ac";
+	setAttr ".ac[0].acn" -type "string" "Mount_Deploy ";
+	setAttr ".ac[0].acs" 4;
+	setAttr ".ac[0].ace" 26;
+	setAttr ".ac[1].acn" -type "string" "Mount_Retract";
+	setAttr ".ac[1].acs" 41;
+	setAttr ".ac[1].ace" 74;
+	setAttr ".ic" no;
+	setAttr ".ebm" yes;
+	setAttr ".ft" 1;
+	setAttr ".fv" -type "string" "FBX201800";
+	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
+	setAttr ".exf" -type "string" "Weapon_Mount_Animated_EX";
+createNode gameFbxExporter -n "Gun_Mount1:gameExporterPreset3";
+	rename -uid "AA928544-4A5E-90DB-E811-E4B8848088D5";
+	setAttr ".pn" -type "string" "TE Anim Default";
+	setAttr ".ils" yes;
+	setAttr ".eti" 3;
+	setAttr ".ebm" yes;
+	setAttr ".fv" -type "string" "FBX201800";
+createNode animCurveTL -n "Minigun_Grp_translateX";
+	rename -uid "7157365A-4D01-3793-5B95-028AECFB8313";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0
+		 34 0 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTL -n "Minigun_Grp_translateY";
+	rename -uid "C1375104-4356-3777-A168-7CA381DE1A3D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 19 ".ktv[0:18]"  1 4.0727532867766003 4 -5.217553582702263
+		 11 -0.057712196516071845 13 2.5035892683396224 15 4.2341077428591234 17 3.9442155747536392
+		 19 4.0727531321773176 24 4.0727531321773176 28 4.0727531321773176 31 4.0727531321773176
+		 34 4.0727531321773176 47 4.0727531321773176 52 4.0727531321773176 65 4.0727531321773176
+		 69 -0.29458466527452232 71 -0.057712196516071845 75 -0.057712196516071845 83 -5.217553582702263
+		 85 -5.217553582702263;
+createNode animCurveTL -n "Minigun_Grp_translateZ";
+	rename -uid "BF751161-47B0-D445-E976-A794A4AE7FFB";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 19 ".ktv[0:18]"  1 0.35546790053836519 4 -1.0678758012394192
+		 11 -1.0678758012394192 13 -1.1343298702595896 15 0.75511109111178198 17 0.11859544805404232
+		 19 0.35546791681249168 24 0.35546791681249168 28 0.35546791681249168 31 0.35546791681249168
+		 34 0.35546791681249168 47 0.35546791681249168 52 0.35546791681249168 65 0.35546791681249168
+		 69 -0.93933824381574049 71 -1.0678758012394192 75 -1.0678758012394192 83 -1.0678758012394192
+		 85 -1.0678758012394192;
+createNode animCurveTU -n "Minigun_Grp_visibility";
+	rename -uid "0C8C695D-45CC-AC2D-E2AF-93A4B8F6DF6E";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1
+		 34 1 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+	setAttr -s 18 ".kot[0:17]"  5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5 5;
+createNode animCurveTA -n "Minigun_Grp_rotateX";
+	rename -uid "AAB49F31-411F-4831-A050-3FBCC399CE58";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 19 ".ktv[0:18]"  1 0 4 -89.999999999999986 11 -89.999999999999986
+		 13 -41.000000000000021 15 8.0000000000000036 17 -5 19 0 24 0 28 0 31 0 34 0 47 0
+		 52 0 65 0 69 -95.000000000000014 71 -89.999999999999986 75 -89.999999999999986 83 -89.999999999999986
+		 85 -89.999999999999986;
+createNode animCurveTA -n "Minigun_Grp_rotateY";
+	rename -uid "4BFFBEF2-485C-A937-FE0C-B0BE533507B3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0
+		 34 0 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTA -n "Minigun_Grp_rotateZ";
+	rename -uid "8AEFA242-4862-5774-6058-7DAAE6193FC4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0
+		 34 0 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTU -n "Minigun_Grp_scaleX";
+	rename -uid "EA352DC5-42DF-68CF-DC71-77B98897D6C0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1
+		 34 1 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTU -n "Minigun_Grp_scaleY";
+	rename -uid "529BC340-4724-3A99-B8AE-0284B7D6E4C2";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1
+		 34 1 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTU -n "Minigun_Grp_scaleZ";
+	rename -uid "12AC289E-4412-D34D-CDA3-8B830B86FA07";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1
+		 34 1 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTL -n "Main_Body_translateX";
+	rename -uid "A5122362-4634-1415-E1C7-E28EEE55BEF3";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTL -n "Main_Body_translateY";
+	rename -uid "CCB74A13-4912-BF68-4C8A-AFB8932B50F0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTL -n "Main_Body_translateZ";
+	rename -uid "D2DD3E94-49D4-666B-8E74-2ABAB14BB911";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTU -n "Main_Body_visibility";
+	rename -uid "2C5A1CF9-4A89-1B48-656A-508145CED269";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1 34 1
+		 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+	setAttr -s 17 ".kot[0:16]"  5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5 5 5;
+createNode animCurveTA -n "Main_Body_rotateX";
+	rename -uid "44EF6051-4363-F0C2-4BEA-95AA1F8FADEF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTA -n "Main_Body_rotateY";
+	rename -uid "EB6BD38B-4377-2F97-6327-F1900E16093C";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTA -n "Main_Body_rotateZ";
+	rename -uid "23A769B9-4C56-49DD-54AC-B3BD1DCDFA90";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 0 11 0 15 0 17 0 19 0 24 0 28 0 31 0 34 0
+		 47 0 52 0 65 0 69 0 71 0 75 0 83 0 85 0;
+createNode animCurveTU -n "Main_Body_scaleX";
+	rename -uid "7FC1A728-4C3F-8BDF-FA23-7D941250951D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1 34 1
+		 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTU -n "Main_Body_scaleY";
+	rename -uid "8EA28EB6-4FEB-41C3-8FF5-1D98F70756F6";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1 34 1
+		 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTU -n "Main_Body_scaleZ";
+	rename -uid "2DAB281A-411C-820D-B451-9C911BF0FBFA";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 17 ".ktv[0:16]"  4 1 11 1 15 1 17 1 19 1 24 1 28 1 31 1 34 1
+		 47 1 52 1 65 1 69 1 71 1 75 1 83 1 85 1;
+createNode animCurveTL -n "Barrel_Cluster_translateX";
+	rename -uid "A170A368-46E4-0396-3A69-0ABBAAA3C185";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 31 0 35 0
+		 47 0 52 0 65 0 69 0 71 0 75 0;
+createNode animCurveTL -n "Barrel_Cluster_translateY";
+	rename -uid "46915773-466C-3752-1E37-D1AC542011DF";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 31 0 35 0
+		 47 0 52 0 65 0 69 0 71 0 75 0;
+createNode animCurveTL -n "Barrel_Cluster_translateZ";
+	rename -uid "164F96E6-44A6-DFD5-C8B4-D28593EB5E9D";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 18 ".ktv[0:17]"  1 0 4 -3.6246543546805277 11 -3.6246543546805277
+		 15 -3.6246543546805277 17 -3.6246543546805277 19 -3.6246543546805277 24 -3.6246543546805277
+		 28 0 31 -0.25 34 0 35 0 47 0 52 0 65 0 69 0 71 0 75 -3.75 77 -3.625;
+createNode animCurveTU -n "Barrel_Cluster_visibility";
+	rename -uid "AF9AD316-46BC-72CE-30B5-A2941BDD1DF2";
+	setAttr ".tan" 9;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 31 1 35 1
+		 47 1 52 1 65 1 69 1 71 1 75 1;
+	setAttr -s 15 ".kot[0:14]"  5 5 5 5 5 5 5 5 
+		5 5 5 5 5 5 5;
+createNode animCurveTA -n "Barrel_Cluster_rotateX";
+	rename -uid "9E571D2E-4C13-632B-B574-C08556B04BE4";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 31 0 35 0
+		 47 0 52 0 65 0 69 0 71 0 75 0;
+createNode animCurveTA -n "Barrel_Cluster_rotateY";
+	rename -uid "809F62F4-48D5-20CB-0763-80806F8F32A0";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 31 0 35 0
+		 47 0 52 0 65 0 69 0 71 0 75 0;
+createNode animCurveTA -n "Barrel_Cluster_rotateZ";
+	rename -uid "732E5ADE-499F-62E8-B23E-8E934DB3FA22";
+	setAttr ".tan" 2;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 0 4 0 11 0 15 0 17 0 19 0 24 0 31 0 35 0
+		 47 -359 52 -359 65 -359 69 -359 71 -359 75 -359;
+	setAttr -s 15 ".kit[10:14]"  18 18 18 18 18;
+	setAttr -s 15 ".kot[10:14]"  18 18 18 18 18;
+createNode animCurveTU -n "Barrel_Cluster_scaleX";
+	rename -uid "49B86BF6-4D0C-FC26-55F1-DCB63059B452";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 31 1 35 1
+		 47 1 52 1 65 1 69 1 71 1 75 1;
+createNode animCurveTU -n "Barrel_Cluster_scaleY";
+	rename -uid "D3AD7637-48D6-C6A4-CF0B-378066AD0E99";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 31 1 35 1
+		 47 1 52 1 65 1 69 1 71 1 75 1;
+createNode animCurveTU -n "Barrel_Cluster_scaleZ";
+	rename -uid "CA46BDA4-43BE-1476-A4CB-BF91E118FB03";
+	setAttr ".tan" 18;
+	setAttr ".wgt" no;
+	setAttr -s 15 ".ktv[0:14]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 31 1 35 1
+		 47 1 52 1 65 1 69 1 71 1 75 1;
 select -ne :time1;
-	setAttr ".o" 85;
-	setAttr ".unw" 85;
+	setAttr ".o" 79;
+	setAttr ".unw" 79;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -5299,16 +7822,18 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 	setAttr ".fprt" yes;
 select -ne :renderPartition;
-	setAttr -s 64 ".st";
+	setAttr -s 251 ".st";
 select -ne :renderGlobalsList1;
 select -ne :defaultShaderList1;
-	setAttr -s 66 ".s";
+	setAttr -s 253 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
+	setAttr -s 4 ".u";
 select -ne :defaultRenderingList1;
-	setAttr -s 9 ".r";
+	setAttr -s 35 ".r";
 select -ne :defaultTextureList1;
+	setAttr -s 4 ".tx";
 select -ne :initialShadingGroup;
 	setAttr -s 2 ".dsm";
 	setAttr ".ro" yes;
@@ -5320,8 +7845,40 @@ select -ne :defaultResolution;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
+select -ne :ikSystem;
+	setAttr -s 4 ".sol";
+connectAttr "Minigun_Grp_translateX.o" "Minigun_Grp.tx";
+connectAttr "Minigun_Grp_translateY.o" "Minigun_Grp.ty";
+connectAttr "Minigun_Grp_translateZ.o" "Minigun_Grp.tz";
+connectAttr "Minigun_Grp_visibility.o" "Minigun_Grp.v";
+connectAttr "Minigun_Grp_rotateX.o" "Minigun_Grp.rx";
+connectAttr "Minigun_Grp_rotateY.o" "Minigun_Grp.ry";
+connectAttr "Minigun_Grp_rotateZ.o" "Minigun_Grp.rz";
+connectAttr "Minigun_Grp_scaleX.o" "Minigun_Grp.sx";
+connectAttr "Minigun_Grp_scaleY.o" "Minigun_Grp.sy";
+connectAttr "Minigun_Grp_scaleZ.o" "Minigun_Grp.sz";
+connectAttr "Main_Body_translateX.o" "Main_Body.tx";
+connectAttr "Main_Body_translateY.o" "Main_Body.ty";
+connectAttr "Main_Body_translateZ.o" "Main_Body.tz";
+connectAttr "Main_Body_visibility.o" "Main_Body.v";
+connectAttr "Main_Body_rotateX.o" "Main_Body.rx";
+connectAttr "Main_Body_rotateY.o" "Main_Body.ry";
+connectAttr "Main_Body_rotateZ.o" "Main_Body.rz";
+connectAttr "Main_Body_scaleX.o" "Main_Body.sx";
+connectAttr "Main_Body_scaleY.o" "Main_Body.sy";
+connectAttr "Main_Body_scaleZ.o" "Main_Body.sz";
 connectAttr "groupId48.id" "Main_BodyShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Main_BodyShape.iog.og[0].gco";
+connectAttr "Barrel_Cluster_translateX.o" "Barrel_Cluster.tx";
+connectAttr "Barrel_Cluster_translateY.o" "Barrel_Cluster.ty";
+connectAttr "Barrel_Cluster_translateZ.o" "Barrel_Cluster.tz";
+connectAttr "Barrel_Cluster_visibility.o" "Barrel_Cluster.v";
+connectAttr "Barrel_Cluster_rotateX.o" "Barrel_Cluster.rx";
+connectAttr "Barrel_Cluster_rotateY.o" "Barrel_Cluster.ry";
+connectAttr "Barrel_Cluster_rotateZ.o" "Barrel_Cluster.rz";
+connectAttr "Barrel_Cluster_scaleX.o" "Barrel_Cluster.sx";
+connectAttr "Barrel_Cluster_scaleY.o" "Barrel_Cluster.sy";
+connectAttr "Barrel_Cluster_scaleZ.o" "Barrel_Cluster.sz";
 connectAttr "groupId46.id" "Barrel_ClusterShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Barrel_ClusterShape.iog.og[0].gco";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -5388,6 +7945,193 @@ relationship "link" ":lightLinker1" "Gun_Mount:Lineup:M134_MiniGun:pCube1SG.mess
 relationship "link" ":lightLinker1" "Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount_SwivelSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert10SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert11SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert12SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert13SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert14SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert15SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:lambert16SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "link" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Gun_Mount:lambert2SG.message" ":defaultLightSet.message";
@@ -5452,6 +8196,193 @@ relationship "shadowLink" ":lightLinker1" "Gun_Mount:Lineup:M134_MiniGun:pCube1S
 relationship "shadowLink" ":lightLinker1" "Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount_SwivelSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert10SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert11SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert12SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert13SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert14SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert15SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:lambert16SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.message" ":defaultLightSet.message";
+relationship "shadowLink" ":lightLinker1" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "Gun_Mount:renderLayerManager.rlmi[0]" "Gun_Mount:defaultRenderLayer.rlid"
@@ -5899,6 +8830,1442 @@ connectAttr "Gun_Mount:Lineup:pasted__Gunmetal.msg" "Gun_Mount:hyperShadePrimary
 		;
 connectAttr "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
 		;
+connectAttr "lambert2.oc" "Gun_Mount_SwivelSG.ss";
+connectAttr "Gun_Mount_SwivelSG.msg" "materialInfo1.sg";
+connectAttr "lambert2.msg" "materialInfo1.m";
+connectAttr "Gun_Mount1:renderLayerManager.rlmi[0]" "Gun_Mount1:defaultRenderLayer.rlid"
+		;
+connectAttr "layerManager.dli[3]" "Gun_Mount1:RefLayer.id";
+connectAttr "Gun_Mount1:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:lambert2.oc" "Gun_Mount1:lambert2SG.ss";
+connectAttr "Gun_Mount1:lambert2SG.msg" "Gun_Mount1:materialInfo1.sg";
+connectAttr "Gun_Mount1:lambert2.msg" "Gun_Mount1:materialInfo1.m";
+connectAttr "Gun_Mount1:lambert3.oc" "Gun_Mount1:lambert3SG.ss";
+connectAttr "Gun_Mount1:lambert3SG.msg" "Gun_Mount1:materialInfo2.sg";
+connectAttr "Gun_Mount1:lambert3.msg" "Gun_Mount1:materialInfo2.m";
+connectAttr "Gun_Mount1:lambert4.oc" "Gun_Mount1:lambert4SG.ss";
+connectAttr "Gun_Mount1:lambert4SG.msg" "Gun_Mount1:materialInfo3.sg";
+connectAttr "Gun_Mount1:lambert4.msg" "Gun_Mount1:materialInfo3.m";
+connectAttr "Gun_Mount1:lambert5.oc" "Gun_Mount1:lambert5SG.ss";
+connectAttr "Gun_Mount1:lambert5SG.msg" "Gun_Mount1:materialInfo4.sg";
+connectAttr "Gun_Mount1:lambert5.msg" "Gun_Mount1:materialInfo4.m";
+connectAttr "Gun_Mount1:lambert6.oc" "Gun_Mount1:lambert6SG.ss";
+connectAttr "Gun_Mount1:lambert6SG.msg" "Gun_Mount1:materialInfo5.sg";
+connectAttr "Gun_Mount1:lambert6.msg" "Gun_Mount1:materialInfo5.m";
+connectAttr "Gun_Mount1:lambert7.oc" "Gun_Mount1:lambert7SG.ss";
+connectAttr "Gun_Mount1:lambert7SG.msg" "Gun_Mount1:materialInfo6.sg";
+connectAttr "Gun_Mount1:lambert7.msg" "Gun_Mount1:materialInfo6.m";
+connectAttr "Gun_Mount1:lambert8.oc" "Gun_Mount1:lambert8SG.ss";
+connectAttr "Gun_Mount1:lambert8SG.msg" "Gun_Mount1:materialInfo7.sg";
+connectAttr "Gun_Mount1:lambert8.msg" "Gun_Mount1:materialInfo7.m";
+connectAttr "Gun_Mount1:lambert9.oc" "Gun_Mount1:lambert9SG.ss";
+connectAttr "Gun_Mount1:lambert9SG.msg" "Gun_Mount1:materialInfo8.sg";
+connectAttr "Gun_Mount1:lambert9.msg" "Gun_Mount1:materialInfo8.m";
+connectAttr "Gun_Mount1:lambert10.oc" "Gun_Mount1:lambert10SG.ss";
+connectAttr "Gun_Mount1:lambert10SG.msg" "Gun_Mount1:materialInfo9.sg";
+connectAttr "Gun_Mount1:lambert10.msg" "Gun_Mount1:materialInfo9.m";
+connectAttr "Gun_Mount1:lambert11.oc" "Gun_Mount1:lambert11SG.ss";
+connectAttr "Gun_Mount1:lambert11SG.msg" "Gun_Mount1:materialInfo10.sg";
+connectAttr "Gun_Mount1:lambert11.msg" "Gun_Mount1:materialInfo10.m";
+connectAttr "Gun_Mount1:lambert12.oc" "Gun_Mount1:lambert12SG.ss";
+connectAttr "Gun_Mount1:lambert12SG.msg" "Gun_Mount1:materialInfo11.sg";
+connectAttr "Gun_Mount1:lambert12.msg" "Gun_Mount1:materialInfo11.m";
+connectAttr "Gun_Mount1:lambert13.oc" "Gun_Mount1:lambert13SG.ss";
+connectAttr "Gun_Mount1:lambert13SG.msg" "Gun_Mount1:materialInfo12.sg";
+connectAttr "Gun_Mount1:lambert13.msg" "Gun_Mount1:materialInfo12.m";
+connectAttr "Gun_Mount1:lambert14.oc" "Gun_Mount1:lambert14SG.ss";
+connectAttr "Gun_Mount1:lambert14SG.msg" "Gun_Mount1:materialInfo13.sg";
+connectAttr "Gun_Mount1:lambert14.msg" "Gun_Mount1:materialInfo13.m";
+connectAttr "Gun_Mount1:lambert15.oc" "Gun_Mount1:lambert15SG.ss";
+connectAttr "Gun_Mount1:lambert15SG.msg" "Gun_Mount1:materialInfo14.sg";
+connectAttr "Gun_Mount1:lambert15.msg" "Gun_Mount1:materialInfo14.m";
+connectAttr "Gun_Mount1:lambert16.oc" "Gun_Mount1:lambert16SG.ss";
+connectAttr "Gun_Mount1:lambert16SG.msg" "Gun_Mount1:materialInfo15.sg";
+connectAttr "Gun_Mount1:lambert16.msg" "Gun_Mount1:materialInfo15.m";
+connectAttr "Gun_Mount1:Railgun_Cannon:renderLayerManager.rlmi[0]" "Gun_Mount1:Railgun_Cannon:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert2.oc" "Gun_Mount1:Railgun_Cannon:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert2SG.msg" "Gun_Mount1:Railgun_Cannon:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert2.msg" "Gun_Mount1:Railgun_Cannon:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert3.oc" "Gun_Mount1:Railgun_Cannon:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert3SG.msg" "Gun_Mount1:Railgun_Cannon:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert3.msg" "Gun_Mount1:Railgun_Cannon:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert4.oc" "Gun_Mount1:Railgun_Cannon:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert4SG.msg" "Gun_Mount1:Railgun_Cannon:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert4.msg" "Gun_Mount1:Railgun_Cannon:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:renderLayerManager.rlmi[0]" "Gun_Mount1:Railgun_Cannon1:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert2.oc" "Gun_Mount1:Railgun_Cannon1:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert2SG.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert2.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert3.oc" "Gun_Mount1:Railgun_Cannon1:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert3SG.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert3.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert4.oc" "Gun_Mount1:Railgun_Cannon1:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert4SG.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert4.msg" "Gun_Mount1:Railgun_Cannon1:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Lineup:renderLayerManager.rlmi[0]" "Gun_Mount1:Lineup:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn3SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo4.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:Lineup:pasted__materialInfo4.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Gunmetal.oc" "Gun_Mount1:Lineup:pasted__blinn3SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__White.oc" "Gun_Mount1:Lineup:pasted__lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert3SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo6.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__White.msg" "Gun_Mount1:Lineup:pasted__materialInfo6.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome.oc" "Gun_Mount1:Lineup:pasted__blinn2SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn2SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome.msg" "Gun_Mount1:Lineup:pasted__materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert4.oc" "Gun_Mount1:Lineup:pasted__lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert4SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo7.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert4.msg" "Gun_Mount1:Lineup:pasted__materialInfo7.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5.oc" "Gun_Mount1:Lineup:pasted__blinn5SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo8.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5.msg" "Gun_Mount1:Lineup:pasted__materialInfo8.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black.msg" "Gun_Mount1:Lineup:pasted__materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black.oc" "Gun_Mount1:Lineup:pasted__lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn1SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue.msg" "Gun_Mount1:Lineup:pasted__materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue.oc" "Gun_Mount1:Lineup:pasted__blinn1SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Windows.oc" "Gun_Mount1:Lineup:pasted__blinn4SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo5.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Windows.msg" "Gun_Mount1:Lineup:pasted__materialInfo5.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Metal.oc" "Gun_Mount1:Lineup:pasted__blinn7SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn7SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo13.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Metal.msg" "Gun_Mount1:Lineup:pasted__materialInfo13.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Car_Main_Color.oc" "Gun_Mount1:Lineup:pasted__blinn4SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo9.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:Lineup:pasted__materialInfo9.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__GunMetal.oc" "Gun_Mount1:Lineup:pasted__blinn8SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn8SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo16.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__GunMetal.msg" "Gun_Mount1:Lineup:pasted__materialInfo16.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__TailLights.oc" "Gun_Mount1:Lineup:pasted__lambert8SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo15.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__TailLights.msg" "Gun_Mount1:Lineup:pasted__materialInfo15.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Glass.oc" "Gun_Mount1:Lineup:pasted__blinn6SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn6SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo11.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Glass.msg" "Gun_Mount1:Lineup:pasted__materialInfo11.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Frame_Metal.oc" "Gun_Mount1:Lineup:pasted__blinn9SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn9SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo17.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:Lineup:pasted__materialInfo17.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Lights.oc" "Gun_Mount1:Lineup:pasted__lambert7SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert7SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo14.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Lights.msg" "Gun_Mount1:Lineup:pasted__materialInfo14.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Rusty_Metal.oc" "Gun_Mount1:Lineup:pasted__blinn5SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo10.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Rusty_Metal.msg" "Gun_Mount1:Lineup:pasted__materialInfo10.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber.oc" "Gun_Mount1:Lineup:pasted__lambert6SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert6SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo12.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber.msg" "Gun_Mount1:Lineup:pasted__materialInfo12.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black1.oc" "Gun_Mount1:Lineup:pasted__blinn2SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn2SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo19.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black1.msg" "Gun_Mount1:Lineup:pasted__materialInfo19.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue1.oc" "Gun_Mount1:Lineup:pasted__blinn1SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn1SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo18.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue1.msg" "Gun_Mount1:Lineup:pasted__materialInfo18.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Window.oc" "Gun_Mount1:Lineup:pasted__blinn4SG2.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG2.msg" "Gun_Mount1:Lineup:pasted__materialInfo22.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Window.msg" "Gun_Mount1:Lineup:pasted__materialInfo22.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome1.oc" "Gun_Mount1:Lineup:pasted__blinn3SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn3SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo21.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome1.msg" "Gun_Mount1:Lineup:pasted__materialInfo21.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber1.oc" "Gun_Mount1:Lineup:pasted__lambert2SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo20.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber1.msg" "Gun_Mount1:Lineup:pasted__materialInfo20.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert18.oc" "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo38.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert18.msg" "Gun_Mount1:Lineup:pasted__materialInfo38.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8.oc" "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo36.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8.msg" "Gun_Mount1:Lineup:pasted__materialInfo36.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert11.oc" "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG.msg" "Gun_Mount1:Lineup:pasted__materialInfo35.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert11.msg" "Gun_Mount1:Lineup:pasted__materialInfo35.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert7.oc" "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo37.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert7.msg" "Gun_Mount1:Lineup:pasted__materialInfo37.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert15.oc" "Gun_Mount1:Lineup:pasted__Front_SuspensionSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Front_SuspensionSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo25.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert15.msg" "Gun_Mount1:Lineup:pasted__materialInfo25.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert5.oc" "Gun_Mount1:Lineup:pasted__F_L_TireSG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__F_L_TireSG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo27.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert5.msg" "Gun_Mount1:Lineup:pasted__materialInfo27.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert10.oc" "Gun_Mount1:Lineup:pasted__pCube5SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__pCube5SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo34.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert10.msg" "Gun_Mount1:Lineup:pasted__materialInfo34.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert3.oc" "Gun_Mount1:Lineup:pasted__pCylinder3SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__pCylinder3SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo23.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert3.msg" "Gun_Mount1:Lineup:pasted__materialInfo23.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert9.oc" "Gun_Mount1:Lineup:pasted__F_L_TireSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__F_L_TireSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo26.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert9.msg" "Gun_Mount1:Lineup:pasted__materialInfo26.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert12.oc" "Gun_Mount1:Lineup:pasted__Hood_ShellSG3.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG3.msg" "Gun_Mount1:Lineup:pasted__materialInfo31.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert12.msg" "Gun_Mount1:Lineup:pasted__materialInfo31.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert13.oc" "Gun_Mount1:Lineup:pasted__Dash_BoardSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Dash_BoardSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo32.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert13.msg" "Gun_Mount1:Lineup:pasted__materialInfo32.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert6.oc" "Gun_Mount1:Lineup:pasted__EngineSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__EngineSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo33.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert6.msg" "Gun_Mount1:Lineup:pasted__materialInfo33.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2.oc" "Gun_Mount1:Lineup:pasted__Hood_ShellSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo28.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2.msg" "Gun_Mount1:Lineup:pasted__materialInfo28.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert16.oc" "Gun_Mount1:Lineup:pasted__Hood_ShellSG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo29.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert16.msg" "Gun_Mount1:Lineup:pasted__materialInfo29.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert17.oc" "Gun_Mount1:Lineup:pasted__Hood_ShellSG2.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG2.msg" "Gun_Mount1:Lineup:pasted__materialInfo30.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert17.msg" "Gun_Mount1:Lineup:pasted__materialInfo30.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert14.oc" "Gun_Mount1:Lineup:pasted__Front_AxleSG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Front_AxleSG.msg" "Gun_Mount1:Lineup:pasted__materialInfo24.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert14.msg" "Gun_Mount1:Lineup:pasted__materialInfo24.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert19.oc" "Gun_Mount1:Lineup:pasted__lambert8SG1.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8SG1.msg" "Gun_Mount1:Lineup:pasted__materialInfo40.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert19.msg" "Gun_Mount1:Lineup:pasted__materialInfo40.m"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Game_Jeep.oc" "Gun_Mount1:Lineup:pasted__lambert5SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert5SG.msg" "Gun_Mount1:Lineup:pasted__materialInfo39.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:Lineup:pasted__materialInfo39.m"
+		;
+connectAttr "layerManager.dli[4]" "Gun_Mount1:Lineup:pasted__GEO_YA.id";
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1.oc" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG.msg" "Gun_Mount1:Lineup:JeepRubiconFull:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:Lineup:JeepRubiconFull:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.msg" "Gun_Mount1:Lineup:JeepRubiconFull:materialInfo1.t"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.c" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.c"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.tf" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.tf"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.rf" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.rf"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.s" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.s"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.wu" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.wu"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.wv" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.wv"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.re" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.re"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.of" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.of"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.r" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.ro"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.o" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.uv"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.ofs" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.ws"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.oc" "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1.c"
+		;
+connectAttr "Gun_Mount1:lambert13SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "Gun_Mount1:lambert6SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Gun_Mount1:lambert7.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Gun_Mount1:lambert11.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Gun_Mount1:lambert10SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Gun_Mount1:lambert6.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Gun_Mount1:lambert14SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "Gun_Mount1:lambert9SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "Gun_Mount1:lambert13.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Gun_Mount1:lambert15SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "Gun_Mount1:lambert16.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "Gun_Mount1:lambert8.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "Gun_Mount1:lambert10.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "Gun_Mount1:lambert12SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "Gun_Mount1:lambert16SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "Gun_Mount1:lambert7SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "Gun_Mount1:lambert15.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "Gun_Mount1:lambert9.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "Gun_Mount1:lambert12.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "Gun_Mount1:lambert8SG.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Black1.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue1.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome1.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Glass.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__GunMetal.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:defaultRenderLayer.rlid"
+		;
+connectAttr "layerManager.dli[5]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:RefLayer.id"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo4.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo4.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo5.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo5.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo6.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo6.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo7.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo7.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo8.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo8.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo9.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo9.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo10.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo10.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo11.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo11.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo12.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo12.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo13.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo13.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo14.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo14.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo15.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:materialInfo15.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo4.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo4.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Gunmetal.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__White.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo6.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__White.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo6.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo7.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo7.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo8.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo8.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Windows.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo5.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Windows.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo5.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Metal.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo13.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Metal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo13.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Car_Main_Color.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo9.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo9.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GunMetal.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo16.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GunMetal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo16.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__TailLights.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo15.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__TailLights.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo15.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Glass.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo11.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Glass.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo11.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Frame_Metal.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo17.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo17.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Lights.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo14.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Lights.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo14.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Rusty_Metal.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo10.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Rusty_Metal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo10.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo12.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo12.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black1.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo19.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo19.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue1.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo18.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo18.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Window.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo22.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Window.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo22.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome1.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo21.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo21.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber1.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo20.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo20.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert18.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo38.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert18.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo38.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo36.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo36.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert11.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo35.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert11.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo35.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo37.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo37.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert15.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo25.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert15.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo25.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo27.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo27.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert10.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo34.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert10.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo34.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo23.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo23.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert9.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo26.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert9.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo26.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert12.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo31.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert12.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo31.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert13.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo32.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert13.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo32.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo33.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo33.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo28.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo28.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert16.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo29.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert16.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo29.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert17.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo30.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert17.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo30.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert14.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo24.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert14.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo24.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert19.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo40.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert19.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo40.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Game_Jeep.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo39.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__materialInfo39.m"
+		;
+connectAttr "layerManager.dli[6]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GEO_YA.id"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.t"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.c" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.c"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.tf" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.tf"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.rf" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.rf"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.s" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.s"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.wu" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.wu"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.wv" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.wv"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.re" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.re"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.of" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.of"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.r" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.ro"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.o" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.uv"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.ofs" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.ws"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:MiniGun_For_Animation:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.oc" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.c"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Glass.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GunMetal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:defaultRenderLayer.rlid"
+		;
+connectAttr "layerManager.dli[7]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:RefLayer.id"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo4.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo4.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo5.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo5.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo6.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo6.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo7.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo7.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo8.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo8.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo9.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo9.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo10.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo10.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo11.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo11.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo12.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo12.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo13.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo13.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo14.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo14.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo15.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:materialInfo15.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:M134_MiniGun:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo4.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo4.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Gunmetal.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__White.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo6.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__White.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo6.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo2.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo2.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo7.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo7.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo8.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo8.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo3.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo3.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Windows.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo5.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Windows.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo5.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Metal.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo13.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Metal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo13.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Car_Main_Color.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo9.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo9.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GunMetal.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo16.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GunMetal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo16.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__TailLights.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo15.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__TailLights.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo15.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Glass.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo11.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Glass.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo11.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Frame_Metal.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo17.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo17.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Lights.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo14.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Lights.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo14.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Rusty_Metal.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo10.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Rusty_Metal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo10.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo12.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo12.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black1.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo19.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo19.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue1.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo18.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo18.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Window.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo22.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Window.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo22.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome1.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo21.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo21.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber1.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo20.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo20.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert18.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo38.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert18.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo38.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo36.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo36.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert11.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo35.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert11.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo35.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo37.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo37.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert15.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo25.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert15.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo25.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo27.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo27.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert10.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo34.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert10.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo34.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo23.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo23.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert9.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo26.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert9.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo26.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert12.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo31.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert12.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo31.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert13.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo32.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert13.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo32.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo33.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo33.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo28.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo28.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert16.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo29.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert16.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo29.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert17.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo30.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert17.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo30.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert14.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo24.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert14.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo24.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert19.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo40.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert19.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo40.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Game_Jeep.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo39.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__materialInfo39.m"
+		;
+connectAttr "layerManager.dli[8]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GEO_YA.id"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.ss"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.sg"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.m"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:materialInfo1.t"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.c" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.c"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.tf" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.tf"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.rf" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.rf"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.s" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.s"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.wu" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.wu"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.wv" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.wv"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.re" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.re"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.of" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.of"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.r" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.ro"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.o" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.uv"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.ofs" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.fs"
+		;
+connectAttr ":defaultColorMgtGlobals.cme" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cme"
+		;
+connectAttr ":defaultColorMgtGlobals.cfe" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cmcf"
+		;
+connectAttr ":defaultColorMgtGlobals.cfp" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.cmcp"
+		;
+connectAttr ":defaultColorMgtGlobals.wsn" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.ws"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:MiniGun_For_Animation:renderLayerManager.rlmi[0]" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer.rlid"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.oc" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.c"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[19].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[20].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[21].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[22].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[23].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[24].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[25].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[26].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Frame_Metal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[27].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Game_Jeep.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[28].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Glass.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[29].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GunMetal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[30].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Gunmetal.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[31].dn"
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:hyperShadePrimaryNodeEditorSavedTabsInfo.tgi[0].ni[32].dn"
+		;
 connectAttr "Gun_Mount:lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "Gun_Mount:lambert3SG.pa" ":renderPartition.st" -na;
 connectAttr "Gun_Mount:lambert4SG.pa" ":renderPartition.st" -na;
@@ -5974,6 +10341,336 @@ connectAttr "Gun_Mount:Lineup:pasted__lambert5SG.pa" ":renderPartition.st" -na;
 connectAttr "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.pa" ":renderPartition.st"
 		 -na;
 connectAttr "Gun_Mount:Lineup:pasted__lambert8SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount_SwivelSG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert4SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert5SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert6SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert7SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert8SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert9SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert10SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert11SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert12SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert13SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert14SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert15SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:lambert16SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert4SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert2SG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert3SG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert4SG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn1SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn2SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn3SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert3SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert4SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn6SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert6SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn7SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert7SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn8SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn9SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn1SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn2SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2SG1.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn3SG1.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn4SG2.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__pCylinder3SG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Front_AxleSG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Front_SuspensionSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:pasted__F_L_TireSG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__F_L_TireSG1.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG1.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG2.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Hood_ShellSG3.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Dash_BoardSG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__EngineSG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__pCube5SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:MainBodySG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:DelinkerSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:Barrel_01SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:M134_MiniGun:pCube1SG.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert5SG.pa" ":renderPartition.st" -na;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8SG1.pa" ":renderPartition.st" -na
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn9SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn1SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn2SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn3SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn4SG2.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCylinder3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_AxleSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Front_SuspensionSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__F_L_TireSG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG2.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Hood_ShellSG3.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Dash_BoardSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__EngineSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__pCube5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn8SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn9SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn1SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn2SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn3SG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn4SG2.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCylinder3SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_AxleSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Front_SuspensionSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__F_L_TireSG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG1.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG2.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Hood_ShellSG3.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Dash_BoardSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__EngineSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__pCube5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:MainBodySG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:DelinkerSG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:Barrel_01SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:M134_MiniGun:pCube1SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG.pa" ":renderPartition.st"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8SG1.pa" ":renderPartition.st"
+		 -na;
 connectAttr "Gun_Mount:lambert2.msg" ":defaultShaderList1.s" -na;
 connectAttr "Gun_Mount:lambert3.msg" ":defaultShaderList1.s" -na;
 connectAttr "Gun_Mount:lambert4.msg" ":defaultShaderList1.s" -na;
@@ -6058,7 +10755,359 @@ connectAttr "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" ":defaultShaderLi
 		 -na;
 connectAttr "Gun_Mount:Lineup:pasted__lambert19.msg" ":defaultShaderList1.s" -na
 		;
+connectAttr "lambert2.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert2.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert3.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert4.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert5.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert6.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert7.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert8.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert9.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert10.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert11.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert12.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert13.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert14.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert15.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:lambert16.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert2.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert3.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon:lambert4.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert2.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert3.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Railgun_Cannon1:lambert4.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Black.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Gunmetal.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Windows.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__White.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert4.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__blinn5.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Car_Main_Color.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Rusty_Metal.msg" ":defaultShaderList1.s" 
+		-na;
+connectAttr "Gun_Mount1:Lineup:pasted__Glass.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber.msg" ":defaultShaderList1.s" 
+		-na;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Metal.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Lights.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__TailLights.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__GunMetal.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Frame_Metal.msg" ":defaultShaderList1.s" 
+		-na;
+connectAttr "Gun_Mount1:Lineup:pasted__Blue1.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Black1.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Tire_Rubber1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Chrome1.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__Window.msg" ":defaultShaderList1.s" -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert3.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert14.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert15.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert9.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert5.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert2.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert16.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert17.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert12.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert13.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert6.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert10.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert11.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert8.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert7.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert18.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:pasted__Game_Jeep.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:pasted__lambert19.msg" ":defaultShaderList1.s" -na
+		;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert6.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert7.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert8.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert9.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert10.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert11.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert12.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert13.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert14.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert15.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:lambert16.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Gunmetal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Windows.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__White.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__blinn5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Rusty_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Glass.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Lights.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__TailLights.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__GunMetal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Frame_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Blue1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Black1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Tire_Rubber1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Chrome1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Window.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert14.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert15.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert9.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert16.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert17.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert12.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert13.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert6.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert10.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert11.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert8.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert7.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert18.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__Game_Jeep.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:pasted__lambert19.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert6.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert7.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert8.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert9.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert10.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert11.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert12.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert13.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert14.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert15.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:lambert16.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Gunmetal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Windows.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__White.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert4.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__blinn5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Car_Main_Color.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Rusty_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Glass.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Lights.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__TailLights.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__GunMetal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Frame_Metal.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Blue1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Black1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Tire_Rubber1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Chrome1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Window.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert3.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert14.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert15.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert9.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert5.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert2.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert16.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert17.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert12.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert13.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert6.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert10.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert11.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert8.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert7.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert18.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__Game_Jeep.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1.msg" ":defaultShaderList1.s"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:pasted__lambert19.msg" ":defaultShaderList1.s"
+		 -na;
 connectAttr "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1P2D.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.msg" ":defaultRenderUtilityList1.u"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1P2D.msg" ":defaultRenderUtilityList1.u"
 		 -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Gun_Mount:defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
@@ -6076,7 +11125,64 @@ connectAttr "Gun_Mount:Lineup:defaultRenderLayer.msg" ":defaultRenderingList1.r"
 		 -na;
 connectAttr "Gun_Mount:MiniGun_For_Animation:defaultRenderLayer.msg" ":defaultRenderingList1.r"
 		 -na;
+connectAttr "Gun_Mount1:defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
+connectAttr "Gun_Mount1:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:Railgun_Cannon1:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Railgun_Cannon1:M134_MiniGun:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:MiniGun_For_Animation:defaultRenderLayer.msg" ":defaultRenderingList1.r"
+		 -na;
 connectAttr "Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "Gun_Mount1:Lineup:JeepRubiconFull:lambert4SG1F.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation1:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.msg" ":defaultTextureList1.tx"
+		 -na;
+connectAttr "Gun_Mount1:MiniGun_For_Animation2:Gun_Mount:Lineup:JeepRubiconFull:lambert4SG1F.msg" ":defaultTextureList1.tx"
 		 -na;
 connectAttr "Barrel_ClusterShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
 connectAttr "Main_BodyShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
