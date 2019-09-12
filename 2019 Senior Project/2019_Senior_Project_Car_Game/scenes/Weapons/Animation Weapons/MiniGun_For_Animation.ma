@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: MiniGun_For_Animation.ma
-//Last modified: Thu, Sep 12, 2019 02:26:38 PM
+//Last modified: Thu, Sep 12, 2019 03:56:58 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "gameFbxExporter" "gameFbxExporter" "1.0";
@@ -4517,7 +4517,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "C9464EC5-4CAA-DFF8-74C3-359F1AFDCE6C";
-	setAttr ".b" -type "string" "playbackOptions -min 4 -max 91 -ast 1 -aet 200 ";
+	setAttr ".b" -type "string" "playbackOptions -min 4 -max 85 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode renderLayerManager -n "Gun_Mount:renderLayerManager";
 	rename -uid "BB78A7D4-4EF3-348E-C212-058D8F0964A6";
@@ -5259,7 +5259,6 @@ createNode gameFbxExporter -n "gameExporterPreset1";
 	rename -uid "DAC71AEF-43B3-96BD-E7AC-B2B8D6D21915";
 	setAttr ".pn" -type "string" "Model Default";
 	setAttr ".ils" yes;
-	setAttr ".ilu" yes;
 	setAttr ".ebm" yes;
 	setAttr ".inc" yes;
 	setAttr ".fv" -type "string" "FBX201800";
@@ -5269,23 +5268,23 @@ createNode gameFbxExporter -n "gameExporterPreset2";
 	rename -uid "1B325B2C-4686-4CEF-9E92-8E80081C6DCB";
 	setAttr ".pn" -type "string" "Anim Default";
 	setAttr ".ils" yes;
+	setAttr ".ilu" yes;
 	setAttr ".eti" 2;
 	setAttr -s 3 ".ac";
-	setAttr ".ac[0].acn" -type "string" "Deploy";
-	setAttr ".ac[0].acs" 1;
-	setAttr ".ac[0].ace" 40;
-	setAttr ".ac[1].acn" -type "string" "Firing Sequence";
-	setAttr ".ac[1].acs" 45;
-	setAttr ".ac[1].ace" 57;
-	setAttr ".ac[2].acn" -type "string" "Withdraw";
-	setAttr ".ac[2].acs" 62;
-	setAttr ".ac[2].ace" 98;
-	setAttr ".spt" 2;
+	setAttr ".ac[0].acn" -type "string" "Minigun Deploy";
+	setAttr ".ac[0].acs" 4;
+	setAttr ".ac[0].ace" 34;
+	setAttr ".ac[1].acn" -type "string" "Minigun Firing Sequence";
+	setAttr ".ac[1].acs" 35;
+	setAttr ".ac[1].ace" 47;
+	setAttr ".ac[2].acn" -type "string" "Minigun Retract";
+	setAttr ".ac[2].acs" 65;
+	setAttr ".ac[2].ace" 85;
 	setAttr ".ic" no;
 	setAttr ".ebm" yes;
 	setAttr ".fv" -type "string" "FBX201800";
 	setAttr ".exp" -type "string" "D:/2018-Junior/2019 Senior Project/2019_Senior_Project_Car_Game/scenes/Weapons/Animation Weapons";
-	setAttr ".exf" -type "string" "Minigun Animation EX";
+	setAttr ".exf" -type "string" "Reworked Minigun Animation EX";
 createNode gameFbxExporter -n "gameExporterPreset3";
 	rename -uid "5B4A8F84-4CDD-8A9A-0761-2792688F86BD";
 	setAttr ".pn" -type "string" "TE Anim Default";
@@ -7813,8 +7812,8 @@ createNode animCurveTU -n "Barrel_Cluster_scaleZ";
 	setAttr -s 15 ".ktv[0:14]"  1 1 4 1 11 1 15 1 17 1 19 1 24 1 31 1 35 1
 		 47 1 52 1 65 1 69 1 71 1 75 1;
 select -ne :time1;
-	setAttr ".o" 79;
-	setAttr ".unw" 79;
+	setAttr ".o" 85;
+	setAttr ".unw" 85;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
